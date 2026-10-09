@@ -115,7 +115,7 @@ export default async function ServiceDetailPage({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-8 space-y-5">
-              <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-sm bg-vensai-royal/10 dark:bg-vensai-electric/15 text-vensai-royal dark:text-vensai-electric text-xs font-mono font-bold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-vensai-royal/10 dark:bg-vensai-electric/15 text-vensai-royal dark:text-vensai-electric text-xs font-mono font-bold uppercase tracking-widest">
                 <span>CATEGORY {service.number}</span>
                 <span>•</span>
                 <span>{service.categoryGroup}</span>
@@ -132,14 +132,14 @@ export default async function ServiceDetailPage({
               <div className="pt-3 flex flex-wrap gap-4">
                 <Link
                   href={`/contact?service=${encodeURIComponent(service.shortTitle)}`}
-                  className="inline-flex items-center gap-2.5 px-7 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-sm shadow-blue-glow transition-all"
+                  className="inline-flex items-center gap-2.5 px-7 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-lg shadow-blue-glow transition-all"
                 >
                   <span>Discuss Your {service.shortTitle} Requirement</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-2 px-6 py-4 text-sm font-semibold border border-slate-300 dark:border-slate-700 hover:border-vensai-electric text-slate-800 dark:text-slate-200 rounded-sm transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-4 text-sm font-semibold border border-slate-300 dark:border-slate-700 hover:border-vensai-electric text-slate-800 dark:text-slate-200 rounded-lg transition-colors"
                 >
                   <span>All 13 Service Categories</span>
                 </Link>
@@ -147,7 +147,7 @@ export default async function ServiceDetailPage({
             </div>
 
             {/* Right Deliverables Summary Box */}
-            <div className="lg:col-span-4 p-6 sm:p-7 rounded-sm bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-enterprise">
+            <div className="lg:col-span-4 p-6 sm:p-7 rounded-xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-enterprise">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-vensai-electric mb-4">
                 Standard Engagement Deliverables
               </p>
@@ -170,7 +170,7 @@ export default async function ServiceDetailPage({
                   {service.engagementModels.map((em) => (
                     <span
                       key={em}
-                      className="px-2.5 py-1 text-xs font-medium bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-sm"
+                      className="px-2.5 py-1 text-xs font-medium bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-md"
                     >
                       {em}
                     </span>
@@ -196,7 +196,7 @@ export default async function ServiceDetailPage({
               {service.whatWeDo.map((item, i) => (
                 <div
                   key={item}
-                  className="p-4 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex items-start gap-3"
+                  className="p-4 rounded-lg bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex items-start gap-3"
                 >
                   <span className="font-mono text-xs font-bold text-vensai-electric mt-0.5">
                     0{i + 1}
@@ -218,7 +218,7 @@ export default async function ServiceDetailPage({
                 {service.capabilities.map((cap) => (
                   <div
                     key={cap}
-                    className="p-3.5 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex items-center gap-2.5 text-sm font-medium text-slate-800 dark:text-slate-200"
+                    className="p-3.5 rounded-lg bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex items-center gap-2.5 text-sm font-medium text-slate-800 dark:text-slate-200"
                   >
                     <span className="w-2 h-2 bg-vensai-electric shrink-0" />
                     <span>{cap}</span>
@@ -228,7 +228,7 @@ export default async function ServiceDetailPage({
             </div>
 
             {service.subCapabilities && (
-              <div className="p-6 rounded-sm bg-vensai-royal/5 dark:bg-vensai-electric/10 border border-vensai-electric/40">
+              <div className="p-6 rounded-xl bg-vensai-royal/5 dark:bg-vensai-electric/10 border border-vensai-electric/40">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-vensai-royal dark:text-vensai-electric mb-4">
                   {service.subCapabilities.title}
                 </h3>
@@ -236,7 +236,7 @@ export default async function ServiceDetailPage({
                   {service.subCapabilities.items.map((sub) => (
                     <div
                       key={sub}
-                      className="p-3 rounded-sm bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200"
+                      className="p-3 rounded-md bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200"
                     >
                       {sub}
                     </div>
@@ -253,7 +253,7 @@ export default async function ServiceDetailPage({
                 {service.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3.5 py-1.5 text-xs font-mono bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 rounded-sm"
+                    className="px-3.5 py-1.5 text-xs font-mono bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 rounded-md"
                   >
                     {tech}
                   </span>
@@ -311,7 +311,7 @@ export default async function ServiceDetailPage({
             {service.useCases.map((uc, idx) => (
               <div
                 key={uc.title}
-                className="p-7 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800"
+                className="p-7 rounded-xl bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800"
               >
                 <span className="font-mono text-xs font-bold text-vensai-electric">
                   USE CASE 0{idx + 1}
@@ -469,14 +469,14 @@ export default async function ServiceDetailPage({
           <div className="pt-4 flex flex-wrap justify-center gap-4">
             <Link
               href={`/contact?service=${encodeURIComponent(service.shortTitle)}`}
-              className="inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold bg-vensai-royal hover:bg-vensai-electric text-white rounded-sm shadow-blue-glow"
+              className="inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold bg-vensai-royal hover:bg-vensai-electric text-white rounded-lg shadow-blue-glow"
             >
               <span>Talk to Vensai</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold border border-slate-700 hover:border-vensai-electric text-slate-200 rounded-sm"
+              className="inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold border border-slate-700 hover:border-vensai-electric text-slate-200 rounded-lg"
             >
               <span>Explore Other Services</span>
             </Link>

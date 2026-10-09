@@ -29,7 +29,7 @@ export function CaseStudiesAndCTASection() {
         />
         <div className="relative max-w-7xl mx-auto px-6">
           <Reveal>
-            <div className="p-8 sm:p-12 lg:p-14 rounded-sm bg-gradient-to-br from-[#111827] via-[#0B1118] to-[#111827] border border-slate-800 shadow-enterprise-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="p-8 sm:p-12 lg:p-14 rounded-2xl bg-gradient-to-br from-[#111827] via-[#0B1118] to-[#111827] border border-slate-800 shadow-enterprise-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-electric">
                   <Compass className="w-4 h-4" />
@@ -45,14 +45,14 @@ export function CaseStudiesAndCTASection() {
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end justify-end gap-3">
                 <Link
                   href="/contact?service=Consulting%20%2F%20R%26D"
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-sm shadow-blue-glow transition-all"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-lg shadow-blue-glow transition-all"
                 >
                   <span>Discuss Your Project</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/solutions/consulting"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white border border-slate-700 hover:border-vensai-electric rounded-sm transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white border border-slate-700 hover:border-vensai-electric rounded-lg transition-colors"
                 >
                   <span>Explore Consulting &amp; R&amp;D</span>
                 </Link>
@@ -76,13 +76,13 @@ export function CaseStudiesAndCTASection() {
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {CASE_STUDY_BLUEPRINTS.map((cs, idx) => (
               <Reveal key={cs.id} delay={idx * 0.05}>
-                <div className="h-full flex flex-col justify-between bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-sm p-7 shadow-enterprise-sm hover:border-vensai-electric transition-all">
+                <div className="h-full flex flex-col justify-between bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-xl p-7 shadow-enterprise-sm hover:border-vensai-electric transition-all">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
                       <span className="font-mono text-xs font-bold text-vensai-royal dark:text-vensai-electric">
                         {cs.code}
                       </span>
-                      <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-sm bg-slate-100 dark:bg-[#0B1118] text-slate-600 dark:text-slate-300">
+                      <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-[#0B1118] text-slate-600 dark:text-slate-300">
                         {cs.engagementModel}
                       </span>
                     </div>
@@ -97,25 +97,25 @@ export function CaseStudiesAndCTASection() {
                     </div>
 
                     <div className="space-y-3 text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2">
-                      <div className="p-3 rounded-sm bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/70 dark:border-slate-800">
+                      <div className="p-3 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/70 dark:border-slate-800">
                         <strong className="text-slate-900 dark:text-white block mb-0.5">
                           Challenge
                         </strong>
                         {cs.challenge.replace(/^Challenge:\s*/i, "")}
                       </div>
-                      <div className="p-3 rounded-sm bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/70 dark:border-slate-800">
+                      <div className="p-3 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/70 dark:border-slate-800">
                         <strong className="text-slate-900 dark:text-white block mb-0.5">
                           Approach
                         </strong>
                         {cs.approach.replace(/^Approach:\s*/i, "")}
                       </div>
-                      <div className="p-3 rounded-sm bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/70 dark:border-slate-800">
+                      <div className="p-3 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/70 dark:border-slate-800">
                         <strong className="text-slate-900 dark:text-white block mb-0.5">
                           Solution
                         </strong>
                         {cs.solution.replace(/^Solution:\s*/i, "")}
                       </div>
-                      <div className="p-3 rounded-sm bg-vensai-royal/5 dark:bg-vensai-electric/10 border border-vensai-electric/30">
+                      <div className="p-3 rounded-lg bg-vensai-royal/5 dark:bg-vensai-electric/10 border border-vensai-electric/30">
                         <strong className="text-vensai-royal dark:text-vensai-electric block mb-0.5">
                           Outcome
                         </strong>
@@ -132,7 +132,7 @@ export function CaseStudiesAndCTASection() {
                       {cs.technologies.map((t) => (
                         <span
                           key={t}
-                          className="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-[#0B1118] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 rounded-sm"
+                          className="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-[#0B1118] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 rounded-md"
                         >
                           {t}
                         </span>
@@ -141,7 +141,7 @@ export function CaseStudiesAndCTASection() {
                     <button
                       type="button"
                       onClick={() => setSelectedBlueprint(cs)}
-                      className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider border border-slate-300 dark:border-slate-700 hover:border-vensai-electric text-slate-800 dark:text-slate-200 rounded-sm inline-flex items-center justify-center gap-2 transition-colors"
+                      className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider border border-slate-300 dark:border-slate-700 hover:border-vensai-electric text-slate-800 dark:text-slate-200 rounded-lg inline-flex items-center justify-center gap-2 transition-colors"
                     >
                       <FileText className="w-3.5 h-3.5 text-vensai-electric" />
                       <span>Inspect Full Case Study Template</span>
@@ -154,7 +154,7 @@ export function CaseStudiesAndCTASection() {
 
           {/* Partner Feedback / Testimonial Placeholder Component (Ready for Real Client Quotes) */}
           <Reveal delay={0.15}>
-            <div className="mt-12 p-8 rounded-sm bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="mt-12 p-8 rounded-xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-4 space-y-2 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 pb-6 lg:pb-0 lg:pr-8">
                 <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-vensai-electric">
                   <Quote className="w-4 h-4" />
@@ -168,7 +168,7 @@ export function CaseStudiesAndCTASection() {
                 </p>
               </div>
               <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-5 rounded-sm bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800">
+                <div className="p-5 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800">
                   <p className="text-xs italic text-slate-600 dark:text-slate-300 leading-relaxed">
                     &ldquo;[Client Testimonial Placeholder — Reserved for verified executive feedback regarding Vensai’s project management, full-time team responsiveness and end-to-end technical delivery.]&rdquo;
                   </p>
@@ -181,7 +181,7 @@ export function CaseStudiesAndCTASection() {
                     </span>
                   </div>
                 </div>
-                <div className="p-5 rounded-sm bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800">
+                <div className="p-5 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800">
                   <p className="text-xs italic text-slate-600 dark:text-slate-300 leading-relaxed">
                     &ldquo;[Client Testimonial Placeholder — Reserved for verified partner feedback highlighting multi-disciplinary collaboration across e-commerce, integrations, creative production and ongoing support.]&rdquo;
                   </p>
@@ -257,14 +257,14 @@ export function CaseStudiesAndCTASection() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-sm shadow-blue-glow transition-all duration-200"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-lg shadow-blue-glow transition-all duration-200"
               >
                 <span>Talk to Vensai</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white bg-[#111827] hover:bg-[#1F2937] border border-slate-700 hover:border-vensai-electric rounded-sm transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white bg-[#111827] hover:bg-[#1F2937] border border-slate-700 hover:border-vensai-electric rounded-lg transition-all duration-200"
               >
                 <span>Explore Services</span>
               </Link>

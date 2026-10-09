@@ -39,7 +39,7 @@ export function TechEcosystemSection() {
 
         {/* Filter & Search Bar */}
         <Reveal delay={0.08}>
-          <div className="mt-10 p-4 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="mt-10 p-4 rounded-xl bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             {/* Category Tabs */}
             <div className="flex flex-wrap gap-1.5">
               {categories.map((cat) => {
@@ -49,7 +49,7 @@ export function TechEcosystemSection() {
                     key={cat}
                     type="button"
                     onClick={() => setSelectedCategory(cat)}
-                    className={`px-3 py-1.5 text-xs font-semibold rounded-sm transition-colors ${
+                    className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                       active
                         ? "bg-vensai-royal text-white shadow-blue-glow-sm"
                         : "bg-white dark:bg-[#0B1118] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-vensai-electric"
@@ -70,7 +70,7 @@ export function TechEcosystemSection() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search SAP, Flutter, AWS, Python..."
                 aria-label="Search technologies"
-                className="w-full pl-9 pr-8 py-2 text-xs bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-vensai-electric"
+                className="w-full pl-9 pr-8 py-2 text-xs bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-lg text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-vensai-electric"
               />
               {searchQuery && (
                 <button
@@ -101,7 +101,7 @@ export function TechEcosystemSection() {
 
             return (
               <Reveal key={group.category} delay={Math.min(idx * 0.03, 0.2)}>
-                <div className="h-full flex flex-col justify-between p-6 rounded-sm bg-[#F7F9FC] dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800">
+                <div className="h-full flex flex-col justify-between p-6 rounded-xl bg-[#F7F9FC] dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800">
                   <div>
                     <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 dark:border-slate-800">
                       <div className="flex items-center gap-2">
@@ -123,7 +123,7 @@ export function TechEcosystemSection() {
                       {visibleTechs.map((tech) => (
                         <div
                           key={tech.name}
-                          className="p-2.5 rounded-sm bg-white dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between gap-3"
+                          className="p-2.5 rounded-lg bg-white dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between gap-3"
                         >
                           <span className="text-xs font-semibold text-slate-900 dark:text-white">
                             {tech.name}

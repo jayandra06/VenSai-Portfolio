@@ -55,7 +55,7 @@ export function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 pt-12 pb-20 lg:pt-20 lg:pb-28">
         {/* Top Positioning Pill Bar */}
         <Reveal>
-          <div className="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-sm border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#111827]/90 text-xs font-semibold tracking-[0.16em] uppercase text-slate-700 dark:text-slate-300 mb-8">
+          <div className="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#111827]/90 text-xs font-semibold tracking-[0.16em] uppercase text-slate-700 dark:text-slate-300 mb-8">
             <span className="w-2 h-2 rounded-full bg-vensai-electric animate-pulse" />
             <span>VENSAI LABS</span>
             <span className="text-vensai-electric">•</span>
@@ -85,7 +85,7 @@ export function HeroSection() {
 
             {/* Core Proposition Callout Box */}
             <Reveal delay={0.15}>
-              <div className="p-5 rounded-sm border-l-2 border-vensai-electric bg-[#F7F9FC] dark:bg-[#111827]/80 border border-slate-200/80 dark:border-slate-800/80 max-w-2xl">
+              <div className="p-5 rounded-xl border-l-2 border-vensai-electric bg-[#F7F9FC] dark:bg-[#111827]/80 border border-slate-200/80 dark:border-slate-800/80 max-w-2xl">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-vensai-royal dark:text-vensai-electric mb-1.5">
                   Full-Service Freelancing Agency &amp; Business Solutions Partner
                 </p>
@@ -100,14 +100,14 @@ export function HeroSection() {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-3 px-7 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-sm shadow-blue-glow transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-3 px-7 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-lg shadow-blue-glow transition-all duration-200"
                 >
                   <span>Talk to Vensai</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-semibold text-slate-900 dark:text-white bg-white dark:bg-[#111827] hover:bg-slate-50 dark:hover:bg-[#1F2937] border border-slate-300 dark:border-slate-700 hover:border-vensai-electric rounded-sm transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-semibold text-slate-900 dark:text-white bg-white dark:bg-[#111827] hover:bg-slate-50 dark:hover:bg-[#1F2937] border border-slate-300 dark:border-slate-700 hover:border-vensai-electric rounded-lg transition-all duration-200"
                 >
                   <span>Explore Services</span>
                 </Link>
@@ -157,7 +157,7 @@ export function HeroSection() {
           {/* Right Column: Sophisticated Enterprise Brand & Ecosystem Console */}
           <div className="lg:col-span-5">
             <Reveal delay={0.15}>
-              <div className="relative rounded-sm border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#080D14] p-6 sm:p-8 shadow-enterprise-lg overflow-hidden">
+              <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#080D14] p-6 sm:p-8 shadow-enterprise-lg overflow-hidden">
                 {/* Top Blueprint Header */}
                 <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200 dark:border-slate-800/90 text-[11px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
                   <span>VENSAI DELIVERY ARCHITECTURE</span>
@@ -165,7 +165,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Official Uploaded Vensai Labs Identity Centerpiece */}
-                <div className="relative rounded-sm border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#05080D] p-6 flex flex-col items-center justify-center shadow-inner">
+                <div className="relative rounded-xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#05080D] p-6 flex flex-col items-center justify-center shadow-inner">
                   {/* Light mode uses exact transparent light-mode extraction; Dark mode uses exact uploaded dark-mode lockup */}
                   <img
                     src="/brand/vensai-full-light.png"
@@ -189,7 +189,7 @@ export function HeroSection() {
 
                 {/* Interactive 4-Pillar Ecosystem Selector: BUILD | DESIGN | AUTOMATE | SCALE */}
                 <div className="mt-6">
-                  <div className="grid grid-cols-4 gap-1.5 p-1 rounded-sm bg-slate-200/70 dark:bg-[#111827] border border-slate-300/60 dark:border-slate-800">
+                  <div className="grid grid-cols-4 gap-1.5 p-1 rounded-xl bg-slate-200/70 dark:bg-[#111827] border border-slate-300/60 dark:border-slate-800">
                     {ECOSYSTEM_NODES.map((node) => {
                       const active = activeNode === node.id;
                       return (
@@ -198,7 +198,7 @@ export function HeroSection() {
                           type="button"
                           aria-pressed={active}
                           onClick={() => setActiveNode(node.id)}
-                          className={`py-2 px-2 text-[11px] font-bold tracking-[0.14em] uppercase rounded-sm transition-all ${
+                          className={`py-2 px-2 text-[11px] font-bold tracking-[0.14em] uppercase rounded-lg transition-all ${
                             active
                               ? "bg-vensai-royal text-white shadow-blue-glow-sm"
                               : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
@@ -216,7 +216,7 @@ export function HeroSection() {
                     return (
                       <div
                         key={node.id}
-                        className={`mt-4 p-4 rounded-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/90 ${
+                        className={`mt-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/90 ${
                           isActive ? "block" : "hidden"
                         }`}
                       >
