@@ -32,7 +32,7 @@ export function WhyVensaiSection() {
               </p>
 
               {/* Strategic Positioning Comparison Card */}
-              <div className="mt-8 p-6 rounded-sm bg-[#111827] border border-slate-800 space-y-4">
+              <div className="mt-8 p-6 rounded-xl bg-[#111827] border border-slate-800 space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                   <span className="text-xs font-bold uppercase tracking-widest text-vensai-electric">
                     The Vensai Agency Advantage
@@ -72,14 +72,14 @@ export function WhyVensaiSection() {
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-sm shadow-blue-glow-sm transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-lg shadow-blue-glow-sm transition-colors"
                 >
                   <span>Partner With Vensai</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 border border-slate-700 hover:border-vensai-electric rounded-sm transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 border border-slate-700 hover:border-vensai-electric rounded-lg transition-colors"
                 >
                   <span>About Our Model</span>
                 </Link>
@@ -91,7 +91,7 @@ export function WhyVensaiSection() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {WHY_VENSAI_POINTS.map((point, index) => (
               <Reveal key={point.title} delay={index * 0.03}>
-                <div className="h-full p-6 rounded-sm bg-[#111827]/90 border border-slate-800 hover:border-vensai-electric/70 transition-colors">
+                <div className="h-full p-6 rounded-xl bg-[#111827]/90 border border-slate-800 hover:border-vensai-electric/70 transition-colors">
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-mono text-xs font-bold text-vensai-electric">
                       {String(index + 1).padStart(2, "0")}

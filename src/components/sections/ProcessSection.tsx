@@ -22,7 +22,7 @@ export function ProcessSection() {
 
         {/* Interactive Stage Inspector Bar */}
         <Reveal delay={0.1}>
-          <div className="mt-14 p-6 sm:p-8 rounded-sm bg-[#F7F9FC] dark:bg-[#111827]/90 border border-slate-200 dark:border-slate-800">
+          <div className="mt-14 p-6 sm:p-8 rounded-xl bg-[#F7F9FC] dark:bg-[#111827]/90 border border-slate-200 dark:border-slate-800">
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 pb-6 border-b border-slate-200 dark:border-slate-800">
               {PROCESS_STEPS.map((step, index) => {
                 const isActive = activeStep === index;
@@ -31,7 +31,7 @@ export function ProcessSection() {
                     key={step.number}
                     type="button"
                     onClick={() => setActiveStep(index)}
-                    className={`p-3 rounded-sm text-left border transition-all ${
+                    className={`p-3 rounded-lg text-left border transition-all ${
                       isActive
                         ? "bg-vensai-royal text-white border-vensai-royal shadow-blue-glow-sm"
                         : "bg-white dark:bg-[#0B1118] border-slate-200 dark:border-slate-800 hover:border-vensai-electric text-slate-800 dark:text-slate-200"
@@ -67,7 +67,7 @@ export function ProcessSection() {
                   {PROCESS_STEPS[activeStep].details}
                 </p>
               </div>
-              <div className="lg:col-span-4 bg-white dark:bg-[#0B1118] p-5 rounded-sm border border-slate-200 dark:border-slate-800">
+              <div className="lg:col-span-4 bg-white dark:bg-[#0B1118] p-5 rounded-lg border border-slate-200 dark:border-slate-800">
                 <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400 mb-3">
                   Key Stage Outputs
                 </p>
@@ -93,14 +93,14 @@ export function ProcessSection() {
             <Reveal key={step.number} delay={idx * 0.04}>
               <div
                 onClick={() => setActiveStep(idx)}
-                className={`cursor-pointer h-full p-6 rounded-sm border transition-all ${
+                className={`cursor-pointer h-full p-6 rounded-xl border transition-all ${
                   activeStep === idx
                     ? "border-vensai-electric bg-[#F7F9FC] dark:bg-[#111827]"
                     : "border-slate-200 dark:border-slate-800/90 bg-white dark:bg-[#0B1118] hover:border-vensai-electric/60"
                 }`}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-sm bg-vensai-royal/10 dark:bg-vensai-electric/15 text-vensai-royal dark:text-vensai-electric">
+                  <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-vensai-royal/10 dark:bg-vensai-electric/15 text-vensai-royal dark:text-vensai-electric">
                     {step.number} — {step.phase}
                   </span>
                   <span className="text-[11px] font-mono text-slate-400">

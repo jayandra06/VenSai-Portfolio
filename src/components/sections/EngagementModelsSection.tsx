@@ -27,7 +27,7 @@ export function EngagementModelsSection() {
               <Reveal key={model.id} delay={idx * 0.04}>
                 <div
                   onClick={() => setActiveModel(model.id)}
-                  className={`cursor-pointer h-full flex flex-col justify-between p-7 rounded-sm border transition-all duration-200 ${
+                  className={`cursor-pointer h-full flex flex-col justify-between p-7 rounded-xl border transition-all duration-200 ${
                     isSelected
                       ? "bg-[#F7F9FC] dark:bg-[#111827] border-vensai-electric shadow-enterprise"
                       : "bg-white dark:bg-[#0B1118] border-slate-200 dark:border-slate-800 hover:border-vensai-electric/70"

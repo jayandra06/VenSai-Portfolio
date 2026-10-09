@@ -25,11 +25,11 @@ export function WhatWeDoSection() {
             title="Everything Your Business Needs to Build, Operate and Grow."
             description="Vensai provides end-to-end professional services across technology, digital commerce, enterprise systems, consulting, creative and operational support. Rather than coordinating multiple disconnected vendors or individual contractors, your business works with one accountable partner."
             action={
-              <div className="inline-flex items-center p-1 rounded-sm bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800">
+              <div className="inline-flex items-center p-1 rounded-xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800">
                 <button
                   type="button"
                   onClick={() => setViewMode("matrix")}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors ${
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors ${
                     viewMode === "matrix"
                       ? "bg-vensai-royal text-white"
                       : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
@@ -41,7 +41,7 @@ export function WhatWeDoSection() {
                 <button
                   type="button"
                   onClick={() => setViewMode("interactive")}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors ${
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors ${
                     viewMode === "interactive"
                       ? "bg-vensai-royal text-white"
                       : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
@@ -59,7 +59,7 @@ export function WhatWeDoSection() {
         {viewMode === "interactive" && (
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Selector Rail */}
-            <div className="lg:col-span-4 bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-sm divide-y divide-slate-200/70 dark:divide-slate-800/70">
+            <div className="lg:col-span-4 bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-xl divide-y divide-slate-200/70 dark:divide-slate-800/70 overflow-hidden">
               {SERVICE_CATEGORIES.map((cat) => {
                 const isSelected = cat.id === selectedId;
                 return (
@@ -94,7 +94,7 @@ export function WhatWeDoSection() {
             </div>
 
             {/* Right Deep-Dive Panel */}
-            <div className="lg:col-span-8 bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-sm p-8 sm:p-10 shadow-enterprise">
+            <div className="lg:col-span-8 bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-xl p-8 sm:p-10 shadow-enterprise">
               <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-[0.2em] text-vensai-electric">
@@ -106,7 +106,7 @@ export function WhatWeDoSection() {
                 </div>
                 <Link
                   href={`/services/${activeCategory.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider bg-vensai-royal hover:bg-vensai-electric text-white rounded-sm transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider bg-vensai-royal hover:bg-vensai-electric text-white rounded-lg transition-colors"
                 >
                   <span>Explore Practice Page</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -126,7 +126,7 @@ export function WhatWeDoSection() {
                   {activeCategory.capabilities.map((cap) => (
                     <div
                       key={cap}
-                      className="flex items-center gap-2 px-3 py-2 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800/80 text-xs font-medium text-slate-800 dark:text-slate-200"
+                      className="flex items-center gap-2 px-3 py-2 rounded-md bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800/80 text-xs font-medium text-slate-800 dark:text-slate-200"
                     >
                       <Check className="w-3.5 h-3.5 text-vensai-electric shrink-0" />
                       <span>{cap}</span>
@@ -137,7 +137,7 @@ export function WhatWeDoSection() {
 
               {/* Optional Sub-Capabilities (E.g. E-Commerce Creative Services) */}
               {activeCategory.subCapabilities && (
-                <div className="mt-6 p-5 rounded-sm bg-vensai-royal/5 dark:bg-vensai-electric/10 border border-vensai-electric/30">
+                <div className="mt-6 p-5 rounded-lg bg-vensai-royal/5 dark:bg-vensai-electric/10 border border-vensai-electric/30">
                   <h4 className="text-xs font-bold uppercase tracking-[0.18em] text-vensai-royal dark:text-vensai-electric mb-3">
                     {activeCategory.subCapabilities.title}
                   </h4>
@@ -206,7 +206,7 @@ export function WhatWeDoSection() {
                       : ""
                   }
                 >
-                  <div className="h-full flex flex-col justify-between bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 hover:border-vensai-electric dark:hover:border-vensai-electric rounded-sm p-6 sm:p-7 shadow-enterprise-sm hover:shadow-enterprise transition-all duration-200 group">
+                  <div className="h-full flex flex-col justify-between bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 hover:border-vensai-electric dark:hover:border-vensai-electric rounded-xl p-6 sm:p-7 shadow-enterprise-sm hover:shadow-enterprise transition-all duration-200 group">
                     <div>
                       {/* Card Top Bar */}
                       <div className="flex items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800/80">
@@ -233,7 +233,7 @@ export function WhatWeDoSection() {
                         {category.capabilities.map((item) => (
                           <span
                             key={item}
-                            className="px-2.5 py-1 text-xs bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-sm"
+                            className="px-2.5 py-1 text-xs bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-md"
                           >
                             {item}
                           </span>
@@ -242,7 +242,7 @@ export function WhatWeDoSection() {
 
                       {/* Special E-Commerce Creative Services Block inside Category 07 */}
                       {category.subCapabilities && (
-                        <div className="mt-4 p-4 rounded-sm bg-[#F7F9FC] dark:bg-[#111827]/90 border-l-2 border-vensai-electric border border-slate-200/80 dark:border-slate-800">
+                        <div className="mt-4 p-4 rounded-lg bg-[#F7F9FC] dark:bg-[#111827]/90 border-l-2 border-vensai-electric border border-slate-200/80 dark:border-slate-800">
                           <p className="text-xs font-bold uppercase tracking-wider text-vensai-royal dark:text-vensai-electric mb-2">
                             {category.subCapabilities.title}
                           </p>
@@ -250,7 +250,7 @@ export function WhatWeDoSection() {
                             {category.subCapabilities.items.map((sub) => (
                               <span
                                 key={sub}
-                                className="px-2.5 py-1 text-xs bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-sm"
+                                className="px-2.5 py-1 text-xs bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-md"
                               >
                                 {sub}
                               </span>

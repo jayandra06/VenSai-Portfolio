@@ -207,7 +207,7 @@ export function EnterpriseModal({
       aria-labelledby="modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
     >
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-sm shadow-enterprise-lg p-6 sm:p-8">
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-xl shadow-enterprise-lg p-6 sm:p-8">
         <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
           <div>
             {subtitle && (
@@ -226,7 +226,7 @@ export function EnterpriseModal({
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="p-2 rounded-sm border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white"
+            className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white"
           >
             <X className="w-4 h-4" />
           </button>
