@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F7F9FC;
+    --text-primary: #0B1118;
+    --text-secondary: #1F2937;
+    --accent-electric: #0A84FF;
+    --accent-royal: #0066FF;
+    --accent-sky: #00A3FF;
+  }
+
+  .dark {
+    --bg-primary: #0B1118;
+    --bg-secondary: #111827;
+    --text-primary: #FFFFFF;
+    --text-secondary: #D1D5DB;
+    --accent-electric: #0A84FF;
+    --accent-royal: #0066FF;
+    --accent-sky: #00A3FF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
