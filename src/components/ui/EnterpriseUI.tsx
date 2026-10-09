@@ -80,6 +80,9 @@ export function Breadcrumbs({
 }: {
   items: { label: string; href?: string }[];
 }) {
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+    "https://vensailabs.com";
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -88,13 +91,13 @@ export function Breadcrumbs({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://vensailabs.com/",
+        item: `${baseUrl}/`,
       },
       ...items.map((item, idx) => ({
         "@type": "ListItem",
         position: idx + 2,
         name: item.label,
-        ...(item.href ? { item: `https://vensailabs.com${item.href}` } : {}),
+        ...(item.href ? { item: `${baseUrl}${item.href}` } : {}),
       })),
     ],
   };
@@ -126,7 +129,7 @@ export function Breadcrumbs({
                   {item.label}
                 </Link>
               ) : (
-                <span className="text-slate-900 dark:text-white font-semibold">
+                <span aria-current="page" className="text-slate-900 dark:text-white font-semibold">
                   {item.label}
                 </span>
               )}
@@ -166,11 +169,15 @@ export function EnterpriseAccordion({
                 }`}
               />
             </button>
-            {isOpen && (
-              <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed pr-8">
-                {item.answer}
-              </p>
-            )}
+            <p
+              className={
+                isOpen
+                  ? "mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed pr-8 block"
+                  : "hidden"
+              }
+            >
+              {item.answer}
+            </p>
           </div>
         );
       })}

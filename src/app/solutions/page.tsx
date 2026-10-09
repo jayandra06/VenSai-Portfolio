@@ -1,15 +1,27 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, ShoppingBag, Compass, Headphones, Building2, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShoppingBag, Compass, Headphones, Building2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/EnterpriseUI";
 import { ENGAGEMENT_MODELS } from "@/data/vensai-data";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildWebPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Enterprise Business Solutions & Engagement Models",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Enterprise Business Solutions & Engagement Models | Vensai Labs",
   description:
-    "Explore Vensai Labs cross-disciplinary business solutions: Digital Commerce Ecosystems, Technical Consulting & R&D, Enterprise Systems, and Post-Deployment Support.",
-};
+    "Explore Vensai Labs cross-disciplinary business solutions: Digital Commerce Ecosystems, Technical Consulting & R&D, Enterprise Systems (SAP BTP / BI), and Post-Deployment Support across 6 engagement models.",
+  path: "/solutions",
+  keywords: [
+    "enterprise business solutions",
+    "digital commerce ecosystems",
+    "technical consulting and R&D",
+    "post-deployment managed support",
+    "SAP BTP and Power BI solutions",
+    "dedicated engineering teams",
+  ],
+});
 
 const FLAGSHIP_SOLUTIONS = [
   {
@@ -55,8 +67,20 @@ const FLAGSHIP_SOLUTIONS = [
 ];
 
 export default function SolutionsPage() {
+  const pageSchema = buildWebPageSchema({
+    title: "Enterprise Business Solutions & Engagement Models | Vensai Labs",
+    description:
+      "Explore Vensai Labs cross-disciplinary business solutions: Digital Commerce Ecosystems, Technical Consulting & R&D, Enterprise Systems (SAP BTP / BI), and Post-Deployment Support.",
+    path: "/solutions",
+    type: "CollectionPage",
+  });
+
   return (
     <div className="bg-white dark:bg-[#0B1118]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
       <section className="py-16 lg:py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumbs items={[{ label: "Solutions" }]} />

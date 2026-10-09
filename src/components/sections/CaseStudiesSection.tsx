@@ -3,8 +3,17 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Compass, FileText, Quote } from "lucide-react";
-import { Reveal, SectionHeader, EnterpriseModal } from "@/components/ui/EnterpriseUI";
-import { CASE_STUDY_BLUEPRINTS, CaseStudyBlueprint } from "@/data/vensai-data";
+import {
+  Reveal,
+  SectionHeader,
+  EnterpriseModal,
+  EnterpriseAccordion,
+} from "@/components/ui/EnterpriseUI";
+import {
+  CASE_STUDY_BLUEPRINTS,
+  CaseStudyBlueprint,
+  HOMEPAGE_FAQS,
+} from "@/data/vensai-data";
 
 export function CaseStudiesAndCTASection() {
   const [selectedBlueprint, setSelectedBlueprint] =
@@ -191,6 +200,24 @@ export function CaseStudiesAndCTASection() {
         </div>
       </section>
 
+      {/* SECTION 17B: ENTERPRISE FREQUENTLY ASKED QUESTIONS */}
+      <section className="py-24 bg-white dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800/90">
+        <div className="max-w-4xl mx-auto px-6">
+          <Reveal>
+            <SectionHeader
+              eyebrow="FREQUENTLY ASKED QUESTIONS"
+              title="How Vensai Labs Engages, Delivers & Supports."
+              description="Direct answers on how our full-time agency model, engagement structures, intellectual property governance and multi-disciplinary capabilities work."
+            />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-12">
+              <EnterpriseAccordion items={HOMEPAGE_FAQS} />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* SECTION 36: HOMEPAGE FINAL CTA */}
       <section className="py-24 bg-[#0B1118] text-white relative overflow-hidden">
         <div
@@ -208,6 +235,10 @@ export function CaseStudiesAndCTASection() {
               <img
                 src="/brand/vensai-symbol.png"
                 alt="Vensai Labs Geometric V Symbol"
+                width={110}
+                height={90}
+                decoding="async"
+                loading="lazy"
                 className="h-14 w-auto object-contain"
               />
               <span className="text-xs font-bold uppercase tracking-[0.24em] text-vensai-electric">

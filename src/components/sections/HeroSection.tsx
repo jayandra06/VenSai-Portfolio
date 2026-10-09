@@ -170,11 +170,19 @@ export function HeroSection() {
                   <img
                     src="/brand/vensai-full-light.png"
                     alt="Vensai Labs — Freelance Talent. Real Solutions. Build | Design | Automate | Scale"
+                    width={680}
+                    height={480}
+                    decoding="async"
+                    fetchPriority="high"
                     className="block dark:hidden w-full max-w-[340px] h-auto object-contain select-none"
                   />
                   <img
                     src="/brand/vensai-full-dark.png"
                     alt="Vensai Labs — Freelance Talent. Real Solutions. Build | Design | Automate | Scale"
+                    width={680}
+                    height={480}
+                    decoding="async"
+                    fetchPriority="high"
                     className="hidden dark:block w-full max-w-[340px] h-auto object-contain select-none"
                   />
                 </div>
@@ -188,6 +196,7 @@ export function HeroSection() {
                         <button
                           key={node.id}
                           type="button"
+                          aria-pressed={active}
                           onClick={() => setActiveNode(node.id)}
                           className={`py-2 px-2 text-[11px] font-bold tracking-[0.14em] uppercase rounded-sm transition-all ${
                             active
@@ -201,13 +210,15 @@ export function HeroSection() {
                     })}
                   </div>
 
-                  {/* Active Node Details */}
+                  {/* All 4 Ecosystem Nodes rendered in SSR DOM for full search engine crawlability */}
                   {ECOSYSTEM_NODES.map((node) => {
-                    if (node.id !== activeNode) return null;
+                    const isActive = node.id === activeNode;
                     return (
                       <div
                         key={node.id}
-                        className="mt-4 p-4 rounded-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/90"
+                        className={`mt-4 p-4 rounded-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/90 ${
+                          isActive ? "block" : "hidden"
+                        }`}
                       >
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-bold uppercase tracking-wider text-vensai-royal dark:text-vensai-electric">

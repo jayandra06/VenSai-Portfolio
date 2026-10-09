@@ -2,15 +2,30 @@ import React from "react";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/EnterpriseUI";
 import { BRAND_CONFIG } from "@/data/vensai-data";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildWebPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Vensai Labs Privacy Policy and data protection practices.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Privacy Policy — Data Protection & Confidentiality | Vensai Labs",
+  description:
+    "Read the Vensai Labs Privacy Policy covering how we collect, protect and handle client project specifications, NDA inquiries and career applications.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
+  const pageSchema = buildWebPageSchema({
+    title: "Privacy Policy — Data Protection & Confidentiality | Vensai Labs",
+    description:
+      "Vensai Labs Privacy Policy and corporate confidentiality practices.",
+    path: "/privacy",
+  });
+
   return (
     <div className="py-16 lg:py-24 bg-white dark:bg-[#0B1118]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
       <div className="max-w-4xl mx-auto px-6 space-y-6">
         <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
         <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">

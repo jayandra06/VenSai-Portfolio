@@ -4,16 +4,41 @@ import type { Metadata } from "next";
 import { ArrowRight, CheckCircle2, Building2 } from "lucide-react";
 import { Breadcrumbs, Reveal } from "@/components/ui/EnterpriseUI";
 import { INDUSTRIES } from "@/data/vensai-data";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildWebPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Industries We Serve — Sector-Focused Technology & Business Solutions",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Industries We Serve — Sector-Focused Technology & Business Solutions | Vensai Labs",
   description:
-    "Vensai Labs delivers specialized engineering, enterprise technology, e-commerce, consulting and operational support across 12 key industries.",
-};
+    "Vensai Labs delivers specialized software engineering, enterprise technology, e-commerce, consulting and operational support across 12 key industries including Retail, FinTech, Logistics, Maritime, Healthcare and Manufacturing.",
+  path: "/industries",
+  keywords: [
+    "retail e-commerce technology solutions",
+    "financial services software engineering",
+    "logistics supply chain software",
+    "maritime port operations software",
+    "healthcare technology consulting",
+    "manufacturing ERP and BI integration",
+  ],
+});
 
 export default function IndustriesPage() {
+  const pageSchema = buildWebPageSchema({
+    title:
+      "Industries We Serve — Sector-Focused Technology & Business Solutions | Vensai Labs",
+    description:
+      "Sector-adapted software engineering, enterprise systems, e-commerce and operational support across 12 core industries.",
+    path: "/industries",
+    type: "CollectionPage",
+  });
+
   return (
     <div className="bg-white dark:bg-[#0B1118]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
       <section className="py-16 lg:py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumbs items={[{ label: "Industries" }]} />

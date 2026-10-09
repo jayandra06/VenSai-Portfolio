@@ -1427,6 +1427,7 @@ export const INSIGHTS_ARTICLES = [
     id: "insight-01",
     category: "Architecture & Delivery",
     readTime: "6 min read",
+    author: "Vensai Labs Delivery & Architecture Practice",
     title: "Why Businesses Are Moving From Fragmented Freelancers to Managed Agency Teams",
     summary:
       "How combining full-time multidisciplinary specialists with central project management eliminates delivery risk across complex software and digital initiatives.",
@@ -1435,11 +1436,27 @@ export const INSIGHTS_ARTICLES = [
       "Central project governance reduces handoff failures between engineering, creative and operational workstreams.",
       "Long-term accountability ensures the team that builds the system stays available to maintain and scale it.",
     ],
+    sections: [
+      {
+        heading: "The Hidden Cost of Fragmented Contractor Coordination",
+        body: "When organizations hire disconnected individual freelancers across UI/UX design, backend engineering, cloud infrastructure and digital marketing, internal leadership is forced to act as systems integrator and project manager. Scope gaps between contractors frequently surface late in development—leading to rework, security blind spots and post-launch abandonment.",
+      },
+      {
+        heading: "The Managed Full-Time Agency Model",
+        body: "Vensai Labs operates on a fundamentally different principle: businesses gain flexible access to specialized talent, but every engineer, designer, consultant and support specialist is a full-time Vensai professional working under central project management. Architecture, code quality, deployment pipelines and post-deployment SLAs remain unified under one accountable partner.",
+      },
+    ],
+    relatedServices: [
+      { label: "Software & Product Engineering", href: "/services/software-development" },
+      { label: "Technical Consulting & R&D", href: "/solutions/consulting" },
+      { label: "Post-Deployment & Customer Support", href: "/solutions/support" },
+    ],
   },
   {
     id: "insight-02",
     category: "Consulting & R&D",
     readTime: "7 min read",
+    author: "Vensai Labs Technical Consulting & R&D Practice",
     title: "Evaluating Technical Feasibility Before Committing to Custom Software or AI",
     summary:
       "A practical framework for validating architecture choices, integration dependencies, security constraints and commercial ROI prior to full-scale development.",
@@ -1448,11 +1465,27 @@ export const INSIGHTS_ARTICLES = [
       "Evaluating existing ERP, CRM and API constraints early determines whether custom software, middleware or platform extension is the right path.",
       "Structured proof-of-concept validation gives leadership clear scope and timeline predictability.",
     ],
+    sections: [
+      {
+        heading: "Why Technical Feasibility Comes Before Sprint Zero",
+        body: "Ambitious software, enterprise integration and AI initiatives often stall because teams jump straight into coding without validating data readiness, third-party API rate limits, latency budgets or legacy ERP constraints. A focused technical feasibility study surfaces these dependencies before major capital is committed.",
+      },
+      {
+        heading: "What an Executive Feasibility Dossier Should Contain",
+        body: "At Vensai Labs, our R&D and architecture assessments deliver a concrete target-state blueprint: build-versus-buy trade-offs, database and cloud sizing, security posture requirements, proof-of-concept validation for high-risk modules, and a phased commercial roadmap.",
+      },
+    ],
+    relatedServices: [
+      { label: "Technical Consulting & R&D", href: "/services/consulting" },
+      { label: "AI & Machine Learning", href: "/services/ai-ml" },
+      { label: "Enterprise Technology (SAP BTP & BI)", href: "/services/enterprise" },
+    ],
   },
   {
     id: "insight-03",
     category: "E-Commerce Ecosystems",
     readTime: "5 min read",
+    author: "Vensai Labs Digital Commerce & Creative Practice",
     title: "Building Connected Digital Commerce: Storefront, ERP, Catalog Creative & Order Support",
     summary:
       "Why modern e-commerce success depends on synchronizing Shopify, WooCommerce, BigCommerce or Odoo with back-office inventory, studio visuals and live customer support.",
@@ -1461,11 +1494,27 @@ export const INSIGHTS_ARTICLES = [
       "Consistent studio product photography and video directly impact conversion and reduce return rates.",
       "Dedicated post-launch order and customer support protects brand reputation as order volume scales.",
     ],
+    sections: [
+      {
+        heading: "Beyond the Storefront Template",
+        body: "Launching a visual theme on Shopify, WooCommerce, BigCommerce or Odoo is only the surface layer of digital commerce. Sustainable growth requires real-time synchronization between checkout, multi-warehouse inventory, ERP accounting, carrier shipping APIs and automated WhatsApp/email order notifications.",
+      },
+      {
+        heading: "Integrating Studio Catalog Production & Order Operations",
+        body: "Vensai Labs pairs commerce engineering with in-house product photography, catalog video production and dedicated post-deployment order support executives—eliminating the friction of managing separate web agencies, photo studios and support outsourcers.",
+      },
+    ],
+    relatedServices: [
+      { label: "E-Commerce Solutions Hub", href: "/solutions/ecommerce" },
+      { label: "Integrations & Automation", href: "/services/integrations" },
+      { label: "Creative Production", href: "/services/creative-production" },
+    ],
   },
   {
     id: "insight-04",
     category: "Cybersecurity & Cloud",
     readTime: "6 min read",
+    author: "Vensai Labs Cloud & Security Engineering Practice",
     title: "Continuous Security & Infrastructure Readiness for Growing Digital Businesses",
     summary:
       "Integrating vulnerability assessments, authorized penetration testing and automated cloud observability into the software lifecycle.",
@@ -1474,5 +1523,337 @@ export const INSIGHTS_ARTICLES = [
       "Cloud misconfigurations remain one of the most common and preventable sources of operational exposure.",
       "Combining DevOps automation with security hardening improves both release velocity and system resilience.",
     ],
+    sections: [
+      {
+        heading: "Embedding Security Into Cloud & Application Delivery",
+        body: "As businesses connect web applications, mobile apps, payment gateways and enterprise ERPs, their API and cloud surface area expands. Periodic vulnerability assessments, authorized penetration testing and IAM/network hardening ensure security keeps pace with product velocity.",
+      },
+      {
+        heading: "Observability, CI/CD & Production Continuity",
+        body: "By combining Infrastructure-as-Code (Terraform, Docker, Kubernetes) with automated CI/CD checks and 24/7 monitoring across AWS, Azure and Google Cloud, Vensai helps organizations achieve predictable deployments and rapid incident response.",
+      },
+    ],
+    relatedServices: [
+      { label: "Cybersecurity Services", href: "/services/cybersecurity" },
+      { label: "Cloud, DevOps & Infrastructure", href: "/services/cloud-devops" },
+      { label: "Managed Support Operations", href: "/solutions/support" },
+    ],
   },
 ];
+
+export const HOMEPAGE_FAQS = [
+  {
+    question: "How is Vensai Labs different from a freelancer marketplace or a traditional IT agency?",
+    answer:
+      "Unlike open freelancer marketplaces where you must vet, hire and coordinate individual contractors yourself, Vensai Labs employs its own full-time professionals across software, mobile, AI, cloud, cybersecurity, enterprise technology, e-commerce, design, marketing and customer support. Unlike narrow single-discipline agencies, Vensai manages the entire engagement end-to-end under central project management.",
+  },
+  {
+    question: "What engagement models does Vensai Labs offer?",
+    answer:
+      "We offer six flexible engagement models: (1) Project Based for complete end-to-end builds, (2) Dedicated Resource for embedding full-time Vensai specialists into your workflow, (3) Dedicated Team for a complete multidisciplinary delivery pod, (4) Managed Services for SLA-driven ongoing operations, (5) Consulting for technical feasibility, R&D and audits, and (6) Post-Deployment Support for long-term maintenance and customer support.",
+  },
+  {
+    question: "Can Vensai help if we have a business or product idea but need technical feasibility and scoping first?",
+    answer:
+      "Yes. Our Technical Consulting & R&D practice conducts project feasibility studies, architecture reviews, technology selection, proof-of-concept validation and budget/timeline roadmapping before you commit to full-scale development.",
+  },
+  {
+    question: "Do you handle both technology development and creative/operational work like product shoots or customer support?",
+    answer:
+      "Yes. Because real business solutions often require multiple disciplines, Vensai provides software and e-commerce engineering alongside brand strategy, UI/UX design, commercial and catalog product photography, performance marketing, and live chat/voice customer and technical support.",
+  },
+  {
+    question: "What happens after our software, mobile app or e-commerce store is deployed?",
+    answer:
+      "Vensai stays accountable after launch. We provide structured post-deployment support including L1–L3 technical troubleshooting, preventive maintenance, cloud and security monitoring, incremental feature enhancements, and omnichannel customer/order support.",
+  },
+  {
+    question: "How does Vensai protect confidentiality and intellectual property?",
+    answer:
+      "All requirement discussions, source code, architectures and business data are handled under strict confidentiality by Vensai’s full-time staff, with clear intellectual property ownership and governance defined in our client agreements.",
+  },
+];
+
+export interface ServiceSEOEnrichment {
+  whoItIsFor: string[];
+  relatedServiceSlugs: string[];
+  relatedIndustries: string[];
+  faqs: { question: string; answer: string }[];
+}
+
+export const SERVICE_SEO_ENRICHMENT: Record<string, ServiceSEOEnrichment> = {
+  "software-development": {
+    whoItIsFor: [
+      "Enterprises and SMEs replacing manual spreadsheets or rigid legacy tools with custom web applications, CRM or ERP systems",
+      "Technology companies and founders building commercial multi-tenant SaaS platforms",
+      "Industrial, logistics and maritime operations requiring resilient Windows/Desktop or offline-capable software",
+    ],
+    relatedServiceSlugs: ["mobile-development", "integrations", "cloud-devops", "consulting"],
+    relatedIndustries: ["SMEs & Enterprises", "Startups & Technology", "Financial Services", "Manufacturing"],
+    faqs: [
+      {
+        question: "Does Vensai build both web-based SaaS platforms and Windows/Desktop applications?",
+        answer:
+          "Yes. Our engineering teams build modern web applications and SaaS platforms (React, Next.js, Node.js, Python, Java, Go) as well as native and cross-platform Windows/Desktop business applications (.NET, C#, WPF, Electron).",
+      },
+      {
+        question: "Can you integrate custom software with our existing ERP, CRM or accounting system?",
+        answer:
+          "Yes. Every custom software system we engineer is designed for clean API connectivity with existing enterprise platforms such as SAP, Odoo, Salesforce, HubSpot, Zoho, Tally, QuickBooks and payment/shipping gateways.",
+      },
+    ],
+  },
+  "mobile-development": {
+    whoItIsFor: [
+      "Retail and D2C brands launching high-conversion Android and iOS customer shopping apps",
+      "Logistics, field-service and healthcare organizations equipping mobile teams with real-time operational apps",
+      "SaaS and enterprise businesses extending web platforms to iOS and Android devices",
+    ],
+    relatedServiceSlugs: ["software-development", "ecommerce", "branding", "support"],
+    relatedIndustries: ["E-commerce & Retail", "Logistics & Transportation", "Healthcare", "Education"],
+    faqs: [
+      {
+        question: "Should we build our mobile app with Flutter, React Native, or native iOS and Android?",
+        answer:
+          "During discovery and feasibility, our mobile architects evaluate your performance, hardware integration, timeline and budget goals to recommend either cross-platform (Flutter / React Native) or native (Swift / Kotlin) engineering.",
+      },
+      {
+        question: "Does Vensai handle App Store and Google Play publishing and ongoing OS updates?",
+        answer:
+          "Yes. We manage the complete release pipeline—including Apple App Store and Google Play compliance, backend API deployment, crash monitoring and post-launch OS compatibility maintenance.",
+      },
+    ],
+  },
+  "ai-ml": {
+    whoItIsFor: [
+      "Organizations seeking secure, private RAG knowledge assistants over internal documents, SOPs and databases",
+      "Operations and customer service leaders automating repetitive triage, extraction and workflow tasks with AI agents",
+      "Manufacturing, retail and financial firms implementing computer vision or predictive analytics",
+    ],
+    relatedServiceSlugs: ["software-development", "enterprise", "consulting", "integrations"],
+    relatedIndustries: ["Professional Services", "Manufacturing", "Healthcare", "Financial Services"],
+    faqs: [
+      {
+        question: "How does Vensai ensure our private business data stays secure when implementing LLMs or RAG?",
+        answer:
+          "We architect RAG pipelines and LLM integrations with strict role-based access controls, private vector databases, enterprise API endpoints that do not train public models on your data, and auditable guardrails.",
+      },
+      {
+        question: "Can AI agents be integrated directly into our existing CRM, ERP or helpdesk?",
+        answer:
+          "Yes. Rather than building isolated AI demos, we connect AI workflows directly to your operational databases, ticketing desks, WhatsApp/email channels and ERP systems.",
+      },
+    ],
+  },
+  "cloud-devops": {
+    whoItIsFor: [
+      "Businesses migrating legacy on-premise servers or monolithic apps to AWS, Microsoft Azure or Google Cloud",
+      "Engineering and SaaS teams needing automated CI/CD pipelines, Docker/Kubernetes orchestration and Terraform IaC",
+      "High-traffic digital commerce and enterprise platforms requiring 24/7 monitoring, scaling and cost optimization",
+    ],
+    relatedServiceSlugs: ["cybersecurity", "software-development", "consulting", "support"],
+    relatedIndustries: ["Startups & Technology", "Financial Services", "E-commerce & Retail", "SMEs & Enterprises"],
+    faqs: [
+      {
+        question: "Which cloud providers does Vensai support?",
+        answer:
+          "Our cloud and DevOps engineers architect, migrate and manage workloads across Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP) and hybrid/containerized environments.",
+      },
+      {
+        question: "Can Vensai audit our current cloud bill and performance bottlenecks?",
+        answer:
+          "Yes. We conduct cloud architecture and cost audits to right-size compute/database resources, eliminate idle spend, harden security groups and improve application response times.",
+      },
+    ],
+  },
+  "cybersecurity": {
+    whoItIsFor: [
+      "Organizations preparing web applications, APIs and cloud infrastructure for enterprise client security reviews",
+      "Financial, healthcare, commerce and SaaS companies requiring authorized penetration testing and vulnerability assessments",
+      "IT leaders seeking proactive cloud/server security hardening and compliance readiness support",
+    ],
+    relatedServiceSlugs: ["cloud-devops", "consulting", "software-development", "enterprise"],
+    relatedIndustries: ["Financial Services", "Healthcare", "Maritime", "Startups & Technology"],
+    faqs: [
+      {
+        question: "What is included in a Vensai security assessment and penetration test?",
+        answer:
+          "We perform authorized vulnerability assessments and penetration testing across web applications, mobile backends, REST/GraphQL APIs and cloud configurations—delivering an executive summary, technical proof-of-findings, prioritized remediation guidance and re-testing verification.",
+      },
+      {
+        question: "Can Vensai’s engineering team also help fix the vulnerabilities discovered during an audit?",
+        answer:
+          "Yes. Because Vensai has full-time software, backend and cloud engineers in-house, we can both identify security gaps and implement the code and infrastructure remediations directly.",
+      },
+    ],
+  },
+  "enterprise": {
+    whoItIsFor: [
+      "Enterprises running SAP that need side-by-side extensions, integrations and workflow apps on SAP BTP",
+      "Executive teams seeking unified financial, supply-chain and sales analytics in Microsoft Power BI or Tableau",
+      "Multi-branch organizations consolidating siloed ERP, CRM and operational databases",
+    ],
+    relatedServiceSlugs: ["integrations", "software-development", "consulting", "ai-ml"],
+    relatedIndustries: ["Manufacturing", "SMEs & Enterprises", "Financial Services", "Logistics & Transportation"],
+    faqs: [
+      {
+        question: "How does Vensai approach SAP BTP and enterprise ERP extensions?",
+        answer:
+          "We follow clean-core principles—building custom workflows, supplier/dealer portals and cross-system integrations on SAP Business Technology Platform (SAP BTP) and enterprise middleware without destabilizing your core ERP.",
+      },
+      {
+        question: "Can you connect multiple data sources into automated Power BI or Tableau dashboards?",
+        answer:
+          "Yes. Our data and BI specialists build governed ETL pipelines that unify ERP, CRM, e-commerce, finance and warehouse data into interactive Power BI and Tableau executive dashboards.",
+      },
+    ],
+  },
+  "ecommerce": {
+    whoItIsFor: [
+      "D2C and B2B brands launching or replatforming stores on Shopify, WooCommerce, BigCommerce, Odoo or custom headless stacks",
+      "Retailers needing two-way synchronization between online storefronts, payment/shipping carriers, inventory and ERP/CRM",
+      "Merchants looking for a single partner to handle store engineering, product photography, catalog videos and order support",
+    ],
+    relatedServiceSlugs: ["integrations", "creative-production", "marketing", "support"],
+    relatedIndustries: ["E-commerce & Retail", "Manufacturing", "Hospitality", "SMEs & Enterprises"],
+    faqs: [
+      {
+        question: "Which e-commerce platforms does Vensai specialize in?",
+        answer:
+          "We design, build and scale stores on Shopify / Shopify Plus, WooCommerce, BigCommerce, Odoo Commerce & ERP, as well as bespoke custom and headless commerce architectures.",
+      },
+      {
+        question: "Does Vensai also produce product photography, catalog videos and listing content?",
+        answer:
+          "Yes. Uniquely among technology partners, Vensai includes an in-house E-Commerce Creative Services practice delivering studio product photography, catalog photography, product videos and marketplace-ready listing content.",
+      },
+    ],
+  },
+  "integrations": {
+    whoItIsFor: [
+      "Businesses eliminating manual CSV uploads and duplicate data entry between ERP, CRM, e-commerce and accounting software",
+      "Operations teams automating customer notifications and workflows across WhatsApp Business API, email, payment and shipping gateways",
+      "Enterprises requiring custom middleware to bridge legacy databases with modern cloud and mobile applications",
+    ],
+    relatedServiceSlugs: ["enterprise", "ecommerce", "software-development", "ai-ml"],
+    relatedIndustries: ["Logistics & Transportation", "E-commerce & Retail", "Manufacturing", "Real Estate"],
+    faqs: [
+      {
+        question: "What types of third-party systems can Vensai integrate?",
+        answer:
+          "We integrate payment gateways (Stripe, Razorpay, PayPal), shipping/logistics APIs, ERPs (SAP, Odoo, Tally, Zoho), CRMs (Salesforce, HubSpot), WhatsApp Business API, email systems and custom databases.",
+      },
+      {
+        question: "How do you ensure integrations don't silently fail when a third-party API goes down?",
+        answer:
+          "We engineer custom middleware with webhook signature verification, message queues, automated retry logic, dead-letter logging and real-time alert notifications.",
+      },
+    ],
+  },
+  "consulting": {
+    whoItIsFor: [
+      "Founders and executives validating technical and commercial feasibility before investing in a major software or AI build",
+      "Companies experiencing slow performance, instability or delays in an existing codebase that require an independent technical audit",
+      "Organizations planning phased digital transformation, legacy modernization or technology vendor selection",
+    ],
+    relatedServiceSlugs: ["software-development", "cybersecurity", "cloud-devops", "enterprise"],
+    relatedIndustries: ["Startups & Technology", "SMEs & Enterprises", "Financial Services", "Maritime"],
+    faqs: [
+      {
+        question: "What deliverables do we receive from a Technical Consulting & Feasibility engagement?",
+        answer:
+          "You receive a comprehensive Feasibility & Audit Dossier—including architecture blueprints, risk and dependency analysis, code/cloud/security audit findings, technology stack recommendations and a phased implementation roadmap.",
+      },
+      {
+        question: "Can we engage Vensai for a standalone technical audit without committing to a full build contract?",
+        answer:
+          "Yes. Our Consulting & R&D practice can be engaged independently for objective feasibility studies, code audits, cloud reviews and architecture roadmapping.",
+      },
+    ],
+  },
+  "branding": {
+    whoItIsFor: [
+      "New ventures and established companies defining or refreshing their brand strategy, naming and visual identity system",
+      "Software and SaaS teams needing intuitive UI/UX product design, interactive Figma prototypes and reusable design systems",
+      "Enterprises upgrading their corporate website and digital presence to reflect their true scale and capabilities",
+    ],
+    relatedServiceSlugs: ["software-development", "marketing", "creative-production", "ecommerce"],
+    relatedIndustries: ["Real Estate", "Hospitality", "Professional Services", "Startups & Technology"],
+    faqs: [
+      {
+        question: "Do your UI/UX designers work directly with Vensai’s frontend and mobile engineers?",
+        answer:
+          "Yes. Our UI/UX and brand designers collaborate daily with our web and mobile engineering teams—ensuring design systems, component tokens and interactions translate into production code without fidelity loss.",
+      },
+      {
+        question: "What is included in a complete brand identity engagement?",
+        answer:
+          "We deliver brand strategy and positioning, naming (if required), logo and visual identity guidelines, typography and color systems, digital UI templates and marketing creative kits.",
+      },
+    ],
+  },
+  "marketing": {
+    whoItIsFor: [
+      "B2B and enterprise companies seeking sustainable organic search visibility (SEO) and qualified lead generation pipelines",
+      "E-commerce and consumer brands scaling ROAS through performance marketing, paid search/social and conversion rate optimization",
+      "Businesses implementing marketing automation, CRM attribution and full-funnel analytics",
+    ],
+    relatedServiceSlugs: ["branding", "creative-production", "ecommerce", "software-development"],
+    relatedIndustries: ["E-commerce & Retail", "Real Estate", "Education", "Professional Services"],
+    faqs: [
+      {
+        question: "How does Vensai align marketing campaigns with technical SEO and website conversion?",
+        answer:
+          "Because our marketers work alongside our web engineers, UI/UX designers and analytics specialists, we optimize technical site architecture, landing page speed, checkout/form conversion and ad attribution together.",
+      },
+      {
+        question: "Do you provide transparent reporting on lead quality and return on ad spend?",
+        answer:
+          "Yes. We configure GA4, Tag Manager, search console and CRM attribution dashboards so you can track impressions, rankings, conversion rates and cost per qualified inquiry.",
+      },
+    ],
+  },
+  "creative-production": {
+    whoItIsFor: [
+      "E-commerce and retail brands requiring studio product photography, catalog imagery and short-form product videos at scale",
+      "Corporations and hospitality/real-estate brands commissioning commercial advertising shoots, brand films and facility visuals",
+      "Marketing teams needing high-production campaign creatives and social media video assets",
+    ],
+    relatedServiceSlugs: ["ecommerce", "branding", "marketing", "support"],
+    relatedIndustries: ["E-commerce & Retail", "Hospitality", "Real Estate", "Manufacturing"],
+    faqs: [
+      {
+        question: "Are creative assets formatted for e-commerce platforms and digital ad channels?",
+        answer:
+          "Yes. All photography and video deliverables are retouched, color-graded and exported in exact aspect ratios and compression specs for Shopify, Amazon, marketplaces, web storefronts and social ad platforms.",
+      },
+      {
+        question: "Can Vensai handle both the product shoot and the e-commerce store upload/catalog management?",
+        answer:
+          "Yes. Our creative production team hands assets directly to our e-commerce and catalog specialists to publish listings, optimize product content and launch campaigns.",
+      },
+    ],
+  },
+  "support": {
+    whoItIsFor: [
+      "Businesses needing reliable post-deployment software maintenance, L1–L3 technical troubleshooting and SLA monitoring",
+      "E-commerce and service brands requiring dedicated chat and voice customer support, order tracking and complaint resolution",
+      "Growing companies looking for managed helpdesk ticketing and escalation operations without internal staffing overhead",
+    ],
+    relatedServiceSlugs: ["software-development", "ecommerce", "cloud-devops", "integrations"],
+    relatedIndustries: ["E-commerce & Retail", "Healthcare", "Logistics & Transportation", "Financial Services"],
+    faqs: [
+      {
+        question: "Does Vensai provide both technical software support and customer service (chat/voice)?",
+        answer:
+          "Yes. We provide L1/L2/L3 application and infrastructure technical support as well as trained customer support executives handling live chat, voice calls, email tickets, order inquiries and escalations.",
+      },
+      {
+        question: "Can Vensai support systems that are already live in production?",
+        answer:
+          "Yes. For existing systems, we conduct a structured onboarding and technical audit to document SOPs and architecture before assuming ongoing maintenance and support SLA coverage.",
+      },
+    ],
+  },
+};
+

@@ -1,14 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Compass, CheckCircle2, FileSearch, ShieldAlert, Cpu } from "lucide-react";
+import { ArrowRight, Compass, CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/EnterpriseUI";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildServiceSchema, buildWebPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Technical Consulting & R&D — Feasibility, Audits & Architecture",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Technical Consulting & R&D — Feasibility Studies, Code Audits & Architecture",
   description:
     "Vensai Labs is your technology research and feasibility partner: Project feasibility, Technical feasibility, Architecture review, Code/Cloud/Security/Performance audits and Digital transformation roadmaps.",
-};
+  path: "/solutions/consulting",
+  keywords: [
+    "technical feasibility consulting",
+    "software architecture review",
+    "source code audit services",
+    "cloud infrastructure audit",
+    "security and scalability assessment",
+    "digital transformation roadmap",
+  ],
+});
 
 const CONSULTING_SERVICES = [
   {
@@ -74,8 +86,32 @@ const CONSULTING_SERVICES = [
 ];
 
 export default function ConsultingPage() {
+  const webPageSchema = buildWebPageSchema({
+    title:
+      "Technical Consulting & R&D — Feasibility Studies, Code Audits & Architecture | Vensai Labs",
+    description:
+      "Technology research, feasibility studies, architecture reviews, and code/cloud/security audits by Vensai Labs.",
+    path: "/solutions/consulting",
+  });
+  const serviceSchema = buildServiceSchema({
+    name: "Technical Consulting, Audits & Feasibility R&D",
+    description:
+      "Independent technical feasibility studies, architecture reviews, code/cloud/security/performance audits and digital transformation roadmaps.",
+    path: "/solutions/consulting",
+    category: "Consulting & Operations",
+    capabilities: CONSULTING_SERVICES.map((s) => s.title),
+  });
+
   return (
     <div className="bg-white dark:bg-[#0B1118]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <section className="py-16 lg:py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumbs

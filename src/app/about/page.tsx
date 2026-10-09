@@ -1,19 +1,43 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, Users, Layers, ShieldCheck, Compass } from "lucide-react";
-import { Breadcrumbs, Reveal, SectionHeader } from "@/components/ui/EnterpriseUI";
-import { WHY_VENSAI_POINTS, PROCESS_STEPS, SERVICE_CATEGORIES } from "@/data/vensai-data";
+import { ArrowRight } from "lucide-react";
+import { Breadcrumbs, SectionHeader } from "@/components/ui/EnterpriseUI";
+import { WHY_VENSAI_POINTS, PROCESS_STEPS } from "@/data/vensai-data";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildWebPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "About Vensai Labs — Professional Business Solutions & Technology Partner",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "About Vensai Labs — Full-Service Freelancing Agency & Business Solutions Partner",
   description:
-    "Learn who Vensai Labs is, our philosophy, our full-time multidisciplinary teams, how we work, and why businesses partner with Vensai from requirement to post-deployment support.",
-};
+    "Learn who Vensai Labs is, our philosophy, our full-time multidisciplinary teams across 13 capabilities, how we work, and why businesses partner with Vensai from requirement to post-deployment support.",
+  path: "/about",
+  keywords: [
+    "about Vensai Labs",
+    "full-service freelancing agency",
+    "business solutions consultancy",
+    "managed technology delivery partner",
+    "in-house engineering and consulting teams",
+  ],
+});
 
 export default function AboutPage() {
+  const aboutPageSchema = buildWebPageSchema({
+    title:
+      "About Vensai Labs — Full-Service Freelancing Agency & Business Solutions Partner",
+    description:
+      "Vensai Labs is a full-service freelancing agency and business solutions consultancy employing full-time professionals across 13 capabilities.",
+    path: "/about",
+    type: "AboutPage",
+  });
+
   return (
     <div className="bg-white dark:bg-[#0B1118]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       {/* Hero & Who Vensai Is */}
       <section className="py-16 lg:py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
@@ -60,12 +84,20 @@ export default function AboutPage() {
               <div className="p-8 rounded-sm bg-white dark:bg-[#05080D] border border-slate-200 dark:border-slate-800 shadow-enterprise-lg flex flex-col items-center">
                 <img
                   src="/brand/vensai-full-light.png"
-                  alt="Vensai Labs Official Identity"
+                  alt="Vensai Labs Official Identity — Freelance Talent. Real Solutions."
+                  width={680}
+                  height={480}
+                  decoding="async"
+                  fetchPriority="high"
                   className="block dark:hidden w-full max-w-[340px] h-auto object-contain"
                 />
                 <img
                   src="/brand/vensai-full-dark.png"
-                  alt="Vensai Labs Official Identity"
+                  alt="Vensai Labs Official Identity — Freelance Talent. Real Solutions."
+                  width={680}
+                  height={480}
+                  decoding="async"
+                  fetchPriority="high"
                   className="hidden dark:block w-full max-w-[340px] h-auto object-contain"
                 />
                 <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 w-full text-center">

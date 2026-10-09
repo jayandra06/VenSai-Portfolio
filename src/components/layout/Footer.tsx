@@ -47,11 +47,19 @@ export function Footer() {
                 <img
                   src="/brand/vensai-symbol.png"
                   alt="Vensai Labs Symbol"
+                  width={110}
+                  height={90}
+                  decoding="async"
+                  loading="lazy"
                   className="h-11 w-auto object-contain"
                 />
                 <img
                   src="/brand/vensai-wordmark-dark.png"
                   alt="VENSAI LABS"
+                  width={260}
+                  height={72}
+                  decoding="async"
+                  loading="lazy"
                   className="h-9 w-auto object-contain"
                 />
               </Link>

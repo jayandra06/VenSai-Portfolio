@@ -1,14 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Headphones, CheckCircle2, ShieldCheck, Activity } from "lucide-react";
+import { ArrowRight, Headphones } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/EnterpriseUI";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildServiceSchema, buildWebPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Customer, Technical & Post-Deployment Support Services",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Customer, Technical & Post-Deployment Support Services | Vensai Labs",
   description:
     "Vensai Labs stays involved before, during and after launch: Pre-deployment, Deployment, Post-deployment, Technical support, Chat support, Voice support, Maintenance, Monitoring and Enhancements.",
-};
+  path: "/solutions/support",
+  keywords: [
+    "post-deployment support services",
+    "managed technical helpdesk",
+    "24/7 customer chat and voice support",
+    "application maintenance and monitoring",
+    "hypercare deployment support",
+    "enterprise SLA support partner",
+  ],
+});
 
 const SUPPORT_PHASES = [
   {
@@ -71,8 +83,32 @@ const SUPPORT_PILLARS = [
 ];
 
 export default function SupportSolutionsPage() {
+  const webPageSchema = buildWebPageSchema({
+    title:
+      "Customer, Technical & Post-Deployment Support Services | Vensai Labs",
+    description:
+      "Pre-deployment, deployment and post-deployment technical maintenance, monitoring and chat/voice customer support.",
+    path: "/solutions/support",
+  });
+  const serviceSchema = buildServiceSchema({
+    name: "Customer, Technical & Post-Deployment Support Services",
+    description:
+      "Lifecycle support covering pre-deployment readiness, deployment hypercare, L1-L3 technical helpdesk, chat/voice customer service, system monitoring and continuous enhancements.",
+    path: "/solutions/support",
+    category: "Consulting & Operations",
+    capabilities: SUPPORT_PILLARS.map((p) => p.title),
+  });
+
   return (
     <div className="bg-white dark:bg-[#0B1118]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <section className="py-16 lg:py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
           <Breadcrumbs

@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import { buildRootGraphSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,52 +21,57 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vensailabs.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Vensai Labs | Freelance Talent. Real Solutions. — Enterprise Technology & Business Partner",
+    default:
+      "Vensai Labs | Freelance Talent. Real Solutions. — Enterprise Technology & Business Partner",
     template: "%s | Vensai Labs",
   },
   description:
     "Vensai Labs is a full-service freelancing agency and business solutions partner delivering software engineering, mobile apps, AI/ML, cloud & DevOps, cybersecurity, SAP/BI, e-commerce, consulting, branding, marketing and post-deployment support.",
+  applicationName: "Vensai Labs",
+  authors: [{ name: "Vensai Labs", url: SITE_URL }],
+  creator: "Vensai Labs",
+  publisher: "Vensai Labs",
   keywords: [
     "Vensai Labs",
     "Freelancing Agency",
-    "Business Solutions",
+    "Business Solutions Partner",
     "Technology Partner",
-    "Software Development",
+    "Software Development Agency",
     "E-commerce Solutions",
-    "Enterprise Technology",
-    "Technical Consulting",
-    "Dedicated Professionals",
-    "Post-Deployment Support",
+    "Enterprise Technology Consulting",
+    "Technical Consulting & R&D",
+    "Dedicated Professional Teams",
+    "Post-Deployment Managed Support",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vensailabs.com",
+    url: `${SITE_URL}/`,
     siteName: "Vensai Labs",
     title: "Vensai Labs — Freelance Talent. Real Solutions.",
     description:
       "One Business Partner. Multiple Capabilities. End-to-End Delivery. Build • Design • Automate • Scale.",
-    images: [
-      {
-        url: "/brand/vensai-logo-original.jpg",
-        width: 1024,
-        height: 724,
-        alt: "Vensai Labs — Freelance Talent. Real Solutions.",
-      },
-    ],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vensai Labs — Freelance Talent. Real Solutions.",
     description:
       "Full-service freelancing agency and business solutions consultancy. Build • Design • Automate • Scale.",
-    images: ["/brand/vensai-logo-original.jpg"],
+    images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -73,31 +80,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const orgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Vensai Labs",
-    slogan: "Freelance Talent. Real Solutions.",
-    description:
-      "Vensai Labs is a full-service freelancing agency and business solutions consultancy with full-time professional teams across software engineering, cloud, AI, cybersecurity, enterprise technology, e-commerce, branding, marketing and operational support.",
-    url: "https://vensailabs.com",
-    logo: "https://vensailabs.com/brand/vensai-logo-original.jpg",
-    knowsAbout: [
-      "Software & Product Engineering",
-      "Mobile Applications",
-      "AI & Machine Learning",
-      "Cloud, DevOps & Infrastructure",
-      "Cybersecurity",
-      "Enterprise Technology (SAP BTP, Power BI, Tableau)",
-      "E-Commerce Solutions",
-      "Integrations & Automation",
-      "Technical Consulting & R&D",
-      "Brand & Digital Design",
-      "Marketing & Growth",
-      "Creative Production",
-      "Customer & Operational Support",
-    ],
-  };
+  const rootGraphSchema = buildRootGraphSchema();
 
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
@@ -106,7 +89,7 @@ export default function RootLayout({
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootGraphSchema) }}
         />
         <ThemeProvider>
           <a
@@ -126,3 +109,4 @@ export default function RootLayout({
     </html>
   );
 }
+

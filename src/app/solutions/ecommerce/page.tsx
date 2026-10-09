@@ -1,14 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, ShoppingBag, Camera, RefreshCw, CreditCard, Truck, BarChart3 } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShoppingBag } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/EnterpriseUI";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildServiceSchema, buildWebPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "E-Commerce Solutions — Shopify, WooCommerce, BigCommerce, Odoo & Custom Commerce",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "E-Commerce Solutions — Shopify, WooCommerce, BigCommerce, Odoo & Custom Commerce",
   description:
     "End-to-end e-commerce ecosystems by Vensai Labs: Strategy, Store Design, Development, ERP/CRM/Payment/Shipping Integrations, Creative Production, Product Photography and Post-Launch Support.",
-};
+  path: "/solutions/ecommerce",
+  keywords: [
+    "Shopify development agency",
+    "WooCommerce development services",
+    "BigCommerce enterprise solutions",
+    "Odoo e-commerce ERP integration",
+    "custom headless commerce",
+    "e-commerce product photography and support",
+  ],
+});
 
 const COMMERCE_PLATFORMS = [
   {
@@ -51,8 +63,33 @@ const LIFECYCLE_CAPABILITIES = [
 ];
 
 export default function EcommerceSolutionsPage() {
+  const webPageSchema = buildWebPageSchema({
+    title:
+      "E-Commerce Solutions — Shopify, WooCommerce, BigCommerce, Odoo & Custom Commerce | Vensai Labs",
+    description:
+      "End-to-end e-commerce ecosystems combining store engineering, ERP/CRM/payment/shipping integrations, studio product photography and post-launch order support.",
+    path: "/solutions/ecommerce",
+  });
+  const serviceSchema = buildServiceSchema({
+    name: "End-to-End E-Commerce Solutions & Digital Commerce Ecosystems",
+    description:
+      "Full-lifecycle e-commerce engineering across Shopify, WooCommerce, BigCommerce, Odoo and custom commerce with ERP/CRM sync, product photography and managed support.",
+    path: "/solutions/ecommerce",
+    category: "Enterprise & Commerce",
+    capabilities: COMMERCE_PLATFORMS.map((p) => p.name),
+    deliverables: LIFECYCLE_CAPABILITIES.map((c) => `${c.title}: ${c.desc}`),
+  });
+
   return (
     <div className="bg-white dark:bg-[#0B1118]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero */}
       <section className="py-16 lg:py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6">

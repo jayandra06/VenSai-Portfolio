@@ -40,6 +40,10 @@ export function WhyVensaiSection() {
                   <img
                     src="/brand/vensai-symbol.png"
                     alt="Vensai V Mark"
+                    width={110}
+                    height={90}
+                    decoding="async"
+                    loading="lazy"
                     className="h-6 w-auto object-contain"
                   />
                 </div>
