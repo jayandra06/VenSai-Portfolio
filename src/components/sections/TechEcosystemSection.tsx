@@ -27,7 +27,7 @@ export function TechEcosystemSection() {
   });
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0B1118] border-b border-slate-200 dark:border-slate-800/90">
+    <section className="py-24 bg-white dark:bg-[#0B1118] border-b border-slate-200 dark:border-slate-800/90 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
           <SectionHeader

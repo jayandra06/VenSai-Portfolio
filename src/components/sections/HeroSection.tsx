@@ -69,7 +69,7 @@ export function HeroSection() {
           {/* Left Column: Primary Enterprise Copy & CTAs */}
           <div className="lg:col-span-7 space-y-8">
             <Reveal delay={0.05}>
-              <h1 className="text-4xl sm:text-5xl xl:text-[56px] font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.08]">
+              <h1 className="text-4xl sm:text-5xl xl:text-[56px] font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.18] sm:leading-[1.22] xl:leading-[1.25]">
                 Technology, Talent &amp; Solutions for Businesses Ready to{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-vensai-royal via-vensai-electric to-vensai-sky">
                   Build and Scale.
@@ -157,7 +157,7 @@ export function HeroSection() {
           {/* Right Column: Sophisticated Enterprise Brand & Ecosystem Console */}
           <div className="lg:col-span-5">
             <Reveal delay={0.15}>
-              <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#080D14] p-6 sm:p-8 shadow-enterprise-lg overflow-hidden">
+              <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#080D14] p-4 sm:p-8 shadow-enterprise-lg overflow-hidden">
                 {/* Top Blueprint Header */}
                 <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200 dark:border-slate-800/90 text-[11px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
                   <span>VENSAI DELIVERY ARCHITECTURE</span>
@@ -189,7 +189,7 @@ export function HeroSection() {
 
                 {/* Interactive 4-Pillar Ecosystem Selector: BUILD | DESIGN | AUTOMATE | SCALE */}
                 <div className="mt-6">
-                  <div className="grid grid-cols-4 gap-1.5 p-1 rounded-xl bg-slate-200/70 dark:bg-[#111827] border border-slate-300/60 dark:border-slate-800">
+                  <div className="grid grid-cols-4 gap-1 sm:gap-1.5 p-1 rounded-xl bg-slate-100/90 dark:bg-[#0c131f] border border-slate-200/90 dark:border-slate-800/80">
                     {ECOSYSTEM_NODES.map((node) => {
                       const active = activeNode === node.id;
                       return (
@@ -198,10 +198,10 @@ export function HeroSection() {
                           type="button"
                           aria-pressed={active}
                           onClick={() => setActiveNode(node.id)}
-                          className={`py-2 px-2 text-[11px] font-bold tracking-[0.14em] uppercase rounded-lg transition-all ${
+                          className={`w-full h-8 sm:h-9 px-0.5 sm:px-1.5 flex items-center justify-center text-center text-[8.5px] min-[360px]:text-[9.5px] sm:text-[10px] font-bold tracking-normal sm:tracking-wider uppercase rounded-lg transition-all duration-200 truncate ${
                             active
-                              ? "bg-vensai-royal text-white shadow-blue-glow-sm"
-                              : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                              ? "bg-gradient-to-r from-vensai-royal via-[#0072ff] to-vensai-electric text-white shadow-md shadow-vensai-royal/30 border border-vensai-sky/40"
+                              : "bg-white/70 dark:bg-[#121c2d]/70 text-slate-700 dark:text-slate-300 hover:text-vensai-royal dark:hover:text-vensai-electric hover:bg-white dark:hover:bg-[#18253b] border border-slate-200/60 dark:border-slate-800/80"
                           }`}
                         >
                           {node.verb}

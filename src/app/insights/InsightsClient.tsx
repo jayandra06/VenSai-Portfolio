@@ -100,16 +100,7 @@ export function InsightsClient() {
 
       {/* Full Crawlable Technical Briefings (Server-Rendered Editorial Content) */}
       <section className="py-20 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1118]">
-        <div className="max-w-5xl mx-auto px-6 space-y-16">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-vensai-electric">
-              IN-DEPTH TECHNICAL &amp; STRATEGY GUIDES
-            </p>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white">
-              Full Practice Briefings &amp; Architectural Notes
-            </h2>
-          </div>
-
+        <div className="max-w-5xl mx-auto px-6 space-y-12">
           {INSIGHTS_ARTICLES.map((art) => {
             const relatedLinks = art.relatedServices || [];
             return (

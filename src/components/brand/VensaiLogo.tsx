@@ -109,7 +109,7 @@ export function VensaiLogo({
 
     // Default: "navbar" horizontal lockup using the 2x supersampled sub-pixel V symbol + VENSAI LABS wordmark
     return (
-      <div className={`inline-flex items-center gap-3.5 group shrink-0 ${className}`}>
+      <div className={`inline-flex items-center gap-2.5 sm:gap-3 group shrink-0 ${className}`}>
         <img
           src="/brand/vensai-symbol.png"
           alt="Vensai Labs V Symbol"
@@ -117,7 +117,7 @@ export function VensaiLogo({
           height={90}
           decoding="async"
           fetchPriority="high"
-          className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] select-none"
+          className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] select-none"
         />
         <div className="flex flex-col justify-center">
           <img
@@ -127,7 +127,7 @@ export function VensaiLogo({
             height={72}
             decoding="async"
             fetchPriority="high"
-            className="block dark:hidden h-8 sm:h-9 w-auto object-contain select-none"
+            className="block dark:hidden h-7 sm:h-8 w-auto object-contain select-none"
           />
           <img
             src="/brand/vensai-wordmark-dark.png"
@@ -136,7 +136,7 @@ export function VensaiLogo({
             height={72}
             decoding="async"
             fetchPriority="high"
-            className="hidden dark:block h-8 sm:h-9 w-auto object-contain select-none"
+            className="hidden dark:block h-7 sm:h-8 w-auto object-contain select-none"
           />
         </div>
       </div>

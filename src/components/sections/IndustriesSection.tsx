@@ -8,7 +8,7 @@ import { INDUSTRIES } from "@/data/vensai-data";
 
 export function IndustriesSection() {
   return (
-    <section className="py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800/90">
+    <section className="py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800/90 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
           <SectionHeader

@@ -24,7 +24,7 @@ export function WhyVensaiSection() {
                 <span className="w-2 h-2 bg-vensai-electric inline-block" />
                 <span>WHY VENSAI LABS</span>
               </div>
-              <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.12]">
+              <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.3] sm:leading-[1.32] lg:leading-[1.35]">
                 More Than a Service Provider. A Long-Term Business Partner.
               </h2>
               <p className="mt-4 text-base text-slate-300 leading-relaxed">
