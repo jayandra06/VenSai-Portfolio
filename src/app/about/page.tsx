@@ -50,7 +50,7 @@ export default function AboutPage() {
                 <span>ABOUT VENSAI LABS • WHO WE ARE</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.25] sm:leading-[1.28] lg:leading-[1.3]">
                 One Business Partner. Multiple Capabilities. End-to-End Delivery.
               </h1>
 
@@ -164,23 +164,27 @@ export default function AboutPage() {
             description="From requirement discovery and technical feasibility to deployment and ongoing support, Vensai manages the entire lifecycle."
           />
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {PROCESS_STEPS.map((step) => (
-              <div
-                key={step.number}
-                className="p-6 rounded-sm bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800"
-              >
-                <span className="font-mono text-xs font-bold text-vensai-electric">
-                  {step.number} — {step.phase}
-                </span>
-                <h3 className="mt-2 text-base font-semibold text-slate-900 dark:text-white">
-                  {step.summary}
-                </h3>
-                <p className="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {step.details}
-                </p>
-              </div>
-            ))}
+          <div className="mt-12 p-6 sm:p-8 rounded-xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-enterprise-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+              {PROCESS_STEPS.map((step, idx) => (
+                <div key={step.number} className="space-y-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-vensai-royal/10 dark:bg-vensai-electric/15 text-vensai-royal dark:text-vensai-electric">
+                      {step.number}
+                    </span>
+                    {idx < PROCESS_STEPS.length - 1 && (
+                      <span className="hidden lg:block flex-1 h-px bg-slate-200 dark:bg-slate-700" />
+                    )}
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                    {step.phase}
+                  </p>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {step.summary}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

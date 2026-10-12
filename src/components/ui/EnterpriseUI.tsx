@@ -61,7 +61,7 @@ export function SectionHeader({
           <span className="w-2 h-2 bg-vensai-electric inline-block" />
           <span>{eyebrow}</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+        <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.3] sm:leading-[1.32] lg:leading-[1.35]">
           {title}
         </h2>
         {description && (

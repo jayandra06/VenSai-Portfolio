@@ -4,6 +4,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowRight, CheckCircle2, Mail, MessageSquare, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/EnterpriseUI";
+import { CustomSelect } from "@/components/ui/CustomSelect";
 import {
   BRAND_CONFIG,
   CONTACT_BUDGET_RANGES,
@@ -237,19 +238,16 @@ function ContactFormInner() {
               >
                 Service Required *
               </label>
-              <select
+              <CustomSelect
                 id="serviceRequired"
                 name="serviceRequired"
                 value={formData.serviceRequired}
-                onChange={handleChange}
-                className="w-full px-4 py-3 text-sm bg-white dark:bg-[#0B1118] border border-slate-300 dark:border-slate-700 focus:border-vensai-electric rounded-sm text-slate-900 dark:text-white focus:outline-none"
-              >
-                {CONTACT_SERVICE_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
+                onChange={(val) =>
+                  setFormData((prev) => ({ ...prev, serviceRequired: val }))
+                }
+                options={CONTACT_SERVICE_OPTIONS}
+                maxVisibleItems={10}
+              />
             </div>
           </div>
 
@@ -262,19 +260,16 @@ function ContactFormInner() {
               >
                 Project Type *
               </label>
-              <select
+              <CustomSelect
                 id="projectType"
                 name="projectType"
                 value={formData.projectType}
-                onChange={handleChange}
-                className="w-full px-4 py-3 text-sm bg-white dark:bg-[#0B1118] border border-slate-300 dark:border-slate-700 focus:border-vensai-electric rounded-sm text-slate-900 dark:text-white focus:outline-none"
-              >
-                {CONTACT_PROJECT_TYPES.map((pt) => (
-                  <option key={pt} value={pt}>
-                    {pt}
-                  </option>
-                ))}
-              </select>
+                onChange={(val) =>
+                  setFormData((prev) => ({ ...prev, projectType: val }))
+                }
+                options={CONTACT_PROJECT_TYPES}
+                maxVisibleItems={10}
+              />
             </div>
             <div>
               <label
@@ -283,19 +278,16 @@ function ContactFormInner() {
               >
                 Budget Range
               </label>
-              <select
+              <CustomSelect
                 id="budgetRange"
                 name="budgetRange"
                 value={formData.budgetRange}
-                onChange={handleChange}
-                className="w-full px-4 py-3 text-sm bg-white dark:bg-[#0B1118] border border-slate-300 dark:border-slate-700 focus:border-vensai-electric rounded-sm text-slate-900 dark:text-white focus:outline-none"
-              >
-                {CONTACT_BUDGET_RANGES.map((br) => (
-                  <option key={br} value={br}>
-                    {br}
-                  </option>
-                ))}
-              </select>
+                onChange={(val) =>
+                  setFormData((prev) => ({ ...prev, budgetRange: val }))
+                }
+                options={CONTACT_BUDGET_RANGES}
+                maxVisibleItems={10}
+              />
             </div>
           </div>
 
@@ -387,43 +379,47 @@ export function ContactClient() {
               </div>
 
               <div className="space-y-4 pt-2 border-t border-slate-800">
-                <div
+                <a
+                  href={`tel:${BRAND_CONFIG.contactPlaceholders.phone.replace(/[^+\d]/g, "")}`}
                   onClick={() =>
                     trackConversionEvent("direct_channel_click", {
                       channel: "phone",
                     })
                   }
-                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 flex items-start gap-3.5"
+                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 hover:border-vensai-electric flex items-start gap-3.5 transition-colors block group cursor-pointer"
                 >
-                  <Phone className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-vensai-electric transition-colors">
                       Phone Consultation
                     </p>
                     <p className="text-sm font-mono font-semibold text-white mt-0.5">
                       {BRAND_CONFIG.contactPlaceholders.phone}
                     </p>
                   </div>
-                </div>
+                </a>
 
-                <div
+                <a
+                  href={`https://wa.me/${BRAND_CONFIG.contactPlaceholders.whatsapp.replace(/[^0-9]/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() =>
                     trackConversionEvent("direct_channel_click", {
                       channel: "whatsapp",
                     })
                   }
-                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 flex items-start gap-3.5"
+                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 hover:border-vensai-electric flex items-start gap-3.5 transition-colors block group cursor-pointer"
                 >
-                  <MessageSquare className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5" />
+                  <MessageSquare className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-vensai-electric transition-colors">
                       WhatsApp Business
                     </p>
                     <p className="text-sm font-mono font-semibold text-white mt-0.5">
                       {BRAND_CONFIG.contactPlaceholders.whatsapp}
                     </p>
                   </div>
-                </div>
+                </a>
 
                 <a
                   href={`mailto:${BRAND_CONFIG.contactPlaceholders.email}`}
@@ -432,11 +428,11 @@ export function ContactClient() {
                       channel: "email",
                     })
                   }
-                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 hover:border-vensai-electric flex items-start gap-3.5 transition-colors block"
+                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 hover:border-vensai-electric flex items-start gap-3.5 transition-colors block group cursor-pointer"
                 >
-                  <Mail className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5" />
+                  <Mail className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-vensai-electric transition-colors">
                       Direct Email
                     </p>
                     <p className="text-sm font-mono font-semibold text-white mt-0.5">

@@ -10,7 +10,7 @@ export function ProcessSection() {
   const [activeStep, setActiveStep] = useState<number>(0);
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0B1118] border-b border-slate-200 dark:border-slate-800/90">
+    <section className="py-24 bg-white dark:bg-[#0B1118] border-b border-slate-200 dark:border-slate-800/90 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
           <SectionHeader
@@ -86,37 +86,6 @@ export function ProcessSection() {
             </div>
           </div>
         </Reveal>
-
-        {/* Full 8-Stage Architectural Grid */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {PROCESS_STEPS.map((step, idx) => (
-            <Reveal key={step.number} delay={idx * 0.04}>
-              <div
-                onClick={() => setActiveStep(idx)}
-                className={`cursor-pointer h-full p-6 rounded-xl border transition-all ${
-                  activeStep === idx
-                    ? "border-vensai-electric bg-[#F7F9FC] dark:bg-[#111827]"
-                    : "border-slate-200 dark:border-slate-800/90 bg-white dark:bg-[#0B1118] hover:border-vensai-electric/60"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-vensai-royal/10 dark:bg-vensai-electric/15 text-vensai-royal dark:text-vensai-electric">
-                    {step.number} — {step.phase}
-                  </span>
-                  <span className="text-[11px] font-mono text-slate-400">
-                    0{idx + 1}/08
-                  </span>
-                </div>
-                <h4 className="text-base font-semibold text-slate-900 dark:text-white leading-snug">
-                  {step.summary}
-                </h4>
-                <p className="mt-2.5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {step.details}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );

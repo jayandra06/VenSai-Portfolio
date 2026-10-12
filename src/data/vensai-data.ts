@@ -97,11 +97,11 @@ export const BRAND_CONFIG = {
   coreProposition:
     "Whatever your business needs — technology, software, e-commerce, cybersecurity, cloud, AI, enterprise systems, branding, marketing, research or operational support — Vensai brings the right expertise together and manages the engagement from requirement to delivery.",
   contactPlaceholders: {
-    email: "contact@vensailabs.com",
-    consultingEmail: "consulting@vensailabs.com",
-    careersEmail: "careers@vensailabs.com",
-    phone: "+1 (000) 000-0000 / +91 00000 00000",
-    whatsapp: "+91 00000 00000",
+    email: "contact@vensailabs.in",
+    consultingEmail: "contact@vensailabs.in",
+    careersEmail: "careers@vensailabs.in",
+    phone: "+91 8309057182",
+    whatsapp: "+91 8309057182",
     locations: "Global Delivery Operations • Remote & On-Site Client Engagement",
     hours: "Monday – Saturday | 24/7 Managed Support Operations Available",
   },
@@ -549,6 +549,51 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: "cat-10",
     number: "10",
+    slug: "support",
+    title: "Customer & Operational Support",
+    shortTitle: "Customer & Ops Support",
+    categoryGroup: "Consulting & Operations",
+    tagline: "Dedicated technical support, omnichannel customer service, order operations and post-deployment management.",
+    overview:
+      "Delivery does not end at launch. Vensai provides trained, full-time operational and technical support professionals who manage customer service across chat and voice, handle technical troubleshooting and ticket escalation, oversee e-commerce order support, and maintain your systems post-deployment.",
+    whatWeDo: [
+      "Provide omnichannel customer service across live chat, voice, email and helpdesk ticketing platforms",
+      "Deliver L1/L2/L3 technical support, bug triage, escalation management and post-deployment application maintenance",
+      "Manage e-commerce order support, shipment tracking inquiries, returns processing and complaint resolution",
+      "Operate under defined SLAs, quality assurance frameworks and escalation workflows integrated with your internal teams",
+    ],
+    capabilities: [
+      "Chat support",
+      "Voice support",
+      "Customer service",
+      "Technical support",
+      "Ticket management",
+      "Order support",
+      "Complaint handling",
+      "Escalation management",
+      "Post-deployment support",
+    ],
+    useCases: [
+      {
+        title: "Post-Deployment Software & Technical Support Desk",
+        description: "Continuous application monitoring, user troubleshooting, ticket resolution and minor enhancement releases after software launch.",
+      },
+      {
+        title: "Omnichannel Customer & Order Support Operations",
+        description: "Dedicated chat, voice and email support teams handling customer inquiries, order status and issue resolution.",
+      },
+      {
+        title: "Managed Escalation & Back-Office Operations",
+        description: "Structured SLA-driven ticket management and operational coordination for growing digital businesses.",
+      },
+    ],
+    technologies: ["Zendesk / Freshdesk / Intercom", "Jira Service Management", "Cloud Telephony & Voice Systems", "CRM & Order Management Portals", "SLA & QA Monitoring Dashboards"],
+    engagementModels: ["Managed Services", "Post-Deployment Support", "Dedicated Resource", "Dedicated Team"],
+    deliverables: ["SOPs & Escalation Playbooks", "Dedicated Chat, Voice & Technical Support Agents", "Ticket Resolution & SLA Compliance Reports", "Continuous Post-Launch System Maintenance"],
+  },
+  {
+    id: "cat-11",
+    number: "11",
     slug: "branding",
     title: "Brand & Digital",
     shortTitle: "Brand & Digital",
@@ -593,8 +638,8 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     deliverables: ["Brand Identity Guidelines & Asset Kit", "Interactive Figma UI/UX Design Systems", "Responsive Website & Product Interfaces", "Campaign & Social Creative Templates"],
   },
   {
-    id: "cat-11",
-    number: "11",
+    id: "cat-12",
+    number: "12",
     slug: "marketing",
     title: "Marketing & Growth",
     shortTitle: "Marketing & Growth",
@@ -638,15 +683,15 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     deliverables: ["Technical SEO & Growth Roadmap", "Managed Ad Campaigns & Creative Testing", "Marketing Automation Workflows", "Monthly Attribution & Conversion Reporting"],
   },
   {
-    id: "cat-12",
-    number: "12",
+    id: "cat-13",
+    number: "13",
     slug: "creative-production",
     title: "Creative Production",
     shortTitle: "Creative Production",
     categoryGroup: "Brand, Growth & Creative",
     tagline: "Commercial advertising shoots, brand films, studio e-commerce photography and promotional video production.",
     overview:
-      "Authentic, high-production visual assets set serious brands apart from generic stock imagery. Vensai manages end-to-end creative production—including commercial advertising shoots, corporate brand shoots, high-volume e-commerce product photography, promotional videos and campaign creatives.",
+      "Authentic, high-production visual assets set serious brands apart from generic stock imagery. Vensai manages end-to-end creative production—including commercial advertising shoots, corporate brand films, high-volume e-commerce product photography, promotional videos and campaign creatives.",
     whatWeDo: [
       "Plan, direct and execute commercial advertising shoots, corporate brand films and product shoots",
       "Deliver high-volume studio e-commerce photography, lifestyle imagery and 360/video product assets",
@@ -680,51 +725,6 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     technologies: ["Studio Lighting & Cinema Camera Systems", "Adobe Premiere Pro & After Effects", "DaVinci Resolve Color Grading", "Capture One & Photoshop Retouching", "Multi-Platform Marketplace Asset Specs"],
     engagementModels: ["Project Based", "Dedicated Team", "Managed Services"],
     deliverables: ["High-Resolution Retouched Photography", "Master & Social-Cut Promotional Videos", "Marketplace-Ready Product Visuals", "Campaign Creative Asset Library"],
-  },
-  {
-    id: "cat-13",
-    number: "13",
-    slug: "support",
-    title: "Customer & Operational Support",
-    shortTitle: "Customer & Ops Support",
-    categoryGroup: "Consulting & Operations",
-    tagline: "Dedicated technical support, omnichannel customer service, order operations and post-deployment management.",
-    overview:
-      "Delivery does not end at launch. Vensai provides trained, full-time operational and technical support professionals who manage customer service across chat and voice, handle technical troubleshooting and ticket escalation, oversee e-commerce order support, and maintain your systems post-deployment.",
-    whatWeDo: [
-      "Provide omnichannel customer service across live chat, voice, email and helpdesk ticketing platforms",
-      "Deliver L1/L2/L3 technical support, bug triage, escalation management and post-deployment application maintenance",
-      "Manage e-commerce order support, shipment tracking inquiries, returns processing and complaint resolution",
-      "Operate under defined SLAs, quality assurance frameworks and escalation workflows integrated with your internal teams",
-    ],
-    capabilities: [
-      "Chat support",
-      "Voice support",
-      "Customer service",
-      "Technical support",
-      "Ticket management",
-      "Order support",
-      "Complaint handling",
-      "Escalation management",
-      "Post-deployment support",
-    ],
-    useCases: [
-      {
-        title: "Post-Deployment Software & Technical Support Desk",
-        description: "Continuous application monitoring, user troubleshooting, ticket resolution and minor enhancement releases after software launch.",
-      },
-      {
-        title: "Omnichannel Customer & Order Support Operations",
-        description: "Dedicated chat, voice and email support teams handling customer inquiries, order status and issue resolution.",
-      },
-      {
-        title: "Managed Escalation & Back-Office Operations",
-        description: "Structured SLA-driven ticket management and operational coordination for growing digital businesses.",
-      },
-    ],
-    technologies: ["Zendesk / Freshdesk / Intercom", "Jira Service Management", "Cloud Telephony & Voice Systems", "CRM & Order Management Portals", "SLA & QA Monitoring Dashboards"],
-    engagementModels: ["Managed Services", "Post-Deployment Support", "Dedicated Resource", "Dedicated Team"],
-    deliverables: ["SOPs & Escalation Playbooks", "Dedicated Chat, Voice & Technical Support Agents", "Ticket Resolution & SLA Compliance Reports", "Continuous Post-Launch System Maintenance"],
   },
 ];
 

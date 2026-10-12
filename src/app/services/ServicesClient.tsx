@@ -43,7 +43,7 @@ export function ServicesClient() {
                 <span className="w-2 h-2 bg-vensai-electric inline-block" />
                 <span>COMPREHENSIVE SERVICE ARCHITECTURE • 13 PRACTICE AREAS</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.25] sm:leading-[1.28] lg:leading-[1.3]">
                 Everything Your Business Needs to Build, Operate and Grow.
               </h1>
               <p className="mt-5 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">

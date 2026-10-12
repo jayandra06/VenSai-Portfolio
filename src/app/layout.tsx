@@ -73,6 +73,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/vensai-symbol.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -85,7 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${manrope.variable} font-sans bg-white dark:bg-[#0B1118] text-slate-900 dark:text-slate-100 antialiased selection:bg-vensai-electric selection:text-white min-h-screen flex flex-col`}
+        className={`${inter.variable} ${manrope.variable} font-sans bg-white dark:bg-[#0B1118] text-slate-900 dark:text-slate-100 antialiased selection:bg-vensai-electric selection:text-white min-h-screen flex flex-col w-full max-w-full overflow-x-hidden`}
       >
         <script
           type="application/ld+json"
@@ -99,7 +109,7 @@ export default function RootLayout({
             Skip to main content
           </a>
           <Navbar />
-          <main id="main-content" className="flex-1">
+          <main id="main-content" className="flex-1 w-full max-w-full overflow-x-hidden">
             {children}
           </main>
           <Footer />

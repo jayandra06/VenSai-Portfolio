@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#080D13] text-slate-300 border-t border-slate-800/90">
+    <footer className="bg-[#080D13] text-slate-300 border-t border-slate-800/90 w-full max-w-full overflow-hidden">
       {/* Top Executive Brand Strip */}
       <div className="border-b border-slate-800/80">
         <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -83,11 +83,21 @@ export function Footer() {
             <div className="pt-2 space-y-2 text-xs text-slate-400">
               <div className="flex items-center gap-2.5">
                 <Mail className="w-3.5 h-3.5 text-vensai-electric shrink-0" />
-                <span>{BRAND_CONFIG.contactPlaceholders.email}</span>
+                <a
+                  href={`mailto:${BRAND_CONFIG.contactPlaceholders.email}`}
+                  className="hover:text-vensai-electric transition-colors"
+                >
+                  {BRAND_CONFIG.contactPlaceholders.email}
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-3.5 h-3.5 text-vensai-electric shrink-0" />
-                <span>{BRAND_CONFIG.contactPlaceholders.phone}</span>
+                <a
+                  href="tel:+918309057182"
+                  className="hover:text-vensai-electric transition-colors"
+                >
+                  {BRAND_CONFIG.contactPlaceholders.phone}
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Globe className="w-3.5 h-3.5 text-vensai-electric shrink-0" />
@@ -296,14 +306,6 @@ export function Footer() {
                   className="px-3 py-1.5 text-xs font-medium border border-slate-800 hover:border-vensai-electric text-slate-300 hover:text-white rounded-sm transition-colors"
                 >
                   Instagram
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-medium border border-slate-800 hover:border-vensai-electric text-slate-300 hover:text-white rounded-sm transition-colors"
-                >
-                  YouTube
                 </a>
               </div>
             </div>
