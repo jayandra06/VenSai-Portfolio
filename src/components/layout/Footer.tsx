@@ -313,11 +313,11 @@ export function Footer() {
                 Legal
               </h3>
               <div className="flex flex-wrap gap-4 text-xs text-slate-400">
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
+                <Link href="/privacy-notice" className="hover:text-white transition-colors">
+                  Privacy Notice
                 </Link>
-                <Link href="/terms" className="hover:text-white transition-colors">
-                  Terms of Engagement
+                <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+                  Terms and Conditions
                 </Link>
                 <Link href="/cookies" className="hover:text-white transition-colors">
                   Cookie Policy

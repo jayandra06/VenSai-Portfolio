@@ -37,8 +37,8 @@ export function CookieConsent() {
               Cookie Policy
             </Link>{" "}
             and{" "}
-            <Link href="/privacy" className="underline hover:text-vensai-electric">
-              Privacy Policy
+            <Link href="/privacy-notice" className="underline hover:text-vensai-electric">
+              Privacy Notice
             </Link>
             .
           </p>
