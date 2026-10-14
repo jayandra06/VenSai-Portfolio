@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Layers, Shield, Cpu, Workflow } from "lucide-react";
 import { Reveal } from "@/components/ui/EnterpriseUI";
-import { BRAND_CONFIG } from "@/data/vensai-data";
+import { BRAND_CONFIG, SERVICE_CATEGORIES } from "@/data/vensai-data";
 
 const ECOSYSTEM_NODES = [
   {
@@ -19,7 +19,7 @@ const ECOSYSTEM_NODES = [
     verb: "DESIGN",
     domain: "Brand, UI/UX & Production",
     items: ["Brand Strategy & Visual Identity", "Enterprise Product UI/UX", "Commercial & Catalog Shoots"],
-    metric: "Categories 10 & 12",
+    metric: "Categories 11 – 13",
   },
   {
     id: "automate",
@@ -31,9 +31,9 @@ const ECOSYSTEM_NODES = [
   {
     id: "scale",
     verb: "SCALE",
-    domain: "Commerce, Growth & Support",
-    items: ["Shopify, WooCommerce, Odoo", "Technical Consulting & R&D", "24/7 Customer & Tech Support"],
-    metric: "Categories 07, 09, 11, 13",
+    domain: "Commerce, Ops & Talent",
+    items: ["Shopify, WooCommerce, Odoo", "Managed IT, KPO & BPO", "Internships & 24/7 Support"],
+    metric: "Categories 07, 09, 10, 14 – 16",
   },
 ];
 
@@ -79,7 +79,7 @@ export function HeroSection() {
 
             <Reveal delay={0.1}>
               <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                From software development and cloud engineering to e-commerce, cybersecurity, branding and business consulting, Vensai brings the expertise, people and execution required to move businesses forward.
+                From software, managed IT and cybersecurity to KPO, BPO, internships, e-commerce and brand, Vensai brings the expertise, people and execution required to move businesses forward.
               </p>
             </Reveal>
 
@@ -135,7 +135,7 @@ export function HeroSection() {
                       Multiple Capabilities
                     </p>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                      13 in-house practice disciplines
+                      {SERVICE_CATEGORIES.length} in-house practice disciplines
                     </p>
                   </div>
                 </div>

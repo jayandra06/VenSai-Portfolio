@@ -38,7 +38,7 @@ const SERVICE_GROUPS: {
   },
   {
     group: "Consulting & Operations",
-    description: "Feasibility, Technical Audits, R&D & 24/7 Support",
+    description: "IT Management, KPO & BPO, Internships, Audits & Support",
   },
   {
     group: "Brand, Growth & Creative",
@@ -368,7 +368,7 @@ export function Navbar() {
               <div className="flex items-center justify-between pb-5 mb-6 border-b border-slate-200 dark:border-slate-800/80">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-vensai-electric">
-                    13 Specialized Service Practice Areas
+                    {SERVICE_CATEGORIES.length} Specialized Service Practice Areas
                   </p>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mt-0.5">
                     Full-Service Freelancing Agency &amp; Business Solutions Partner

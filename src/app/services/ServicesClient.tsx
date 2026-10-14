@@ -2,7 +2,27 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Check, Search } from "lucide-react";
+import {
+  ArrowRight,
+  Briefcase,
+  Building2,
+  Check,
+  Clapperboard,
+  Cloud,
+  Code2,
+  Compass,
+  GraduationCap,
+  Headphones,
+  Palette,
+  Search,
+  Server,
+  Shield,
+  ShoppingBag,
+  Smartphone,
+  Sparkles,
+  TrendingUp,
+  Workflow,
+} from "lucide-react";
 import { Breadcrumbs, Reveal } from "@/components/ui/EnterpriseUI";
 import { SERVICE_CATEGORIES } from "@/data/vensai-data";
 
@@ -17,6 +37,25 @@ export function ServicesClient() {
     "Consulting & Operations",
     "Brand, Growth & Creative",
   ];
+
+  const icons: Record<string, React.ComponentType<{ className?: string }>> = {
+    "software-development": Code2,
+    "mobile-development": Smartphone,
+    "ai-ml": Sparkles,
+    "cloud-devops": Cloud,
+    cybersecurity: Shield,
+    enterprise: Building2,
+    ecommerce: ShoppingBag,
+    integrations: Workflow,
+    consulting: Compass,
+    support: Headphones,
+    branding: Palette,
+    marketing: TrendingUp,
+    "creative-production": Clapperboard,
+    "it-management": Server,
+    "kpo-bpo": Briefcase,
+    "internship-programs": GraduationCap,
+  };
 
   const filtered = SERVICE_CATEGORIES.filter((cat) => {
     const matchGroup = activeGroup === "All" || cat.categoryGroup === activeGroup;
@@ -41,13 +80,13 @@ export function ServicesClient() {
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-royal dark:text-vensai-electric mb-3">
                 <span className="w-2 h-2 bg-vensai-electric inline-block" />
-                <span>COMPREHENSIVE SERVICE ARCHITECTURE • 13 PRACTICE AREAS</span>
+                <span>THE PRACTICE FLOOR • {SERVICE_CATEGORIES.length} DISCIPLINES</span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.25] sm:leading-[1.28] lg:leading-[1.3]">
-                Everything Your Business Needs to Build, Operate and Grow.
+                Build it. Run it. Staff it. Teach it.
               </h1>
               <p className="mt-5 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                Vensai Labs combines full-time engineering, enterprise systems, digital commerce, cybersecurity, technical consulting, creative production and customer support teams under one accountable partner.
+                Engineering, cybersecurity, managed IT, KPO and BPO, internship cohorts, commerce, brand and support — the full spread of work a technology and operations partner is expected to carry, under one Vensai team.
               </p>
             </div>
             <div className="lg:col-span-4 flex lg:justify-end">
@@ -95,20 +134,31 @@ export function ServicesClient() {
         </div>
       </section>
 
-      {/* Detailed 13-Category Service Directory */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 space-y-10">
-          {filtered.map((service) => (
+        <div className="max-w-7xl mx-auto px-6 space-y-8">
+          {filtered.map((service) => {
+            const Icon = icons[service.slug] || Sparkles;
+            return (
             <Reveal key={service.id}>
-              <article className="rounded-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/70 p-8 sm:p-10 shadow-enterprise-sm hover:border-vensai-electric transition-all">
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
-                  <div>
+              <article className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/70 shadow-enterprise-sm hover:border-vensai-electric transition-all">
+                <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-vensai-sky via-vensai-electric to-vensai-royal" />
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-8 sm:p-10 pb-6 border-b border-slate-200 dark:border-slate-800">
+                  <div className="relative">
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -top-4 -right-2 text-7xl font-semibold tracking-tighter text-slate-100 dark:text-white/[0.05] select-none"
+                    >
+                      {service.number}
+                    </span>
                     <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-vensai-royal dark:text-vensai-electric">
-                      <span>CATEGORY {service.number}</span>
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-vensai-royal text-white">
+                        <Icon className="w-4 h-4" />
+                      </span>
+                      <span>{service.number}</span>
                       <span>•</span>
                       <span>{service.categoryGroup}</span>
                     </div>
-                    <h2 className="mt-1.5 text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white">
+                    <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white">
                       <Link
                         href={`/services/${service.slug}`}
                         className="hover:text-vensai-royal dark:hover:text-vensai-electric transition-colors"
@@ -116,6 +166,7 @@ export function ServicesClient() {
                         {service.title}
                       </Link>
                     </h2>
+                    <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-2xl">{service.tagline}</p>
                   </div>
                   <div className="flex flex-wrap items-center gap-3">
                     <Link
@@ -134,7 +185,7 @@ export function ServicesClient() {
                   </div>
                 </div>
 
-                <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="px-8 sm:px-10 pb-8 sm:pb-10 pt-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
                   <div className="lg:col-span-5 space-y-4">
                     <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                       {service.overview}
@@ -228,7 +279,13 @@ export function ServicesClient() {
                 </div>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
+          {filtered.length === 0 && (
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Nothing on the floor matches that search. Try a broader word, or clear the filter.
+            </p>
+          )}
         </div>
       </section>
     </div>

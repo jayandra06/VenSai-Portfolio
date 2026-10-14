@@ -16,7 +16,7 @@ export const metadata: Metadata = buildPageMetadata({
   title:
     "Vensai Labs | Freelance Talent. Real Solutions. — Enterprise Technology & Business Partner",
   description:
-    "Vensai Labs is a full-service freelancing agency and business solutions partner with in-house full-time teams across software engineering, cloud, AI, cybersecurity, SAP/BI, e-commerce, consulting, brand, marketing and post-deployment support.",
+    "Vensai Labs is a full-service freelancing agency and business solutions partner with in-house teams across software, cloud, AI, cybersecurity, managed IT, KPO and BPO, internships, e-commerce, consulting, brand and support.",
   path: "/",
   keywords: [
     "full-service freelancing agency",
@@ -34,7 +34,7 @@ export default function HomePage() {
     title:
       "Vensai Labs | Freelance Talent. Real Solutions. — Enterprise Technology & Business Partner",
     description:
-      "Full-service freelancing agency and business solutions consultancy managing project execution, dedicated specialists, consulting and post-deployment support across 13 capabilities.",
+      "Full-service freelancing agency and business solutions consultancy managing project execution, dedicated specialists, managed IT, KPO and BPO, internships, consulting and post-deployment support.",
     path: "/",
   });
   const faqSchema = buildFaqSchema(HOMEPAGE_FAQS, "/");

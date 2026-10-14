@@ -28,7 +28,7 @@ export default function NotFound() {
         </h1>
 
         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          The URL may have been moved, updated, or mistyped. Use the recovery links below to explore Vensai Labs&apos; 13 service categories, flagship solutions, or connect with our team.
+          The URL may have been moved, updated, or mistyped. Use the recovery links below to explore Vensai Labs&apos; service floor, flagship solutions, or connect with our team.
         </p>
 
         <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
@@ -44,7 +44,7 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold text-slate-900 dark:text-white bg-[#F7F9FC] dark:bg-[#111827] border border-slate-300 dark:border-slate-700 hover:border-vensai-electric rounded-sm transition-colors"
           >
             <Layers className="w-4 h-4 text-vensai-electric" />
-            <span>Explore All 13 Services</span>
+            <span>Explore All Services</span>
           </Link>
           <Link
             href="/contact"

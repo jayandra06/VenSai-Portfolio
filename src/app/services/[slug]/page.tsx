@@ -9,6 +9,7 @@ import {
   SectionHeader,
 } from "@/components/ui/EnterpriseUI";
 import {
+  INDUSTRIES,
   SERVICE_CATEGORIES,
   SERVICE_SEO_ENRICHMENT,
   PROCESS_STEPS,
@@ -141,7 +142,7 @@ export default async function ServiceDetailPage({
                   href="/services"
                   className="inline-flex items-center gap-2 px-6 py-4 text-sm font-semibold border border-slate-300 dark:border-slate-700 hover:border-vensai-electric text-slate-800 dark:text-slate-200 rounded-lg transition-colors"
                 >
-                  <span>All 13 Service Categories</span>
+                  <span>All Service Categories</span>
                 </Link>
               </div>
             </div>
@@ -444,7 +445,7 @@ export default async function ServiceDetailPage({
                     href="/industries"
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-vensai-royal dark:text-vensai-electric hover:underline"
                   >
-                    <span>View All 12 Industry Sectors</span>
+                    <span>View All {INDUSTRIES.length} Industry Sectors</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

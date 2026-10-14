@@ -7,9 +7,9 @@ import { SERVICE_CATEGORIES } from "@/data/vensai-data";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
-    "13 Enterprise Technology, Commerce & Business Services | Vensai Labs",
+    `${SERVICE_CATEGORIES.length} Technology, Operations & Creative Services | Vensai Labs`,
   description:
-    "Explore Vensai Labs’ 13 full-time practice areas: custom software engineering, mobile apps, AI/ML, cloud & DevOps, cybersecurity, SAP/BI, e-commerce, API integrations, consulting, branding, marketing, creative shoots and 24/7 support.",
+    "Explore Vensai Labs’ full-time practice areas: software, mobile, AI, cloud, cybersecurity, managed IT, KPO and BPO, internships, SAP/BI, e-commerce, consulting, brand, marketing and support.",
   path: "/services",
   keywords: [
     "enterprise technology services",
@@ -24,9 +24,9 @@ export const metadata: Metadata = buildPageMetadata({
 export default function ServicesDirectoryPage() {
   const pageSchema = buildWebPageSchema({
     title:
-      "13 Enterprise Technology, Commerce & Business Services | Vensai Labs",
+      `${SERVICE_CATEGORIES.length} Technology, Operations & Creative Services | Vensai Labs`,
     description:
-      "Comprehensive directory of Vensai Labs’ 13 in-house service categories across engineering, cloud, AI, cybersecurity, enterprise technology, e-commerce, consulting, brand, growth and support.",
+      "Directory of Vensai Labs’ in-house practices across engineering, managed IT, KPO and BPO, internships, cybersecurity, commerce, consulting, brand and support.",
     path: "/services",
     type: "CollectionPage",
   });
@@ -35,7 +35,7 @@ export default function ServicesDirectoryPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${SITE_URL}/services#catalog`,
-    name: "Vensai Labs 13 Practice Categories",
+    name: `Vensai Labs ${SERVICE_CATEGORIES.length} Practice Categories`,
     itemListElement: SERVICE_CATEGORIES.map((s, idx) => ({
       "@type": "ListItem",
       position: idx + 1,

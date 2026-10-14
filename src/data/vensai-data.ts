@@ -88,6 +88,15 @@ export const BRAND_CONFIG = {
   shortName: "Vensai Labs",
   tagline: "FREELANCE TALENT. REAL SOLUTIONS.",
   statement: "BUILD • DESIGN • AUTOMATE • SCALE.",
+  nameMeaning: "Venture for Startups and Institutes",
+  mission: "Crafted to support startups and institutes.",
+  company: {
+    legalName: "Vijetha Softwares Private Limited",
+    shortLegalName: "Vijetha Softwares Pvt Ltd",
+    cin: "U72900AP2022PTC122120",
+    incorporated: "29 June 2022",
+    collaboration: "HCTPL",
+  },
   statementPipe: "BUILD | DESIGN | AUTOMATE | SCALE",
   pillars: [
     "ONE BUSINESS PARTNER.",
@@ -95,7 +104,7 @@ export const BRAND_CONFIG = {
     "END-TO-END DELIVERY.",
   ],
   coreProposition:
-    "Whatever your business needs — technology, software, e-commerce, cybersecurity, cloud, AI, enterprise systems, branding, marketing, research or operational support — Vensai brings the right expertise together and manages the engagement from requirement to delivery.",
+    "Whatever your business needs — technology, software, managed IT, KPO and BPO, internships, e-commerce, cybersecurity, cloud, AI, enterprise systems, branding, marketing, research or operational support — Vensai brings the right expertise together and manages the engagement from requirement to delivery.",
   contactPlaceholders: {
     email: "contact@vensailabs.in",
     consultingEmail: "contact@vensailabs.in",
@@ -726,6 +735,144 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     engagementModels: ["Project Based", "Dedicated Team", "Managed Services"],
     deliverables: ["High-Resolution Retouched Photography", "Master & Social-Cut Promotional Videos", "Marketplace-Ready Product Visuals", "Campaign Creative Asset Library"],
   },
+  {
+    id: "cat-14",
+    number: "14",
+    slug: "it-management",
+    title: "IT Management & High Availability",
+    shortTitle: "IT Management",
+    categoryGroup: "Consulting & Operations",
+    tagline: "The quiet operating layer: access, assets, incidents and always-on infrastructure, run as one practice.",
+    overview:
+      "Vensai manages the technology estate your teams actually touch every day. We administer identities and permissions, track assets and endpoints, run the IT helpdesk, govern vendors and licenses, and keep critical systems available — so internal IT is a managed rhythm, not a stack of unanswered tickets.",
+    whatWeDo: [
+      "Operate IT service management across incidents, requests, changes and problem records with clear ownership",
+      "Administer user access, role permissions, endpoint fleets and software asset inventories",
+      "Watch availability, backups and recovery so business systems stay reachable through failures and peaks",
+      "Coordinate vendors, licenses and workplace technology so leadership has one accountable IT desk",
+    ],
+    capabilities: [
+      "IT service management",
+      "Access & identity administration",
+      "Asset & endpoint management",
+      "High availability operations",
+      "Backup & recovery",
+      "Vendor & license governance",
+      "IT helpdesk",
+      "Change & incident management",
+      "Infrastructure monitoring",
+      "Workplace technology support",
+    ],
+    useCases: [
+      {
+        title: "Managed IT Desk for Growing Companies",
+        description: "A single Vensai desk handling user requests, access changes, device onboarding and day-to-day IT issues without building a large internal IT department.",
+      },
+      {
+        title: "High-Availability & Recovery Operations",
+        description: "Monitoring, backup discipline and incident playbooks that keep customer-facing and internal systems reachable.",
+      },
+      {
+        title: "Access, Asset & Vendor Governance",
+        description: "Cleaning up who can see what, what hardware and licenses the company owns, and which vendors are actually accountable.",
+      },
+    ],
+    technologies: ["ITSM & Helpdesk Platforms", "Identity & Access Administration", "Endpoint & Asset Inventories", "Backup & Recovery Tooling", "Uptime & Infrastructure Monitoring"],
+    engagementModels: ["Managed Services", "Dedicated Resource", "Dedicated Team", "Post-Deployment Support"],
+    deliverables: ["IT Operating Playbooks", "Access & Asset Register", "Incident & Change Cadence", "Availability & Backup Review"],
+  },
+  {
+    id: "cat-15",
+    number: "15",
+    slug: "kpo-bpo",
+    title: "KPO & BPO Operations",
+    shortTitle: "KPO & BPO",
+    categoryGroup: "Consulting & Operations",
+    tagline: "Routine desks and specialist knowledge work, staffed so your core team can stay on the work only they should do.",
+    overview:
+      "Vensai runs business-process and knowledge-process desks as an extension of your company. BPO covers the repeatable operational load — data work, documents, back office and customer operations. KPO covers work that needs judgment — research, analysis, finance operations and quality review — with documented processes and a named Vensai lead.",
+    whatWeDo: [
+      "Stand up BPO desks for data entry, cleansing, document processing, back-office administration and customer operations",
+      "Staff KPO work that needs domain judgment: research, analysis, reconciliation support and structured reporting",
+      "Write the process, quality checks and escalation path so outsourced work stays consistent as volume moves",
+      "Pair operations desks with Vensai engineering when the work should be automated instead of merely staffed",
+    ],
+    capabilities: [
+      "Business process outsourcing",
+      "Knowledge process outsourcing",
+      "Data entry & cleansing",
+      "Research & analysis desks",
+      "Finance & accounts operations",
+      "Document processing",
+      "Back-office administration",
+      "Customer operations",
+      "Quality sampling",
+      "Process documentation",
+    ],
+    useCases: [
+      {
+        title: "Back-Office & Data Operations Desk",
+        description: "High-volume data entry, document handling and administrative processing with sampling checks and a clear handoff back to your team.",
+      },
+      {
+        title: "Knowledge & Research Pods",
+        description: "Analysts who synthesize information, prepare structured findings and support decisions that should not sit in a generic call queue.",
+      },
+      {
+        title: "Finance & Customer Operations Support",
+        description: "Accounts processing, reconciliation support and customer-operations follow-through running beside your existing systems.",
+      },
+    ],
+    technologies: ["Process & SOP Documentation", "Secure Document Workflows", "CRM & ERP Operational Access", "QA Sampling Dashboards", "Ticketing & Work-Queue Tools"],
+    engagementModels: ["Managed Services", "Dedicated Team", "Dedicated Resource"],
+    deliverables: ["Process Maps & SOPs", "Staffed BPO or KPO Desk", "Quality Sampling Reports", "Escalation & Handoff Rhythm"],
+  },
+  {
+    id: "cat-16",
+    number: "16",
+    slug: "internship-programs",
+    title: "Internship & Talent Programs",
+    shortTitle: "Internships & Training",
+    categoryGroup: "Consulting & Operations",
+    tagline: "Mentor-led cohorts where people learn by shipping real work, not by watching slides.",
+    overview:
+      "Vensai runs internship and upskilling programs the way a delivery studio should: live projects, working mentors, and a visible record of what each person built. Cohorts cover software, cloud, design and operations tracks — for students entering the field and for companies that want their own teams trained on current practice.",
+    whatWeDo: [
+      "Host mentor-led internships where participants work on real project tasks under practicing engineers and designers",
+      "Run classroom and virtual training cohorts in software, cloud, cybersecurity fundamentals, design and operations",
+      "Build corporate upskilling programs around the tools and workflows a client team actually uses",
+      "Review progress, portfolios and readiness so the program ends with evidence, not only a certificate",
+    ],
+    capabilities: [
+      "Live-project internships",
+      "Mentor-led technical training",
+      "Classroom & virtual cohorts",
+      "Corporate upskilling",
+      "Portfolio reviews",
+      "Software engineering tracks",
+      "Cloud & security foundations",
+      "Design & product tracks",
+      "Assessments & progress reviews",
+      "Placement-ready showcases",
+    ],
+    useCases: [
+      {
+        title: "Live-Project Internship Cohorts",
+        description: "Students and early-career talent working through scoped engineering, design or operations tasks with weekly mentor reviews.",
+      },
+      {
+        title: "Corporate Team Upskilling",
+        description: "A focused program that trains an internal team on the stack, process and quality bar Vensai uses in delivery.",
+      },
+      {
+        title: "Campus & Virtual Training Tracks",
+        description: "Structured technical tracks with assignments, critiques and a final showcase of working artifacts.",
+      },
+    ],
+    technologies: ["Live Project Environments", "Version Control & Code Review", "Design Critique in Figma", "Cloud Lab Environments", "Assessment & Portfolio Reviews"],
+    engagementModels: ["Project Based", "Dedicated Resource", "Consulting"],
+    deliverables: ["Cohort Curriculum & Schedule", "Mentor-Reviewed Project Work", "Progress Assessments", "Portfolio or Team Showcase"],
+  },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
@@ -812,7 +959,7 @@ export const WHY_VENSAI_POINTS = [
   {
     title: "Multi-Disciplinary Expertise",
     description:
-      "Software, cloud, cybersecurity, SAP/BI, e-commerce, creative production and customer support operate under one roof—eliminating multi-vendor friction.",
+      "Software, cloud, cybersecurity, managed IT, KPO and BPO, internships, SAP/BI, e-commerce, creative production and customer support operate under one roof.",
   },
   {
     title: "Central Project Management",
@@ -996,7 +1143,7 @@ export const INDUSTRIES: IndustryItem[] = [
     id: "financial-services",
     name: "Financial Services",
     summary:
-      "Secure custom software, regulatory-ready infrastructure, authorized security assessments, automated data pipelines and executive BI reporting.",
+      "Banks, lenders, insurers and financial firms: secure software, payments and onboarding workflows, authorized security assessments, and executive BI reporting.",
     challengesAddressed: [
       "Hardening web applications, APIs and cloud infrastructure against security threats",
       "Automating multi-source financial reconciliation and executive Power BI / Tableau reporting",
@@ -1123,6 +1270,42 @@ export const INDUSTRIES: IndustryItem[] = [
       "Accessing dedicated professionals or managed services with predictable governance",
     ],
     relevantCapabilities: ["Enterprise Technology", "Software & Product Engineering", "Integrations & Automation", "Technical Consulting & R&D", "Customer & Operational Support"],
+  },
+  {
+    id: "communication-media",
+    name: "Communication & Media",
+    summary:
+      "Audience platforms, content operations, campaign production and analytics for publishers, studios, telecom and digital media brands.",
+    challengesAddressed: [
+      "Shipping content, subscription and audience platforms that stay fast under publishing spikes",
+      "Connecting editorial workflows, ad operations and customer support into one system",
+      "Producing campaign films, brand assets and performance reporting the newsroom or studio can actually use",
+    ],
+    relevantCapabilities: ["Software & Product Engineering", "Creative Production", "Marketing & Growth", "Cloud, DevOps & Infrastructure", "KPO & BPO Operations"],
+  },
+  {
+    id: "insurance",
+    name: "Insurance",
+    summary:
+      "Policy, claims and agent experiences, document-heavy operations, secure customer desks and reporting for insurers and brokers.",
+    challengesAddressed: [
+      "Replacing paper-heavy policy and claims steps with tracked digital workflows",
+      "Protecting applicant and policyholder data across portals, APIs and operations desks",
+      "Staffing document processing, research and customer follow-up without slowing the core team",
+    ],
+    relevantCapabilities: ["Software & Product Engineering", "Cybersecurity", "KPO & BPO Operations", "Integrations & Automation", "Customer & Operational Support"],
+  },
+  {
+    id: "industrial-services",
+    name: "Industrial Services",
+    summary:
+      "Field-service, maintenance and asset workflows for companies that install, repair and keep industrial equipment running.",
+    challengesAddressed: [
+      "Giving field technicians mobile job, parts and service-history tools that work on site",
+      "Connecting maintenance schedules, dealer portals and ERP inventory without double entry",
+      "Running a technical helpdesk and back-office desk around installations, warranties and SLAs",
+    ],
+    relevantCapabilities: ["Mobile Applications", "Software & Product Engineering", "IT Management & High Availability", "Integrations & Automation", "Customer & Operational Support"],
   },
 ];
 
@@ -1382,6 +1565,18 @@ export const CAREER_ROLES = [
     type: "Full-Time • In-House Team",
     focus: "Omnichannel chat and voice customer support, technical helpdesk ticketing, e-commerce order operations and post-deployment escalation care.",
   },
+  {
+    title: "IT Operations Specialists",
+    department: "IT Management",
+    type: "Full-Time • In-House Team",
+    focus: "Access administration, endpoint and asset care, IT helpdesk, backup discipline and day-to-day availability operations.",
+  },
+  {
+    title: "KPO & BPO Analysts",
+    department: "Knowledge & Business Operations",
+    type: "Full-Time • In-House Team",
+    focus: "Data and document operations, research desks, finance-operations support, quality sampling and process documentation.",
+  },
 ];
 
 export const CONTACT_SERVICE_OPTIONS = [
@@ -1400,6 +1595,9 @@ export const CONTACT_SERVICE_OPTIONS = [
   "Consulting / R&D",
   "Technical Audit",
   "Support",
+  "IT Management",
+  "KPO & BPO",
+  "Internships & Training",
   "Other",
 ];
 
@@ -1852,6 +2050,69 @@ export const SERVICE_SEO_ENRICHMENT: Record<string, ServiceSEOEnrichment> = {
         question: "Can Vensai support systems that are already live in production?",
         answer:
           "Yes. For existing systems, we conduct a structured onboarding and technical audit to document SOPs and architecture before assuming ongoing maintenance and support SLA coverage.",
+      },
+    ],
+  },
+  "it-management": {
+    whoItIsFor: [
+      "Companies that have outgrown ad-hoc IT and need access, assets, tickets and availability run as a managed practice",
+      "Multi-site businesses that need one helpdesk rhythm across offices, remote staff and vendors",
+      "Leadership teams preparing for growth, audits or a cloud move and needing the current IT estate documented first",
+    ],
+    relatedServiceSlugs: ["cloud-devops", "cybersecurity", "support", "consulting"],
+    relatedIndustries: ["SMEs & Enterprises", "Financial Services", "Industrial Services", "Healthcare"],
+    faqs: [
+      {
+        question: "How is IT management different from cloud and DevOps at Vensai?",
+        answer:
+          "Cloud and DevOps covers architecture, migration, pipelines and production infrastructure. IT management covers the operating desk around that estate: user access, endpoints, assets, incidents, vendors, backups and day-to-day availability.",
+      },
+      {
+        question: "Can Vensai take over an existing internal IT helpdesk?",
+        answer:
+          "Yes. We start with a short discovery of your tools, access model and ticket history, then run the desk against agreed hours, escalation paths and a written asset and access register.",
+      },
+    ],
+  },
+  "kpo-bpo": {
+    whoItIsFor: [
+      "Operators drowning in data entry, document handling and back-office administration",
+      "Teams that need research, analysis or finance-operations support with judgment, not only scripted replies",
+      "Companies that want process outsourcing paired with the option to automate the repetitive parts",
+    ],
+    relatedServiceSlugs: ["support", "integrations", "consulting", "it-management"],
+    relatedIndustries: ["Financial Services", "Insurance", "E-commerce & Retail", "Professional Services"],
+    faqs: [
+      {
+        question: "What is the difference between Vensai’s BPO and KPO work?",
+        answer:
+          "BPO is the repeatable operational load: data, documents, administration and customer-operations queues. KPO is knowledge work that needs analysis and judgment, such as research desks, reconciliation support and structured reporting. Both run with written processes and quality sampling.",
+      },
+      {
+        question: "Will a KPO or BPO desk work inside our existing systems?",
+        answer:
+          "Yes. Desks are set up with controlled access to the CRM, ERP, finance or document tools you already use, plus an escalation path back to your internal owners.",
+      },
+    ],
+  },
+  "internship-programs": {
+    whoItIsFor: [
+      "Students and early-career talent who want mentor-led project experience in software, cloud, design or operations",
+      "Colleges and training partners looking for a delivery studio to run a live technical track",
+      "Companies that want their own teams upskilled on the tools and review standards used in real projects",
+    ],
+    relatedServiceSlugs: ["software-development", "cloud-devops", "branding", "consulting"],
+    relatedIndustries: ["Education", "Startups & Technology", "Professional Services", "SMEs & Enterprises"],
+    faqs: [
+      {
+        question: "Do Vensai internships include real project work?",
+        answer:
+          "Yes. Cohorts work on scoped tasks reviewed by practicing mentors. The point of the program is a portfolio of work and a clear progress record, not a slide deck.",
+      },
+      {
+        question: "Can you run a private training program for our internal team?",
+        answer:
+          "Yes. Corporate tracks are built around your stack and workflows, with assignments, critiques and a closing showcase for the team.",
       },
     ],
   },

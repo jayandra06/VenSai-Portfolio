@@ -11,7 +11,7 @@ export const metadata: Metadata = buildPageMetadata({
   title:
     "Industries We Serve — Sector-Focused Technology & Business Solutions | Vensai Labs",
   description:
-    "Vensai Labs delivers specialized software engineering, enterprise technology, e-commerce, consulting and operational support across 12 key industries including Retail, FinTech, Logistics, Maritime, Healthcare and Manufacturing.",
+    `Vensai Labs delivers software, managed IT, KPO and BPO, commerce and operational support across ${INDUSTRIES.length} industries including retail, banking, insurance, media, healthcare, industrial services and manufacturing.`,
   path: "/industries",
   keywords: [
     "retail e-commerce technology solutions",
@@ -28,7 +28,7 @@ export default function IndustriesPage() {
     title:
       "Industries We Serve — Sector-Focused Technology & Business Solutions | Vensai Labs",
     description:
-      "Sector-adapted software engineering, enterprise systems, e-commerce and operational support across 12 core industries.",
+      `Sector-adapted software, managed IT, KPO and BPO, commerce and operational support across ${INDUSTRIES.length} industries.`,
     path: "/industries",
     type: "CollectionPage",
   });
@@ -45,13 +45,13 @@ export default function IndustriesPage() {
           <div className="max-w-3xl space-y-5">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-royal dark:text-vensai-electric">
               <Building2 className="w-4 h-4" />
-              <span>12 SECTOR PRACTICES • INDUSTRY SOLUTIONS</span>
+              <span>{INDUSTRIES.length} SECTOR PRACTICES • INDUSTRY SOLUTIONS</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
               Capabilities Adapted to the Realities of Your Industry.
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              From high-volume retail and omnichannel commerce to financial services, logistics, maritime, healthcare and manufacturing, Vensai configures multi-disciplinary teams around your sector’s operational workflows.
+              From retail and banking to insurance, media, healthcare, industrial services and manufacturing, Vensai configures multi-disciplinary teams around your sector’s operational workflows.
             </p>
           </div>
         </div>

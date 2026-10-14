@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { Breadcrumbs, SectionHeader } from "@/components/ui/EnterpriseUI";
-import { WHY_VENSAI_POINTS, PROCESS_STEPS } from "@/data/vensai-data";
+import { BRAND_CONFIG, WHY_VENSAI_POINTS, PROCESS_STEPS } from "@/data/vensai-data";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildWebPageSchema } from "@/lib/schema";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = buildPageMetadata({
   title:
     "About Vensai Labs — Full-Service Freelancing Agency & Business Solutions Partner",
   description:
-    "Learn who Vensai Labs is, our philosophy, our full-time multidisciplinary teams across 13 capabilities, how we work, and why businesses partner with Vensai from requirement to post-deployment support.",
+    "Learn who Vensai Labs is, our philosophy, our full-time multidisciplinary teams, how we work, and why businesses partner with Vensai from requirement to post-deployment support.",
   path: "/about",
   keywords: [
     "about Vensai Labs",
@@ -27,7 +27,7 @@ export default function AboutPage() {
     title:
       "About Vensai Labs — Full-Service Freelancing Agency & Business Solutions Partner",
     description:
-      "Vensai Labs is a full-service freelancing agency and business solutions consultancy employing full-time professionals across 13 capabilities.",
+      "Vensai Labs is a full-service freelancing agency and business solutions consultancy employing full-time professionals across engineering, managed IT, KPO and BPO, internships, creative and support.",
     path: "/about",
     type: "AboutPage",
   });
@@ -74,7 +74,7 @@ export default function AboutPage() {
                   href="/services"
                   className="inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold border border-slate-300 dark:border-slate-700 hover:border-vensai-electric text-slate-800 dark:text-slate-200 rounded-sm transition-colors"
                 >
-                  <span>Explore Our 13 Practice Areas</span>
+                  <span>Explore the Practice Floor</span>
                 </Link>
               </div>
             </div>
@@ -110,6 +110,64 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company History */}
+      <section className="py-20 border-b border-slate-200 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-5 space-y-4">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-royal dark:text-vensai-electric">
+              <span className="w-2 h-2 bg-vensai-electric inline-block" />
+              <span>OUR STORY • COMPANY HISTORY</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white leading-tight">
+              VenSai: <span className="text-vensai-royal dark:text-vensai-electric">Ven</span>ture for{" "}
+              <span className="text-vensai-royal dark:text-vensai-electric">S</span>tartups and{" "}
+              <span className="text-vensai-royal dark:text-vensai-electric">I</span>nstitutes.
+            </h2>
+            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Vensai Labs is crafted to support startups and institutes. It is a brand of {BRAND_CONFIG.company.legalName}, built in collaboration with {BRAND_CONFIG.company.collaboration}, to give new ventures and institutions the engineering, operations, talent and training they need from day one.
+            </p>
+          </div>
+
+          <div className="lg:col-span-7">
+            <ol className="relative border-l-2 border-vensai-electric/40 ml-3 space-y-8">
+              <li className="pl-8 relative">
+                <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-vensai-royal ring-4 ring-white dark:ring-[#0B1118]" />
+                <p className="font-mono text-xs font-bold text-vensai-electric">
+                  {BRAND_CONFIG.company.incorporated.toUpperCase()}
+                </p>
+                <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">
+                  {BRAND_CONFIG.company.legalName} is incorporated
+                </h3>
+                <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Registered as a private limited company in Andhra Pradesh, India, with CIN{" "}
+                  <span className="font-mono">{BRAND_CONFIG.company.cin}</span>.
+                </p>
+              </li>
+              <li className="pl-8 relative">
+                <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-vensai-electric ring-4 ring-white dark:ring-[#0B1118]" />
+                <p className="font-mono text-xs font-bold text-vensai-electric">COLLABORATION</p>
+                <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">
+                  Partnering with {BRAND_CONFIG.company.collaboration}
+                </h3>
+                <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Vijetha Softwares joins hands with {BRAND_CONFIG.company.collaboration} to combine delivery capacity, domain knowledge and talent programs under one roof.
+                </p>
+              </li>
+              <li className="pl-8 relative">
+                <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-vensai-sky ring-4 ring-white dark:ring-[#0B1118]" />
+                <p className="font-mono text-xs font-bold text-vensai-electric">VENSAI LABS</p>
+                <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">
+                  A venture built for startups and institutes
+                </h3>
+                <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Vensai Labs launches as the brand that helps startups build and scale, and helps institutes train talent through live projects, internships and technology programs.
+                </p>
+              </li>
+            </ol>
           </div>
         </div>
       </section>

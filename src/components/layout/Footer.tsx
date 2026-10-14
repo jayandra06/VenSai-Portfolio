@@ -77,8 +77,19 @@ export function Footer() {
             </div>
 
             <p className="text-sm text-slate-400 leading-relaxed pr-4">
-              Vensai Labs is a full-service freelancing agency and business solutions partner. With full-time teams across engineering, cloud, cybersecurity, enterprise technology, e-commerce, brand, marketing and customer support, we manage engagements from requirement to delivery.
+              <span className="text-white font-semibold">VenSai</span> — {BRAND_CONFIG.nameMeaning}. Vensai Labs is {BRAND_CONFIG.mission.toLowerCase()} We bring engineering, managed IT, KPO and BPO, internships, commerce, brand and support together and manage engagements from requirement to delivery.
             </p>
+
+            <div className="p-4 rounded-sm border border-slate-800 bg-[#0B1118] text-xs text-slate-400 space-y-1">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-vensai-electric">
+                A brand of
+              </p>
+              <p className="text-sm font-semibold text-white">{BRAND_CONFIG.company.legalName}</p>
+              <p>
+                CIN: <span className="font-mono text-slate-300">{BRAND_CONFIG.company.cin}</span>
+              </p>
+              <p>In collaboration with {BRAND_CONFIG.company.collaboration}</p>
+            </div>
 
             <div className="pt-2 space-y-2 text-xs text-slate-400">
               <div className="flex items-center gap-2.5">
@@ -241,6 +252,30 @@ export function Footer() {
                   Customer &amp; Operational Support
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/services/it-management"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  IT Management
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/kpo-bpo"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  KPO &amp; BPO
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/internship-programs"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Internships &amp; Training
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -333,7 +368,10 @@ export function Footer() {
       {/* Bottom Copyright Bar */}
       <div className="border-t border-slate-800/80 bg-[#05080D]">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {currentYear} Vensai Labs. All rights reserved.</p>
+          <p className="text-center sm:text-left">
+            © {currentYear} Vensai Labs, a brand of {BRAND_CONFIG.company.shortLegalName}. CIN:{" "}
+            <span className="font-mono">{BRAND_CONFIG.company.cin}</span>. All rights reserved.
+          </p>
           <p className="tracking-wider uppercase text-[11px] text-slate-400">
             FREELANCE TALENT. REAL SOLUTIONS. <span className="text-vensai-electric mx-1.5">•</span>{" "}
             BUILD | DESIGN | AUTOMATE | SCALE
