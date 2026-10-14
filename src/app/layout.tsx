@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { buildRootGraphSchema } from "@/lib/schema";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -115,6 +116,7 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
