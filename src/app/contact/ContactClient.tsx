@@ -38,6 +38,9 @@ function matchProjectType(paramValue: string): string {
 function ContactFormInner() {
   const searchParams = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [leadId, setLeadId] = useState(() => crypto.randomUUID());
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -81,14 +84,38 @@ function ContactFormInner() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    trackConversionEvent("lead_form_submit", {
-      service_required: formData.serviceRequired,
-      project_type: formData.projectType,
-      budget_range: formData.budgetRange,
-    });
-    setSubmitted(true);
+    if (submitting) return;
+    setSubmitting(true);
+    setSubmitError(null);
+
+    const website = (new FormData(e.currentTarget).get("website") as string) || "";
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, website, externalId: leadId }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
+      }
+
+      trackConversionEvent("lead_form_submit", {
+        service_required: formData.serviceRequired,
+        project_type: formData.projectType,
+        budget_range: formData.budgetRange,
+      });
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error ? error.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -113,7 +140,10 @@ function ContactFormInner() {
           <div className="pt-4">
             <button
               type="button"
-              onClick={() => setSubmitted(false)}
+              onClick={() => {
+                setSubmitted(false);
+                setLeadId(crypto.randomUUID());
+              }}
               className="px-6 py-3 text-xs font-bold uppercase tracking-wider bg-vensai-royal hover:bg-vensai-electric text-white rounded-sm"
             >
               Submit Another Requirement
@@ -311,15 +341,34 @@ function ContactFormInner() {
             />
           </div>
 
+          <div aria-hidden="true" className="sr-only">
+            <label htmlFor="website">Website</label>
+            <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+          </div>
+
+          {submitError && (
+            <p
+              role="alert"
+              className="px-4 py-3 text-sm rounded-sm border border-red-300 dark:border-red-800 bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300"
+            >
+              {submitError} You can also reach us at{" "}
+              <a className="underline" href={`mailto:${BRAND_CONFIG.contactPlaceholders.email}`}>
+                {BRAND_CONFIG.contactPlaceholders.email}
+              </a>
+              .
+            </p>
+          )}
+
           <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Your information is kept strictly confidential by Vensai Labs.
             </p>
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-sm shadow-blue-glow transition-all"
+              disabled={submitting}
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric disabled:opacity-60 disabled:cursor-wait rounded-sm shadow-blue-glow transition-all"
             >
-              <span>Submit Requirement</span>
+              <span>{submitting ? "Sending..." : "Submit Requirement"}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
