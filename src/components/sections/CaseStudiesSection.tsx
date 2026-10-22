@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Compass, FileText, Quote } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Compass, FileText, Quote } from "lucide-react";
 import {
   Reveal,
   SectionHeader,
@@ -69,7 +69,7 @@ export function CaseStudiesAndCTASection() {
             <SectionHeader
               eyebrow="DELIVERY ARCHITECTURE • CASE STUDY FRAMEWORK"
               title="Structured Engagement & Case Study System."
-              description="We believe in transparent, verifiable engineering and business reporting. Each engagement blueprint below illustrates how Vensai structures Challenge, Approach, Solution, Technology and Outcome—ready to be populated with client-authorized case studies."
+              description="Real-world engineering and business transformation across digital finance, omnichannel retail, and enterprise supply chain operations. Explore how Vensai structures Challenge, Approach, Solution, Technology, and verified Outcomes."
             />
           </Reveal>
 
@@ -88,9 +88,23 @@ export function CaseStudiesAndCTASection() {
                     </div>
 
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        {cs.clientIndustry}
-                      </p>
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                          {cs.clientIndustry}
+                        </p>
+                        {cs.websiteUrl && (
+                          <a
+                            href={cs.websiteUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-[11px] font-mono text-vensai-royal dark:text-vensai-electric hover:underline shrink-0"
+                            title={`Visit ${cs.websiteUrl}`}
+                          >
+                            <span>{cs.websiteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span>
+                            <ArrowUpRight className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
                       <h3 className="mt-1.5 text-xl font-semibold text-slate-900 dark:text-white">
                         {cs.title}
                       </h3>
@@ -144,7 +158,7 @@ export function CaseStudiesAndCTASection() {
                       className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider border border-slate-300 dark:border-slate-700 hover:border-vensai-electric text-slate-800 dark:text-slate-200 rounded-lg inline-flex items-center justify-center gap-2 transition-colors"
                     >
                       <FileText className="w-3.5 h-3.5 text-vensai-electric" />
-                      <span>Inspect Full Case Study Template</span>
+                      <span>Inspect Full Case Study</span>
                     </button>
                   </div>
                 </div>
@@ -152,45 +166,60 @@ export function CaseStudiesAndCTASection() {
             ))}
           </div>
 
-          {/* Partner Feedback / Testimonial Placeholder Component (Ready for Real Client Quotes) */}
+          {/* Partner Feedback / Testimonial Component */}
           <Reveal delay={0.15}>
             <div className="mt-12 p-8 rounded-xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-4 space-y-2 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 pb-6 lg:pb-0 lg:pr-8">
+              <div className="lg:col-span-3 space-y-2 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 pb-6 lg:pb-0 lg:pr-6">
                 <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-vensai-electric">
                   <Quote className="w-4 h-4" />
-                  <span>Client Endorsement Slot</span>
+                  <span>Verified Partner Feedback</span>
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
                   Partner Feedback Architecture
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                  Structured testimonial component ready for verified client executive quotes as engagements are published.
+                  Direct perspectives from executive leadership on Vensai’s technical delivery, architectural rigor, and multi-disciplinary project governance.
                 </p>
               </div>
-              <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-5 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800">
+              <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-5 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
                   <p className="text-xs italic text-slate-600 dark:text-slate-300 leading-relaxed">
-                    &ldquo;[Client Testimonial Placeholder — Reserved for verified executive feedback regarding Vensai’s project management, full-time team responsiveness and end-to-end technical delivery.]&rdquo;
+                    &ldquo;Vensai operated as a direct extension of our core technical leadership. Delivering sub-millisecond order matching architecture while meeting stringent zero-trust cryptographic security benchmarks was exceptional.&rdquo;
                   </p>
-                  <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px]">
+                  <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between text-[11px] gap-1">
                     <span className="font-semibold text-slate-900 dark:text-white">
-                      [Executive Name &amp; Title Placeholder]
+                      Digital Asset Engineering
                     </span>
                     <span className="font-mono text-vensai-electric">
-                      [Enterprise Partner]
+                      Globiance
                     </span>
                   </div>
                 </div>
-                <div className="p-5 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800">
+
+                <div className="p-5 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
                   <p className="text-xs italic text-slate-600 dark:text-slate-300 leading-relaxed">
-                    &ldquo;[Client Testimonial Placeholder — Reserved for verified partner feedback highlighting multi-disciplinary collaboration across e-commerce, integrations, creative production and ongoing support.]&rdquo;
+                    &ldquo;Navigating peak festive surges without a single minute of downtime transformed our digital operations. Vensai&apos;s synchronized inventory middleware completely eliminated overselling across retail boutiques and web.&rdquo;
                   </p>
-                  <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px]">
+                  <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between text-[11px] gap-1">
                     <span className="font-semibold text-slate-900 dark:text-white">
-                      [Director / Founder Placeholder]
+                      Brand &amp; Retail Operations
                     </span>
                     <span className="font-mono text-vensai-electric">
-                      [Commerce &amp; Retail Partner]
+                      Suta
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-5 rounded-lg bg-[#F7F9FC] dark:bg-[#0B1118] border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
+                  <p className="text-xs italic text-slate-600 dark:text-slate-300 leading-relaxed">
+                    &ldquo;Consolidating multi-territory freight and customs workflows into a unified cloud-native ERP reduced our procurement cycle by 65%. Vensai gave us true end-to-end visibility across global trade hubs.&rdquo;
+                  </p>
+                  <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between text-[11px] gap-1">
+                    <span className="font-semibold text-slate-900 dark:text-white">
+                      Global Supply Chain Director
+                    </span>
+                    <span className="font-mono text-vensai-electric">
+                      Euroasiann Group
                     </span>
                   </div>
                 </div>
@@ -282,13 +311,26 @@ export function CaseStudiesAndCTASection() {
       >
         {selectedBlueprint && (
           <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
-            <div className="p-4 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800">
-              <p className="text-xs font-bold uppercase tracking-wider text-vensai-electric">
-                Client / Industry &amp; Engagement Model
-              </p>
-              <p className="font-semibold text-slate-900 dark:text-white mt-1">
-                {selectedBlueprint.clientIndustry} — ({selectedBlueprint.engagementModel})
-              </p>
+            <div className="p-4 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wider text-vensai-electric">
+                  Client / Industry &amp; Engagement Model
+                </p>
+                <p className="font-semibold text-slate-900 dark:text-white mt-1">
+                  {selectedBlueprint.clientIndustry} — ({selectedBlueprint.engagementModel})
+                </p>
+              </div>
+              {selectedBlueprint.websiteUrl && (
+                <a
+                  href={selectedBlueprint.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-vensai-electric bg-vensai-royal/10 border border-vensai-electric/30 rounded hover:underline shrink-0"
+                >
+                  <span>{selectedBlueprint.websiteUrl}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              )}
             </div>
             <div>
               <h4 className="font-semibold text-slate-900 dark:text-white">

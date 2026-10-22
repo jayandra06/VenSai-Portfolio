@@ -132,13 +132,17 @@ export function WhatWeDoSection() {
             onClick={() => setActiveGroup("All")}
             className={`text-left rounded-2xl border px-4 py-4 transition-all ${
               activeGroup === "All"
-                ? "bg-slate-900 text-white border-slate-900 dark:bg-white dark:text-slate-900 dark:border-white"
+                ? "bg-gradient-to-br from-vensai-royal to-vensai-electric text-white border-transparent shadow-blue-glow-sm"
                 : "bg-white dark:bg-[#0B1118] border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:border-vensai-electric"
             }`}
           >
-            <p className="text-[10px] font-bold tracking-[0.22em] uppercase opacity-70">All</p>
-            <p className="mt-1 text-sm font-semibold">Whole floor</p>
-            <p className="mt-1 text-[11px] opacity-70">{SERVICE_CATEGORIES.length} practices</p>
+            <p className={`text-[10px] font-bold tracking-[0.22em] uppercase ${activeGroup === "All" ? "text-white/80" : "text-vensai-electric"}`}>
+              All
+            </p>
+            <p className="mt-1 text-sm font-semibold leading-snug">Whole floor</p>
+            <p className={`mt-1 text-[11px] leading-snug ${activeGroup === "All" ? "text-white/80" : "text-slate-500 dark:text-slate-400"}`}>
+              {SERVICE_CATEGORIES.length} practices
+            </p>
           </button>
           {(Object.keys(STUDIO_META) as ServiceCategory["categoryGroup"][]).map((group) => {
             const meta = STUDIO_META[group];

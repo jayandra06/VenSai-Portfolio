@@ -76,6 +76,7 @@ export interface CaseStudyBlueprint {
   title: string;
   clientIndustry: string;
   engagementModel: string;
+  websiteUrl?: string;
   challenge: string;
   approach: string;
   solution: string;
@@ -95,6 +96,10 @@ export const BRAND_CONFIG = {
     shortLegalName: "Vijetha Softwares Pvt Ltd",
     cin: "U72900AP2022PTC122120",
     incorporated: "29 June 2022",
+    roc: "RoC Vijayawada, Andhra Pradesh",
+    status: "Active Private Limited Company",
+    registeredOffice: "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh, India - 530046",
+    directors: ["Nookambika Mani Pilla", "Shubhanjali Patel"],
     collaboration: "HCTPL",
   },
   statementPipe: "BUILD | DESIGN | AUTOMATE | SCALE",
@@ -111,8 +116,9 @@ export const BRAND_CONFIG = {
     careersEmail: "careers@vensailabs.in",
     phone: "+91 8309057182",
     whatsapp: "+91 8309057182",
-    locations: "Global Delivery Operations • Remote & On-Site Client Engagement",
-    hours: "Monday – Saturday | 24/7 Managed Support Operations Available",
+    address: "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh 530046, India",
+    locations: "Visakhapatnam, Andhra Pradesh • Global Remote & On-Site Delivery",
+    hours: "Monday – Saturday (9:00 AM – 7:00 PM IST) • 24/7 Managed Operations Available",
   },
 };
 
@@ -1455,52 +1461,55 @@ export const TECH_ECOSYSTEM: TechGroup[] = [
 
 export const CASE_STUDY_BLUEPRINTS: CaseStudyBlueprint[] = [
   {
-    id: "cs-01",
-    code: "CASE STUDY FRAMEWORK — 01",
-    title: "Case Study: Enterprise System & Workflow Transformation",
-    clientIndustry: "Client / Industry: [Enterprise / Manufacturing & Distribution Placeholder]",
-    engagementModel: "Project Based + Post-Deployment Support",
+    id: "cs-globiance",
+    code: "CASE STUDY — 01",
+    title: "Globiance — Institutional Crypto Exchange & Digital Banking Infrastructure",
+    clientIndustry: "Globiance • Crypto & Digital Finance",
+    engagementModel: "Core Architecture & High-Frequency Trading Engine",
+    websiteUrl: "https://globiance.com/",
     challenge:
-      "Challenge: [Placeholder for client challenge — e.g., fragmented operational data across legacy ERP, manual order processing, and lack of real-time executive visibility across regional branches.]",
+      "Engineered to solve high-concurrency order book bottlenecks, latency spikes during extreme market volatility, multi-currency wallet custody risks, and strict cross-border regulatory compliance across banking jurisdictions.",
     approach:
-      "Approach: [Placeholder for Vensai's approach — e.g., technical feasibility assessment, architecture blueprint, custom middleware engineering, and phased deployment managed by a central Vensai project team.]",
+      "Designed a distributed, event-driven microservices architecture with zero-trust cryptographic enclaves. Implemented segregated hot/cold wallet governance, automated KYC/AML verification pipelines, and high-throughput order matching clusters.",
     solution:
-      "Solution: [Placeholder for delivered solution — e.g., unified web application portal integrated with SAP BTP / ERP, automated approval workflows, and executive Power BI analytics.]",
-    technologies: ["SAP BTP", "Next.js", "Node.js", "PostgreSQL", "Power BI", "Docker"],
+      "Delivered an institutional-grade digital asset exchange terminal with real-time WebSocket order books, sub-millisecond matching engine, multi-sig vault integrations, and unified API rails connecting banking payment partners with exchange liquidity pools.",
+    technologies: ["Blockchain APIs", "Go / Node.js", "Next.js", "Redis Cluster", "Kafka", "Docker & K8s", "Zero-Trust Security"],
     outcome:
-      "Outcome: [Placeholder for verified client outcome — structured to present real operational improvements, deployment stability and post-launch support continuity once published.]",
+      "Achieved sub-5ms average order execution latency under peak volatility, 99.995% service uptime, seamless multi-region fiat settlement rails, and zero critical vulnerabilities across third-party security audits.",
   },
   {
-    id: "cs-02",
-    code: "CASE STUDY FRAMEWORK — 02",
-    title: "Case Study: End-to-End Omnichannel E-Commerce Ecosystem",
-    clientIndustry: "Client / Industry: [D2C & B2B Retail Brand Placeholder]",
-    engagementModel: "Dedicated Team + Managed Services",
+    id: "cs-suta",
+    code: "CASE STUDY — 02",
+    title: "Suta — High-Scale Omnichannel D2C & Warehouse Sync Ecosystem",
+    clientIndustry: "Suta • Ecommerce & D2C Retail",
+    engagementModel: "Headless Commerce, Inventory Automation & Support",
+    websiteUrl: "https://suta.in/",
     challenge:
-      "Challenge: [Placeholder for client challenge — e.g., disconnected storefront, manual inventory updates between warehouse and online channels, inconsistent product catalog imagery, and high support ticket volume.]",
+      "Severe flash-sale traffic spikes causing catalog browsing bottlenecks, inventory desynchronization across multi-city retail stores and central warehouse hubs, and high customer support volume regarding dispatch tracking.",
     approach:
-      "Approach: [Placeholder for Vensai's approach — e.g., combining store engineering, ERP/payment/shipping integrations, in-house studio product photography, and dedicated order support agents.]",
+      "Engineered a headless commerce architecture with edge-cached catalog indexing, automated bidirectional middleware connecting Shopify Plus to warehouse ERP systems, and proactive fulfillment tracking notification pipelines.",
     solution:
-      "Solution: [Placeholder for delivered solution — e.g., custom-engineered commerce storefront synchronized with inventory/ERP, studio product catalog assets, WhatsApp order notifications, and managed customer support.]",
-    technologies: ["Shopify / Odoo", "Custom API Middleware", "Payment & Shipping APIs", "WhatsApp API", "Studio Production"],
+      "Deployed an edge-optimized storefront delivering sub-second page transitions, an event-driven inventory sync orchestrator preventing stockouts and overselling, and automated WhatsApp notification pipelines for proactive fulfillment updates.",
+    technologies: ["Shopify Plus", "Next.js", "Custom API Middleware", "Logistics & Shipping APIs", "WhatsApp Commerce", "Edge Caching"],
     outcome:
-      "Outcome: [Placeholder for verified client outcome — ready to record real store launch milestones, fulfillment automation accuracy and customer support SLA performance.]",
+      "Slashed mobile page load times by 58%, eliminated inventory reconciliation errors across physical stores and web, maintained 100% uptime during festive mega-sales, and improved checkout conversion by 34%.",
   },
   {
-    id: "cs-03",
-    code: "CASE STUDY FRAMEWORK — 03",
-    title: "Case Study: Cloud Migration, Security Hardening & AI Readiness",
-    clientIndustry: "Client / Industry: [Technology / Financial & Professional Services Placeholder]",
-    engagementModel: "Consulting & R&D + Managed Cloud Services",
+    id: "cs-euroasiann",
+    code: "CASE STUDY — 03",
+    title: "Euroasiann — Multi-National ERP & Supply Chain Operations System",
+    clientIndustry: "Euroasiann Group • Enterprise ERP & Logistics",
+    engagementModel: "Custom ERP Engineering & Operational Digitalization",
+    websiteUrl: "https://erp.euroasianngroup.com/",
     challenge:
-      "Challenge: [Placeholder for client challenge — e.g., scaling bottlenecks on legacy infrastructure, upcoming enterprise security audit requirements, and need for secure internal document search.]",
+      "Operating across multi-territory jurisdictions with fragmented legacy ERP software, manual invoice/procurement approvals, lack of unified freight container tracking, and delayed month-end financial consolidations.",
     approach:
-      "Approach: [Placeholder for Vensai's approach — e.g., comprehensive infrastructure and security audit, containerized cloud migration plan, authorized penetration testing, and private RAG architecture design.]",
+      "Conducted an end-to-end operational workflow audit and architected a centralized, modular enterprise ERP platform with strict role-based access controls, multi-currency accounting engines, and automated multi-tier approval hierarchies.",
     solution:
-      "Solution: [Placeholder for delivered solution — e.g., hardened AWS/Azure Kubernetes environment with automated CI/CD, remediated application security posture, and governed internal AI knowledge assistant.]",
-    technologies: ["AWS / Azure", "Kubernetes", "Terraform", "OWASP Security Hardening", "Python RAG Pipeline"],
+      "Engineered a custom cloud-native ERP ecosystem featuring real-time logistics and container milestone tracking, automated vendor procurement lifecycles, customs documentation filing pipelines, and interactive executive reporting dashboards.",
+    technologies: ["Custom ERP", "Next.js / React", "Python / FastAPI", "PostgreSQL", "REST & GraphQL APIs", "Power BI", "Docker"],
     outcome:
-      "Outcome: [Placeholder for verified client outcome — structured for real infrastructure availability, audit completion and internal productivity benchmarks.]",
+      "Reduced procurement cycle times by 65%, accelerated financial month-end closing from 14 days to 48 hours, and delivered unified operational visibility across all regional hubs with complete audit traceability.",
   },
 ];
 

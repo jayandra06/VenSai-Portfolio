@@ -80,15 +80,18 @@ export function Footer() {
               <span className="text-white font-semibold">VenSai</span> — {BRAND_CONFIG.nameMeaning}. Vensai Labs is {BRAND_CONFIG.mission.toLowerCase()} We bring engineering, managed IT, KPO and BPO, internships, commerce, brand and support together and manage engagements from requirement to delivery.
             </p>
 
-            <div className="p-4 rounded-sm border border-slate-800 bg-[#0B1118] text-xs text-slate-400 space-y-1">
+            <div className="p-4 rounded-sm border border-slate-800 bg-[#0B1118] text-xs text-slate-400 space-y-1.5">
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-vensai-electric">
                 A brand of
               </p>
               <p className="text-sm font-semibold text-white">{BRAND_CONFIG.company.legalName}</p>
               <p>
-                CIN: <span className="font-mono text-slate-300">{BRAND_CONFIG.company.cin}</span>
+                CIN: <span className="font-mono text-slate-300">{BRAND_CONFIG.company.cin}</span> • {BRAND_CONFIG.company.roc}
               </p>
-              <p>In collaboration with {BRAND_CONFIG.company.collaboration}</p>
+              <p className="text-[11px] text-slate-400 leading-snug">
+                Regd Office: {BRAND_CONFIG.company.registeredOffice}
+              </p>
+              <p className="pt-0.5 text-[11px]">In collaboration with {BRAND_CONFIG.company.collaboration}</p>
             </div>
 
             <div className="pt-2 space-y-2 text-xs text-slate-400">
@@ -110,9 +113,9 @@ export function Footer() {
                   {BRAND_CONFIG.contactPlaceholders.phone}
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Globe className="w-3.5 h-3.5 text-vensai-electric shrink-0" />
-                <span>{BRAND_CONFIG.contactPlaceholders.locations}</span>
+              <div className="flex items-start gap-2.5">
+                <Globe className="w-3.5 h-3.5 text-vensai-electric shrink-0 mt-0.5" />
+                <span className="leading-snug">{BRAND_CONFIG.contactPlaceholders.locations}</span>
               </div>
             </div>
           </div>

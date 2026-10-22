@@ -499,6 +499,19 @@ export function ContactClient() {
                 <p>2. We conduct a discovery &amp; technical feasibility call.</p>
                 <p>3. You receive a clear scope, team plan, timeline and commercial proposal.</p>
               </div>
+
+              <div className="pt-4 border-t border-slate-800 space-y-1.5 text-xs text-slate-400">
+                <p className="font-semibold text-white uppercase tracking-wider text-[11px]">
+                  Registered Corporate Office
+                </p>
+                <p className="text-slate-200 font-medium">{BRAND_CONFIG.company.legalName}</p>
+                <p className="text-[11px]">
+                  CIN: <span className="font-mono text-vensai-electric">{BRAND_CONFIG.company.cin}</span> • {BRAND_CONFIG.company.roc}
+                </p>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  {BRAND_CONFIG.company.registeredOffice}
+                </p>
+              </div>
             </div>
           </div>
         </div>

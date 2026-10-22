@@ -246,7 +246,7 @@ export function HeroSection() {
 
                 {/* Bottom Governance Bar */}
                 <div className="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800/90 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
-                  <span>Full-Time Vensai Employees</span>
+                  <span>A Complete Business Ecosystem</span>
                   <span className="text-vensai-electric">•</span>
                   <span>Central Project Management</span>
                 </div>

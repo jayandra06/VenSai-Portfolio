@@ -27,10 +27,25 @@ export function buildRootGraphSchema() {
         image: `${SITE_URL}/brand/vensai-logo-original.jpg`,
         description:
           "Vensai Labs is a full-service freelancing agency and business solutions consultancy employing full-time professional teams across software engineering, mobile apps, AI/ML, cloud & DevOps, cybersecurity, enterprise technology, e-commerce, consulting, branding, marketing and post-deployment support.",
+        telephone: BRAND_CONFIG.contactPlaceholders.phone,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "57-6-114/1, Aganampudi",
+          addressLocality: "Visakhapatnam",
+          addressRegion: "Andhra Pradesh",
+          postalCode: "530046",
+          addressCountry: "IN",
+        },
+        parentOrganization: {
+          "@type": "Organization",
+          name: BRAND_CONFIG.company.legalName,
+          taxID: BRAND_CONFIG.company.cin,
+        },
         contactPoint: [
           {
             "@type": "ContactPoint",
             contactType: "sales and client inquiries",
+            telephone: BRAND_CONFIG.contactPlaceholders.phone,
             email: BRAND_CONFIG.contactPlaceholders.email,
             url: `${SITE_URL}/contact`,
             availableLanguage: ["English"],

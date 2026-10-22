@@ -143,8 +143,8 @@ export default function AboutPage() {
                   {BRAND_CONFIG.company.legalName} is incorporated
                 </h3>
                 <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Registered as a private limited company in Andhra Pradesh, India, with CIN{" "}
-                  <span className="font-mono">{BRAND_CONFIG.company.cin}</span>.
+                  Registered as an active private limited technology company with Corporate Identification Number (CIN){" "}
+                  <span className="font-mono font-medium text-slate-900 dark:text-white">{BRAND_CONFIG.company.cin}</span> under {BRAND_CONFIG.company.roc}. Headquartered at {BRAND_CONFIG.company.registeredOffice}.
                 </p>
               </li>
               <li className="pl-8 relative">
