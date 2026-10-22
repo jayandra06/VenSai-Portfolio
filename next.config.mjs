@@ -14,6 +14,14 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // ── Canonical domain: www → non-www ──────────────────────────────────
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.vensailabs.in" }],
+        destination: "https://vensailabs.in/:path*",
+        permanent: true,
+      },
+      // ── Legacy path aliases ───────────────────────────────────────────────
       {
         source: "/privacy",
         destination: "/privacy-notice",
@@ -43,6 +51,10 @@ const nextConfig = {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
           },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(self), interest-cohort=()",
+          },
         ],
       },
       {
@@ -51,6 +63,26 @@ const nextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Static assets under /_next/static are already immutable, but be explicit
+        source: "/_next/static/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Sitemap and robots — keep fresh but cacheable
+        source: "/:path(sitemap\\.xml|robots\\.txt|sitemap-pages\\.xml)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
           },
         ],
       },

@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ui/CookieConsent";
-import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import { SITE_URL, DEFAULT_OG_IMAGE, GEO_BASE_KEYWORDS } from "@/lib/seo";
 import { buildRootGraphSchema } from "@/lib/schema";
 
 const inter = Inter({
@@ -44,10 +44,16 @@ export const metadata: Metadata = {
     "Technical Consulting & R&D",
     "Dedicated Professional Teams",
     "Post-Deployment Managed Support",
+    ...GEO_BASE_KEYWORDS,
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
+    alternateLocale: [
+      "en_GB", "en_CA", "en_AU", "de_DE",
+      "en_AE", "ar_AE", "en_EG", "ar_EG",
+      "it_IT", "en_IN", "hi_IN",
+    ],
     url: `${SITE_URL}/`,
     siteName: "Vensai Labs",
     title: "Vensai Labs — Freelance Talent. Real Solutions.",
