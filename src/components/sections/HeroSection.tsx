@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Layers, Shield, Cpu, Workflow } from "lucide-react";
 import { Reveal } from "@/components/ui/EnterpriseUI";
 import { BRAND_CONFIG, SERVICE_CATEGORIES } from "@/data/vensai-data";
@@ -39,6 +40,7 @@ const ECOSYSTEM_NODES = [
 
 export function HeroSection() {
   const [activeNode, setActiveNode] = useState<string>("build");
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#0B1118] border-b border-slate-200 dark:border-slate-800/90">
@@ -193,32 +195,36 @@ export function HeroSection() {
                     {ECOSYSTEM_NODES.map((node) => {
                       const active = activeNode === node.id;
                       return (
-                        <button
+                        <motion.button
                           key={node.id}
                           type="button"
                           aria-pressed={active}
                           onClick={() => setActiveNode(node.id)}
-                          className={`w-full h-8 sm:h-9 px-0.5 sm:px-1.5 flex items-center justify-center text-center text-[8.5px] min-[360px]:text-[9.5px] sm:text-[10px] font-bold tracking-normal sm:tracking-wider uppercase rounded-lg transition-all duration-200 truncate ${
+                          whileHover={prefersReducedMotion ? {} : { scale: 1.05, y: -1 }}
+                          whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
+                          transition={{ duration: 0.16 }}
+                          className={`w-full h-8 sm:h-9 px-0.5 sm:px-1.5 flex items-center justify-center text-center text-[8.5px] min-[360px]:text-[9.5px] sm:text-[10px] font-bold tracking-normal sm:tracking-wider uppercase rounded-lg transition-colors duration-200 truncate focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vensai-electric ${
                             active
                               ? "bg-gradient-to-r from-vensai-royal via-[#0072ff] to-vensai-electric text-white shadow-md shadow-vensai-royal/30 border border-vensai-sky/40"
                               : "bg-white/70 dark:bg-[#121c2d]/70 text-slate-700 dark:text-slate-300 hover:text-vensai-royal dark:hover:text-vensai-electric hover:bg-white dark:hover:bg-[#18253b] border border-slate-200/60 dark:border-slate-800/80"
                           }`}
                         >
                           {node.verb}
-                        </button>
+                        </motion.button>
                       );
                     })}
                   </div>
 
-                  {/* All 4 Ecosystem Nodes rendered in SSR DOM for full search engine crawlability */}
-                  {ECOSYSTEM_NODES.map((node) => {
-                    const isActive = node.id === activeNode;
-                    return (
-                      <div
+                  {/* Animated Ecosystem Node Detail Panel */}
+                  <AnimatePresence mode="wait">
+                    {ECOSYSTEM_NODES.filter((node) => node.id === activeNode).map((node) => (
+                      <motion.div
                         key={node.id}
-                        className={`mt-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/90 ${
-                          isActive ? "block" : "hidden"
-                        }`}
+                        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 8, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -6, scale: 0.98 }}
+                        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                        className="mt-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/90"
                       >
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-bold uppercase tracking-wider text-vensai-royal dark:text-vensai-electric">
@@ -229,19 +235,22 @@ export function HeroSection() {
                           </span>
                         </div>
                         <ul className="space-y-1.5 mt-2.5">
-                          {node.items.map((it) => (
-                            <li
+                          {node.items.map((it, ii) => (
+                            <motion.li
                               key={it}
+                              initial={{ opacity: 0, x: -8 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.22, delay: ii * 0.06 }}
                               className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300"
                             >
                               <span className="w-1.5 h-1.5 bg-vensai-electric rounded-full" />
                               <span>{it}</span>
-                            </li>
+                            </motion.li>
                           ))}
                         </ul>
-                      </div>
-                    );
-                  })}
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
                 </div>
 
                 {/* Bottom Governance Bar */}

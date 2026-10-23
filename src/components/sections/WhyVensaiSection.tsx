@@ -2,11 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Users, Layers, Check } from "lucide-react";
 import { Reveal, SectionHeader } from "@/components/ui/EnterpriseUI";
 import { WHY_VENSAI_POINTS } from "@/data/vensai-data";
 
 export function WhyVensaiSection() {
+  const prefersReducedMotion = useReducedMotion();
   return (
     <section className="py-24 bg-[#0B1118] text-white border-b border-slate-800/90 relative overflow-hidden">
       {/* Subtle Blue Accent Glow */}
@@ -91,12 +93,20 @@ export function WhyVensaiSection() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {WHY_VENSAI_POINTS.map((point, index) => (
               <Reveal key={point.title} delay={index * 0.03}>
-                <div className="h-full p-6 rounded-xl bg-[#111827]/90 border border-slate-800 hover:border-vensai-electric/70 transition-colors">
+                <motion.div
+                  whileHover={prefersReducedMotion ? {} : { y: -4, boxShadow: "0 8px 32px rgba(0,95,255,0.12)" }}
+                  transition={{ duration: 0.22 }}
+                  className="h-full p-6 rounded-xl bg-[#111827]/90 border border-slate-800 hover:border-vensai-electric/70 transition-colors cursor-default"
+                >
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-mono text-xs font-bold text-vensai-electric">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-vensai-electric/60" />
+                    <motion.span
+                      className="w-1.5 h-1.5 rounded-full bg-vensai-electric/60"
+                      animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
+                      transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.15 }}
+                    />
                   </div>
                   <h3 className="text-base font-semibold text-white">
                     {point.title}
@@ -104,7 +114,7 @@ export function WhyVensaiSection() {
                   <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
                     {point.description}
                   </p>
-                </div>
+                </motion.div>
               </Reveal>
             ))}
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Search, Terminal, X } from "lucide-react";
 import { Reveal, SectionHeader } from "@/components/ui/EnterpriseUI";
 import { TECH_ECOSYSTEM } from "@/data/vensai-data";
@@ -8,6 +9,7 @@ import { TECH_ECOSYSTEM } from "@/data/vensai-data";
 export function TechEcosystemSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const prefersReducedMotion = useReducedMotion();
 
   const categories = ["All", ...TECH_ECOSYSTEM.map((t) => t.category)];
 
@@ -45,10 +47,13 @@ export function TechEcosystemSection() {
               {categories.map((cat) => {
                 const active = selectedCategory === cat;
                 return (
-                  <button
+                  <motion.button
                     key={cat}
                     type="button"
                     onClick={() => setSelectedCategory(cat)}
+                    whileHover={prefersReducedMotion ? {} : { y: -1, scale: 1.03 }}
+                    whileTap={prefersReducedMotion ? {} : { scale: 0.96 }}
+                    transition={{ duration: 0.16 }}
                     className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                       active
                         ? "bg-vensai-royal text-white shadow-blue-glow-sm"
@@ -56,7 +61,7 @@ export function TechEcosystemSection() {
                     }`}
                   >
                     {cat}
-                  </button>
+                  </motion.button>
                 );
               })}
             </div>
@@ -100,8 +105,12 @@ export function TechEcosystemSection() {
               : group.technologies;
 
             return (
-              <Reveal key={group.category} delay={Math.min(idx * 0.03, 0.2)}>
-                <div className="h-full flex flex-col justify-between p-6 rounded-xl bg-[#F7F9FC] dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800">
+              <Reveal key={group.category} delay={Math.min(idx * 0.04, 0.22)}>
+                <motion.div
+                  whileHover={prefersReducedMotion ? {} : { y: -3, boxShadow: "0 8px 30px rgba(0,95,255,0.08)" }}
+                  transition={{ duration: 0.22 }}
+                  className="h-full flex flex-col justify-between p-6 rounded-xl bg-[#F7F9FC] dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800 hover:border-vensai-electric/50 transition-colors"
+                >
                   <div>
                     <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 dark:border-slate-800">
                       <div className="flex items-center gap-2">
@@ -135,7 +144,7 @@ export function TechEcosystemSection() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </Reveal>
             );
           })}

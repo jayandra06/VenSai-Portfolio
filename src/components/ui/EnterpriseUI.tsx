@@ -2,17 +2,59 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronDown, X } from "lucide-react";
 
+/* ─── Reveal ─────────────────────────────────────────────────────────────────── */
 export function Reveal({
   children,
   delay = 0,
   className = "",
+  direction = "up",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  direction?: "up" | "down" | "left" | "right";
+}) {
+  const prefersReducedMotion = useReducedMotion();
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: direction === "up" ? 20 : direction === "down" ? -20 : 0,
+      x: direction === "left" ? 20 : direction === "right" ? -20 : 0,
+    },
+    visible: { opacity: 1, y: 0, x: 0 },
+  };
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ─── StaggerReveal ──────────────────────────────────────────────────────────── */
+export function StaggerReveal({
+  children,
+  className = "",
+  staggerDelay = 0.06,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  staggerDelay?: number;
 }) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -22,17 +64,35 @@ export function Reveal({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.45, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: staggerDelay } },
+      }}
     >
-      {children}
+      {React.Children.map(children, (child, i) => (
+        <motion.div
+          key={i}
+          variants={{
+            hidden: { opacity: 0, y: 18 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+            },
+          }}
+        >
+          {child}
+        </motion.div>
+      ))}
     </motion.div>
   );
 }
 
+/* ─── SectionHeader ──────────────────────────────────────────────────────────── */
 export function SectionHeader({
   eyebrow,
   title,
@@ -58,7 +118,11 @@ export function SectionHeader({
         <div
           className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-royal dark:text-vensai-electric mb-3`}
         >
-          <span className="w-2 h-2 bg-vensai-electric inline-block" />
+          <motion.span
+            className="w-2 h-2 bg-vensai-electric inline-block"
+            animate={{ scale: [1, 1.4, 1] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          />
           <span>{eyebrow}</span>
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.3] sm:leading-[1.32] lg:leading-[1.35]">
@@ -75,6 +139,7 @@ export function SectionHeader({
   );
 }
 
+/* ─── Breadcrumbs ────────────────────────────────────────────────────────────── */
 export function Breadcrumbs({
   items,
 }: {
@@ -141,6 +206,7 @@ export function Breadcrumbs({
   );
 }
 
+/* ─── EnterpriseAccordion ───────────────────────────────────────────────────── */
 export function EnterpriseAccordion({
   items,
 }: {
@@ -163,21 +229,28 @@ export function EnterpriseAccordion({
               <span className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                 {item.question}
               </span>
-              <ChevronDown
-                className={`w-5 h-5 text-vensai-electric shrink-0 transition-transform duration-200 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-              />
+              <motion.div
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.22 }}
+              >
+                <ChevronDown className="w-5 h-5 text-vensai-electric shrink-0" />
+              </motion.div>
             </button>
-            <p
-              className={
-                isOpen
-                  ? "mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed pr-8 block"
-                  : "hidden"
-              }
-            >
-              {item.answer}
-            </p>
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ overflow: "hidden" }}
+                >
+                  <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed pr-8">
+                    {item.answer}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         );
       })}
@@ -185,6 +258,7 @@ export function EnterpriseAccordion({
   );
 }
 
+/* ─── EnterpriseModal ───────────────────────────────────────────────────────── */
 export function EnterpriseModal({
   isOpen,
   onClose,
@@ -198,41 +272,53 @@ export function EnterpriseModal({
   subtitle?: string;
   children: React.ReactNode;
 }) {
-  if (!isOpen) return null;
-
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
-    >
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-xl shadow-enterprise-lg p-6 sm:p-8">
-        <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
-          <div>
-            {subtitle && (
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-vensai-electric">
-                {subtitle}
-              </p>
-            )}
-            <h3
-              id="modal-title"
-              className="text-xl font-semibold text-slate-900 dark:text-white mt-1"
-            >
-              {title}
-            </h3>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close modal"
-            className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.22 }}
+        >
+          <motion.div
+            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0B1118] border border-slate-200 dark:border-slate-800 rounded-xl shadow-enterprise-lg p-6 sm:p-8"
+            initial={{ scale: 0.94, y: 20, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.94, y: 20, opacity: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-        <div className="mt-6">{children}</div>
-      </div>
-    </div>
+            <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
+              <div>
+                {subtitle && (
+                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-vensai-electric">
+                    {subtitle}
+                  </p>
+                )}
+                <h3
+                  id="modal-title"
+                  className="text-xl font-semibold text-slate-900 dark:text-white mt-1"
+                >
+                  {title}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close modal"
+                className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="mt-6">{children}</div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
