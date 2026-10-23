@@ -159,21 +159,21 @@ export function WhatWeDoSection() {
         type="button"
         aria-pressed={isSelected}
         onClick={() => handleSelect(cat.id)}
-        layout
-        initial={{ opacity: 0, y: 24, scale: 0.96 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: -12, scale: 0.95 }}
+        layout="position"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0 }}
         transition={{
-          duration: prefersReducedMotion ? 0 : 0.38,
-          delay: prefersReducedMotion ? 0 : Math.min(i * 0.045, 0.25),
-          ease: [0.22, 1, 0.36, 1],
+          duration: prefersReducedMotion ? 0 : 0.55,
+          delay: prefersReducedMotion ? 0 : Math.min(i * 0.04, 0.22),
+          ease: [0.16, 1, 0.3, 1],
         }}
-        whileHover={prefersReducedMotion ? {} : { y: -4, scale: 1.015 }}
-        whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
-        className={`group relative overflow-hidden text-left rounded-2xl border p-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vensai-electric ${
+        whileHover={prefersReducedMotion ? {} : { y: -2 }}
+        whileTap={prefersReducedMotion ? {} : { y: 0 }}
+        className={`group relative overflow-hidden text-left rounded-2xl border p-4 transition-[border-color,background-color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vensai-electric ${
           isSelected
-            ? "bg-gradient-to-br from-vensai-royal/5 to-vensai-electric/10 dark:from-vensai-royal/20 dark:to-vensai-electric/10 border-vensai-electric shadow-blue-glow-sm"
-            : "bg-white/80 dark:bg-[#0B1118] border-slate-200 dark:border-slate-800 hover:border-vensai-electric/70"
+            ? "bg-white dark:bg-[#0d1420] border-vensai-electric/60 shadow-[0_0_0_1px_rgba(0,95,255,0.15),0_4px_24px_rgba(0,95,255,0.08)]"
+            : "bg-white/80 dark:bg-[#0B1118] border-slate-200 dark:border-slate-800 hover:border-vensai-electric/40 hover:shadow-[0_2px_16px_rgba(0,95,255,0.06)]"
         }`}
       >
         {/* Ghost number watermark */}
@@ -183,46 +183,45 @@ export function WhatWeDoSection() {
         >
           {cat.number}
         </span>
+
         <div className="relative flex items-start justify-between gap-3">
-          <motion.span
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-xl transition-colors ${
+          {/* Icon: CSS transition only, no Framer wiggle */}
+          <span
+            className={`inline-flex h-9 w-9 items-center justify-center rounded-xl transition-[background-color,color] duration-300 ${
               isSelected
                 ? "bg-vensai-royal text-white"
-                : "bg-[#F7F9FC] dark:bg-[#111827] text-vensai-royal dark:text-vensai-electric group-hover:bg-vensai-royal/10"
+                : "bg-[#F7F9FC] dark:bg-[#111827] text-vensai-royal dark:text-vensai-electric group-hover:bg-vensai-royal/8 dark:group-hover:bg-vensai-electric/10"
             }`}
-            animate={isSelected ? { rotate: [0, -8, 8, 0] } : { rotate: 0 }}
-            transition={{ duration: 0.4 }}
           >
             <CatIcon className="w-4 h-4" />
-          </motion.span>
+          </span>
           <span className="font-mono text-[10px] font-bold text-vensai-electric">{cat.number}</span>
         </div>
+
         <p className="relative mt-3 text-sm font-semibold text-slate-900 dark:text-white leading-snug">
           {cat.shortTitle}
         </p>
         <p className="relative mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
           {SERVICE_LINES[cat.slug]}
         </p>
-        {/* Selected indicator bar */}
-        <AnimatePresence>
-          {isSelected && (
-            <motion.span
-              key="indicator"
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vensai-royal to-vensai-electric rounded-b-2xl"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              exit={{ scaleX: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            />
-          )}
-        </AnimatePresence>
-        {/* Expand chevron */}
-        <motion.span
-          className="absolute top-3 right-3 text-vensai-electric opacity-0 group-hover:opacity-100 transition-opacity"
-          animate={isSelected ? { rotate: 90 } : { rotate: 0 }}
+
+        {/* Selected: thin bottom gradient line — pure CSS transition, no framer */}
+        <span
+          aria-hidden="true"
+          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-vensai-royal via-vensai-electric to-vensai-sky rounded-b-2xl transition-all duration-500 ${
+            isSelected ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+          }`}
+          style={{ transformOrigin: "left" }}
+        />
+
+        {/* Chevron — smooth CSS rotate */}
+        <span
+          className={`absolute top-3 right-3 text-vensai-electric transition-[opacity,transform] duration-300 ${
+            isSelected ? "opacity-100 rotate-90" : "opacity-0 rotate-0 group-hover:opacity-60"
+          }`}
         >
           <ChevronRight className="w-3.5 h-3.5" />
-        </motion.span>
+        </span>
       </motion.button>
     );
 
@@ -306,7 +305,7 @@ export function WhatWeDoSection() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
             layout
           >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="sync">
               {rows}
             </AnimatePresence>
           </motion.div>
