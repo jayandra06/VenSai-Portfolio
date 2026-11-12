@@ -252,8 +252,8 @@ export function WhatWeDoSection() {
         <Reveal>
           <SectionHeader
             eyebrow={`THE PRACTICE FLOOR • ${SERVICE_CATEGORIES.length} DISCIPLINES`}
-            title="One company. IT and non-IT, staffed in-house."
-            description="Software, cybersecurity, managed IT, KPO and BPO, internships, commerce, brand and support sit in the same company. Open a practice and see how it is staffed."
+            title="What our teams work on day to day."
+            description="Pick a practice area to see typical work—not a slide deck list of buzzwords."
             action={
               <Link
                 href="/services"

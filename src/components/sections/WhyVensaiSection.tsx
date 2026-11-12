@@ -20,10 +20,10 @@ export function WhyVensaiSection() {
                 <span>Why Vensai Labs</span>
               </div>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-                A software company, not a marketplace of separate people.
+                You work with our employees—not a patchwork of freelancers.
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
-                Vensai employs its own full-time experts across technology, engineering, design, consulting, marketing and operations. IT and non-IT sit in the same company, and one team stays accountable from the first brief through support.
+                Engineers, designers, consultants, and support staff are on Vijetha’s payroll. Project managers track scope, timelines, and handover so the same group can maintain what they built.
               </p>
 
               <div className="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-[#F7F9FC] p-6 dark:border-slate-700 dark:bg-[#18202a]">

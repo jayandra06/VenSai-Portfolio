@@ -83,8 +83,8 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="p-8 rounded-sm bg-white dark:bg-[#05080D] border border-slate-200 dark:border-slate-800 shadow-enterprise-lg flex flex-col items-center">
                 <img
-                  src="/brand/vensai-full-light.png"
-                  alt="Vensai Labs Official Identity — Expert Talent. Real Solutions."
+                  src="/brand/vensai-full-light.jpg"
+                  alt="Vensai Labs Official Identity — People. Technology. Innovation."
                   width={680}
                   height={480}
                   decoding="async"
@@ -92,8 +92,8 @@ export default function AboutPage() {
                   className="block dark:hidden w-full max-w-[340px] h-auto object-contain"
                 />
                 <img
-                  src="/brand/vensai-full-dark.png"
-                  alt="Vensai Labs Official Identity — Expert Talent. Real Solutions."
+                  src="/brand/vensai-full-dark.jpg"
+                  alt="Vensai Labs Official Identity — People. Technology. Innovation."
                   width={680}
                   height={480}
                   decoding="async"
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 />
                 <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 w-full text-center">
                   <p className="text-xs font-mono uppercase tracking-[0.2em] text-vensai-royal dark:text-vensai-electric">
-                    EXPERT TALENT. REAL SOLUTIONS.
+                    {BRAND_CONFIG.tagline}
                   </p>
                   <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-slate-500 mt-1">
                     BUILD • DESIGN • AUTOMATE • SCALE
@@ -147,8 +147,7 @@ export default function AboutPage() {
                   <span className="font-mono font-medium text-slate-900 dark:text-white">
                     {BRAND_CONFIG.company.cin}
                   </span>{" "}
-                  under {BRAND_CONFIG.company.roc}. Registered office: {BRAND_CONFIG.company.registeredOffice}. Hyderabad business unit:{" "}
-                  {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}.
+                  under {BRAND_CONFIG.company.roc}. Teams are based in {BRAND_CONFIG.offices.display.replace(" · ", " and ")}.
                 </p>
               </li>
               <li className="pl-8 relative">

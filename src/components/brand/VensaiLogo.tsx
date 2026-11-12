@@ -37,7 +37,7 @@ export function VensaiLogo({
         >
           <img
             src="/brand/vensai-logo-original.jpg"
-            alt="Vensai Labs — Expert Talent. Real Solutions. Build | Design | Automate | Scale"
+            alt="Vensai Labs — People. Technology. Innovation. Build | Design | Automate | Scale"
             width={1024}
             height={724}
             decoding="async"
@@ -52,16 +52,16 @@ export function VensaiLogo({
       return (
         <div className={`relative inline-flex flex-col items-center ${className}`}>
           <img
-            src="/brand/vensai-full-light.png"
-            alt="Vensai Labs — Expert Talent. Real Solutions. Build | Design | Automate | Scale"
+            src="/brand/vensai-full-light.jpg"
+            alt="Vensai Labs — People. Technology. Innovation. Build | Design | Automate | Scale"
             width={680}
             height={480}
             decoding="async"
             className="block dark:hidden w-full h-auto object-contain select-none"
           />
           <img
-            src="/brand/vensai-full-dark.png"
-            alt="Vensai Labs — Expert Talent. Real Solutions. Build | Design | Automate | Scale"
+            src="/brand/vensai-full-dark.jpg"
+            alt="Vensai Labs — People. Technology. Innovation. Build | Design | Automate | Scale"
             width={680}
             height={480}
             decoding="async"

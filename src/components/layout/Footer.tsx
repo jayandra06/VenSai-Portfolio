@@ -13,7 +13,7 @@ export function Footer() {
           <p className="text-sm text-slate-300">
             <span className="font-semibold text-white">{BRAND_CONFIG.legalLine}</span>
             <span className="mx-2 text-slate-600">·</span>
-            A software company across IT and non-IT.
+            {BRAND_CONFIG.tagline}
           </p>
           <div className="flex items-center gap-3">
             <Link
@@ -69,20 +69,7 @@ export function Footer() {
             </p>
 
             <div className="space-y-3 text-sm text-slate-400">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  {BRAND_CONFIG.offices.registered.label}
-                </p>
-                <p className="mt-1 text-slate-200">{BRAND_CONFIG.company.registeredOffice}</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  {BRAND_CONFIG.offices.hyderabad.label}
-                </p>
-                <p className="mt-1 leading-relaxed text-slate-200">
-                  {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}
-                </p>
-              </div>
+              <p className="text-slate-200">{BRAND_CONFIG.offices.display}</p>
               <p className="text-xs text-slate-500">
                 {BRAND_CONFIG.company.legalName}
                 <span className="mx-1.5">·</span>

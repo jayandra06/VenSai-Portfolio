@@ -60,14 +60,14 @@ export const metadata: Metadata = {
     siteName: "Vensai Labs",
     title: "Vensai Labs — Expert Talent. Real Solutions.",
     description:
-      "VenSai Labs by Vijetha Softwares Pvt. Ltd. A software company across IT and non-IT. Build • Design • Automate • Scale.",
+      "VenSai Labs by Vijetha Softwares Pvt. Ltd. People. Technology. Innovation. Build • Design • Automate • Scale.",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vensai Labs — Expert Talent. Real Solutions.",
     description:
-      "A software company across IT and non-IT. Build • Design • Automate • Scale.",
+      "People. Technology. Innovation. Build • Design • Automate • Scale.",
     images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {

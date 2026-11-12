@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { VensaiLogo } from "@/components/brand/VensaiLogo";
 import { useTheme } from "@/components/theme/ThemeProvider";
-import { SERVICE_CATEGORIES } from "@/data/vensai-data";
+import { BRAND_CONFIG, SERVICE_CATEGORIES } from "@/data/vensai-data";
 
 const SERVICE_GROUPS: {
   group: "Technology & Engineering" | "Enterprise & Commerce" | "Consulting & Operations" | "Brand, Growth & Creative";
@@ -142,19 +142,13 @@ export function Navbar() {
           <div className="flex items-center gap-2.5 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-vensai-electric shrink-0" />
             <span className="font-semibold tracking-[0.15em] uppercase text-slate-900 dark:text-white">
-              EXPERT TALENT. REAL SOLUTIONS.
+              {BRAND_CONFIG.tagline}
             </span>
           </div>
 
           {/* Right Side: Brand Statement & Consulting Quick-Link */}
           <div className="flex items-center gap-5 shrink-0">
-            <span className="text-slate-600 dark:text-slate-300">
-              Registered Office, Visakhapatnam
-            </span>
-            <span className="h-3.5 w-px bg-slate-300 dark:bg-slate-700" />
-            <span className="text-slate-600 dark:text-slate-300">
-              Hyderabad Business Unit, Gachibowli
-            </span>
+            <span className="text-slate-600 dark:text-slate-300">{BRAND_CONFIG.offices.display}</span>
           </div>
         </div>
       </div>
@@ -540,7 +534,7 @@ export function Navbar() {
             <div className="p-6 space-y-6">
               <div className="pb-4 border-b border-slate-200 dark:border-slate-800">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-vensai-electric">
-                  EXPERT TALENT. REAL SOLUTIONS.
+                  {BRAND_CONFIG.tagline}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                   BUILD • DESIGN • AUTOMATE • SCALE

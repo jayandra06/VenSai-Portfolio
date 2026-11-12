@@ -44,7 +44,7 @@ export default function TermsAndConditionsPage() {
             These terms govern your use of the {BRAND_CONFIG.shortName} website. By browsing the site, submitting an inquiry or applying for a role, you agree to these terms. If you do not agree, please do not use the site.
           </p>
           <p>
-            {BRAND_CONFIG.legalLine} is a software company across IT and non-IT. Tagline: &ldquo;{BRAND_CONFIG.tagline}&rdquo; Operating statement: &ldquo;{BRAND_CONFIG.statement}&rdquo; The registered office is in {BRAND_CONFIG.offices.registered.line}. The Hyderabad business unit is at {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}.
+            {BRAND_CONFIG.legalLine} is a software company across IT and non-IT. Tagline: &ldquo;{BRAND_CONFIG.tagline}&rdquo; Operating statement: &ldquo;{BRAND_CONFIG.statement}&rdquo; Operating presence: {BRAND_CONFIG.offices.display}. Statutory registered office details are on file with the Registrar of Companies and available on the MCA public register under CIN {BRAND_CONFIG.company.cin}.
           </p>
 
           <h2 className="text-xl font-semibold text-slate-900 dark:text-white pt-4">

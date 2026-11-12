@@ -12,7 +12,7 @@ export const DEFAULT_OG_IMAGE = {
   url: "/brand/vensai-logo-original.jpg",
   width: 1024,
   height: 724,
-  alt: "Vensai Labs — Expert Talent. Real Solutions. Build • Design • Automate • Scale.",
+  alt: "Vensai Labs — People. Technology. Innovation. Build • Design • Automate • Scale.",
 };
 
 // ── Geo-targeted hreflang alternates ──────────────────────────────────────────

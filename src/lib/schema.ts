@@ -22,7 +22,7 @@ export function buildRootGraphSchema() {
           contentUrl: `${SITE_URL}/brand/vensai-logo-original.jpg`,
           width: 1024,
           height: 724,
-          caption: "Vensai Labs — Expert Talent. Real Solutions.",
+          caption: "Vensai Labs — People. Technology. Innovation.",
         },
         image: `${SITE_URL}/brand/vensai-logo-original.jpg`,
         legalName: BRAND_CONFIG.company.legalName,
@@ -62,21 +62,15 @@ export function buildRootGraphSchema() {
         address: [
           {
             "@type": "PostalAddress",
-            streetAddress: "57-6-114/1, Aganampudi",
             addressLocality: "Visakhapatnam",
             addressRegion: "Andhra Pradesh",
-            postalCode: "530046",
             addressCountry: "IN",
-            name: BRAND_CONFIG.offices.registered.label,
           },
           {
             "@type": "PostalAddress",
-            streetAddress: "3rd Floor, Vasishta Bhavan, TCS Synergy Park, APHB, Gachibowli",
             addressLocality: "Hyderabad",
-            postalCode: "500032",
             addressRegion: "Telangana",
             addressCountry: "IN",
-            name: BRAND_CONFIG.offices.hyderabad.label,
           },
         ],
         parentOrganization: {

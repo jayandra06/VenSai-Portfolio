@@ -4,16 +4,16 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Reveal } from "@/components/ui/EnterpriseUI";
-import { BRAND_CONFIG } from "@/data/vensai-data";
+import { BRAND_CONFIG, SERVICE_CATEGORIES } from "@/data/vensai-data";
 
-const PRACTICES = [
+const PRACTICE_SUMMARY = [
   {
-    label: "IT",
-    items: ["Software, mobile and cloud", "AI, data and cybersecurity", "Enterprise systems and commerce"],
+    label: "Engineering",
+    items: ["Applications, APIs, mobile, cloud", "Security reviews and managed IT"],
   },
   {
-    label: "Non-IT",
-    items: ["KPO, BPO and managed operations", "Brand, design and production", "Internships and client support"],
+    label: "Operations & growth",
+    items: ["BPO/KPO and customer support", "Brand, catalog, and campaigns"],
   },
 ];
 
@@ -24,21 +24,18 @@ export function HeroSection() {
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="space-y-8 lg:col-span-7">
             <Reveal>
-              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                {BRAND_CONFIG.legalLine}
-              </p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">{BRAND_CONFIG.legalLine}</p>
             </Reveal>
 
             <Reveal delay={0.05}>
-              <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl xl:text-[52px] xl:leading-[1.12]">
-                A software company for businesses ready to{" "}
-                <span className="text-vensai-royal dark:text-vensai-electric">build and scale.</span>
+              <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl xl:text-[52px] xl:leading-[1.15]">
+                {BRAND_CONFIG.homepage.headline}
               </h1>
             </Reveal>
 
             <Reveal delay={0.1}>
               <p className="max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                VenSai Labs brings IT and non-IT under one roof. Software, cloud, security, commerce, brand, operations and support are staffed by our own experts and delivered as one engagement.
+                {BRAND_CONFIG.homepage.lead}
               </p>
             </Reveal>
 
@@ -48,14 +45,14 @@ export function HeroSection() {
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2.5 rounded-full bg-vensai-royal px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-vensai-electric"
                 >
-                  <span>Talk to Vensai</span>
+                  <span>Talk to us</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3.5 text-sm font-semibold text-slate-800 transition-colors hover:border-vensai-royal hover:text-vensai-royal dark:border-slate-600 dark:text-slate-100 dark:hover:border-vensai-electric dark:hover:text-vensai-electric"
                 >
-                  Explore services
+                  See what we do
                 </Link>
               </div>
             </Reveal>
@@ -63,16 +60,22 @@ export function HeroSection() {
             <Reveal delay={0.2}>
               <dl className="grid max-w-xl grid-cols-1 gap-6 border-t border-slate-200 pt-6 dark:border-slate-800 sm:grid-cols-3">
                 <div>
-                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">One company</dt>
-                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">A single team accountable for the work</dd>
+                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">CIN on record</dt>
+                  <dd className="mt-1 font-mono text-sm text-slate-500 dark:text-slate-400">
+                    {BRAND_CONFIG.company.cin}
+                  </dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">IT and non-IT</dt>
-                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">Engineering through operations and brand</dd>
+                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">Practice areas</dt>
+                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    {SERVICE_CATEGORIES.length} teams under one company
+                  </dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">After launch</dt>
-                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">Support that stays with the system</dd>
+                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">After go-live</dt>
+                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    Maintenance and support retained in-house
+                  </dd>
                 </div>
               </dl>
             </Reveal>
@@ -82,30 +85,26 @@ export function HeroSection() {
             <Reveal delay={0.1}>
               <div className="rounded-2xl border border-slate-200 bg-[#F7F9FC] p-6 shadow-enterprise dark:border-slate-800 dark:bg-[#18202a] sm:p-8">
                 <img
-                  src="/brand/vensai-full-light.png"
-                  alt="Vensai Labs — Expert Talent. Real Solutions. Build | Design | Automate | Scale"
-                  width={680}
-                  height={480}
+                  src="/brand/vensai-full-light.jpg"
+                  alt={`Vensai Labs — ${BRAND_CONFIG.tagline} ${BRAND_CONFIG.statementPipe}`}
+                  width={1024}
+                  height={724}
                   decoding="async"
                   fetchPriority="high"
-                  className="mx-auto block h-auto w-full max-w-[280px] object-contain dark:hidden"
+                  className="mx-auto block h-auto w-full max-w-[320px] object-contain dark:hidden"
                 />
                 <img
-                  src="/brand/vensai-full-dark.png"
-                  alt="Vensai Labs — Expert Talent. Real Solutions. Build | Design | Automate | Scale"
-                  width={680}
-                  height={480}
+                  src="/brand/vensai-full-dark.jpg"
+                  alt={`Vensai Labs — ${BRAND_CONFIG.tagline} ${BRAND_CONFIG.statementPipe}`}
+                  width={1024}
+                  height={724}
                   decoding="async"
                   fetchPriority="high"
-                  className="mx-auto hidden h-auto w-full max-w-[280px] object-contain dark:block"
+                  className="mx-auto hidden h-auto w-full max-w-[320px] object-contain dark:block"
                 />
 
-                <p className="mt-6 text-center text-xs font-semibold uppercase tracking-[0.18em] text-vensai-royal dark:text-vensai-electric">
-                  {BRAND_CONFIG.tagline}
-                </p>
-
                 <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  {PRACTICES.map((practice) => (
+                  {PRACTICE_SUMMARY.map((practice) => (
                     <div
                       key={practice.label}
                       className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-[#121820]"
@@ -122,26 +121,10 @@ export function HeroSection() {
                   ))}
                 </div>
 
-                <div className="mt-5 space-y-3 border-t border-slate-200 pt-5 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300">
-                  <p className="flex gap-2">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
-                    <span>
-                      <span className="font-medium text-slate-900 dark:text-white">
-                        {BRAND_CONFIG.offices.registered.label}.{" "}
-                      </span>
-                      {BRAND_CONFIG.company.registeredOffice}
-                    </span>
-                  </p>
-                  <p className="flex gap-2">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
-                    <span>
-                      <span className="font-medium text-slate-900 dark:text-white">
-                        {BRAND_CONFIG.offices.hyderabad.label}.{" "}
-                      </span>
-                      {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}
-                    </span>
-                  </p>
-                </div>
+                <p className="mt-5 flex items-center gap-2 border-t border-slate-200 pt-5 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300">
+                  <MapPin className="h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
+                  <span>{BRAND_CONFIG.offices.display}</span>
+                </p>
               </div>
             </Reveal>
           </div>

@@ -88,11 +88,16 @@ export const BRAND_CONFIG = {
   name: "VENSAI LABS",
   shortName: "Vensai Labs",
   legalLine: "VenSai Labs by Vijetha Softwares Pvt. Ltd.",
-  tagline: "EXPERT TALENT. REAL SOLUTIONS.",
+  tagline: "PEOPLE. TECHNOLOGY. INNOVATION.",
   statement: "BUILD • DESIGN • AUTOMATE • SCALE.",
   nameMeaning: "Venture for Startups and Institutes",
-  mission: "Crafted to support startups and institutes.",
-  positioning: "A software company across IT and non-IT.",
+  mission: "Built for startups, institutes, and growing businesses.",
+  positioning: "Private software company — IT and non-IT services under Vijetha Softwares.",
+  homepage: {
+    headline: "Software and day-to-day operations, handled by one company.",
+    lead:
+      "VenSai Labs is a brand of Vijetha Softwares Pvt. Ltd. Full-time teams in Hyderabad and Visakhapatnam work on engineering, commerce, design, BPO/KPO, and post-launch support—so you are not juggling separate vendors.",
+  },
   company: {
     legalName: "Vijetha Softwares Private Limited",
     shortLegalName: "Vijetha Softwares Pvt. Ltd.",
@@ -100,23 +105,15 @@ export const BRAND_CONFIG = {
     incorporated: "29 June 2022",
     roc: "RoC Vijayawada, Andhra Pradesh",
     status: "Active Private Limited Company",
-    registeredOffice: "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh, India - 530046",
+    /** MCA filing address — not shown on the marketing site; cities only in public UI. */
+    registeredOfficeLegal:
+      "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh, India - 530046",
     directors: ["Nookambika Mani Pilla", "Shubhanjali Patel"],
     collaboration: "HCTPL",
   },
   offices: {
-    registered: {
-      label: "Registered Office",
-      line: "Visakhapatnam, Andhra Pradesh, India",
-    },
-    hyderabad: {
-      label: "Hyderabad Business Unit",
-      lines: [
-        "3rd Floor, Vasishta Bhavan",
-        "TCS Synergy Park, APHB",
-        "Gachibowli, Hyderabad 500032",
-      ],
-    },
+    display: "Hyderabad · Visakhapatnam",
+    cities: ["Hyderabad", "Visakhapatnam"] as const,
   },
   statementPipe: "BUILD | DESIGN | AUTOMATE | SCALE",
   pillars: [
@@ -125,16 +122,14 @@ export const BRAND_CONFIG = {
     "END-TO-END DELIVERY.",
   ],
   coreProposition:
-    "Whatever your business needs — technology, software, managed IT, KPO and BPO, internships, e-commerce, cybersecurity, cloud, AI, enterprise systems, branding, marketing, research or operational support — Vensai brings the right expertise together and manages the engagement from requirement to delivery.",
+    "Tell us the outcome you need. We scope it, assign people from our own payroll, and stay on for maintenance and support when the work goes live.",
   contactPlaceholders: {
     email: "contact@vensailabs.in",
     consultingEmail: "contact@vensailabs.in",
     careersEmail: "careers@vensailabs.in",
     phone: "+91 8309057182",
     whatsapp: "+91 8309057182",
-    address: "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh 530046, India",
-    locations:
-      "Registered Office, Visakhapatnam • Hyderabad Business Unit, Gachibowli • Global Remote & On-Site Delivery",
+    locations: "Hyderabad · Visakhapatnam · Global delivery",
     hours: "Monday – Saturday (9:00 AM – 7:00 PM IST) • 24/7 Managed Operations Available",
   },
 };

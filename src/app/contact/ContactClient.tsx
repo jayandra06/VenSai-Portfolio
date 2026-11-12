@@ -396,24 +396,9 @@ export function ContactClient() {
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Share your requirement below. Our consulting and project management team will review your brief, evaluate technical feasibility, and connect you with the right Vensai specialists.
             </p>
-            <div className="grid gap-4 pt-2 sm:grid-cols-2">
-              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-[#121820]">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  {BRAND_CONFIG.offices.registered.label}
-                </p>
-                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-white">
-                  {BRAND_CONFIG.offices.registered.line}
-                </p>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-[#121820]">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  {BRAND_CONFIG.offices.hyderabad.label}
-                </p>
-                <p className="mt-1 text-sm font-medium leading-relaxed text-slate-900 dark:text-white">
-                  {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}
-                </p>
-              </div>
-            </div>
+            <p className="pt-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+              Offices: {BRAND_CONFIG.offices.display}
+            </p>
           </div>
         </div>
       </section>
@@ -518,17 +503,18 @@ export function ContactClient() {
                 <p>3. You receive a clear scope, team plan, timeline and commercial proposal.</p>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 space-y-1.5 text-xs text-slate-400">
-                <p className="font-semibold text-white uppercase tracking-wider text-[11px]">
-                  Registered Corporate Office
+              <div className="space-y-1.5 border-t border-slate-200 pt-4 text-xs text-slate-600 dark:border-slate-700 dark:text-slate-400">
+                <p className="font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
+                  Company
                 </p>
-                <p className="text-slate-200 font-medium">{BRAND_CONFIG.company.legalName}</p>
-                <p className="text-[11px]">
-                  CIN: <span className="font-mono text-vensai-electric">{BRAND_CONFIG.company.cin}</span> • {BRAND_CONFIG.company.roc}
+                <p className="font-medium text-slate-800 dark:text-slate-200">
+                  {BRAND_CONFIG.company.legalName}
                 </p>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
-                  {BRAND_CONFIG.company.registeredOffice}
+                <p>
+                  CIN: <span className="font-mono text-vensai-electric">{BRAND_CONFIG.company.cin}</span> ·{" "}
+                  {BRAND_CONFIG.company.roc}
                 </p>
+                <p>{BRAND_CONFIG.offices.display}</p>
               </div>
             </div>
           </div>
