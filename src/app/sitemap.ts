@@ -11,33 +11,10 @@ const LAST_MODIFIED_SERVICES = new Date("2026-10-22T00:00:00.000Z");
 // Abu Dhabi), Egypt, Italy (Rome), India — plus x-default fallback.
 const GEO_ALTERNATES = [
   { hreflang: "x-default", lang: "en" },
-  { hreflang: "en-US", lang: "en" },   // United States
-  { hreflang: "en-GB", lang: "en" },   // United Kingdom
-  { hreflang: "en-CA", lang: "en" },   // Canada
-  { hreflang: "en-AU", lang: "en" },   // Australia
-  { hreflang: "de-DE", lang: "de" },   // Germany
-  { hreflang: "en-DE", lang: "en" },   // Germany (English speakers)
-  { hreflang: "en-AE", lang: "en" },   // UAE — Dubai & Abu Dhabi
-  { hreflang: "ar-AE", lang: "ar" },   // UAE — Arabic speakers
-  { hreflang: "en-EG", lang: "en" },   // Egypt
-  { hreflang: "ar-EG", lang: "ar" },   // Egypt — Arabic speakers
-  { hreflang: "it-IT", lang: "it" },   // Italy (Rome)
-  { hreflang: "en-IT", lang: "en" },   // Italy — English speakers
-  { hreflang: "en-IN", lang: "en" },   // India
-  { hreflang: "hi-IN", lang: "hi" },   // India — Hindi speakers
-  // Broader European coverage
-  { hreflang: "en-FR", lang: "en" },   // France
-  { hreflang: "en-NL", lang: "en" },   // Netherlands
-  { hreflang: "en-ES", lang: "en" },   // Spain
-  { hreflang: "en-SE", lang: "en" },   // Sweden
-  { hreflang: "en-PL", lang: "en" },   // Poland
-  { hreflang: "en-CH", lang: "en" },   // Switzerland
-  { hreflang: "en-BE", lang: "en" },   // Belgium
-  { hreflang: "en-IE", lang: "en" },   // Ireland
-  { hreflang: "en-NO", lang: "en" },   // Norway
-  { hreflang: "en-DK", lang: "en" },   // Denmark
-  { hreflang: "en-FI", lang: "en" },   // Finland
-  { hreflang: "en-AT", lang: "en" },   // Austria
+  { hreflang: "en", lang: "en" },
+  { hreflang: "en-IN", lang: "en" },
+  { hreflang: "en-US", lang: "en" },
+  { hreflang: "en-GB", lang: "en" },
 ];
 
 /** Build the hreflang `alternates.languages` map for a given path */
@@ -63,6 +40,7 @@ const CORE_ROUTES: {
 }[] = [
   { path: "/",                         priority: 1.0,  changeFrequency: "weekly",  section: "home" },
   { path: "/services",                 priority: 0.95, changeFrequency: "weekly",  section: "services" },
+  { path: "/vendorship",               priority: 0.92, changeFrequency: "weekly",  section: "vendorship" },
   { path: "/solutions",                priority: 0.90, changeFrequency: "weekly",  section: "solutions" },
   { path: "/solutions/ecommerce",      priority: 0.90, changeFrequency: "weekly",  section: "solutions" },
   { path: "/solutions/consulting",     priority: 0.90, changeFrequency: "weekly",  section: "solutions" },

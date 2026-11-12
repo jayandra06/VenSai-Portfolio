@@ -97,7 +97,7 @@ export function CareersClient() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-vensai-electric">
-                10 PROFESSIONAL DISCIPLINES
+                {CAREER_ROLES.length} PROFESSIONAL DISCIPLINES
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">
                 Roles Across Vensai Labs
@@ -159,7 +159,7 @@ export function CareersClient() {
             Ready to Join Vensai Labs?
           </h2>
           <p className="text-base text-slate-300">
-            Send us your profile and portfolio, or apply directly to one of our 10 practice tracks. You can also reach our talent team at{" "}
+            Send us your profile and portfolio, or apply directly to one of our {CAREER_ROLES.length} practice tracks. You can also reach our talent team at{" "}
             <span className="text-vensai-electric font-mono">
               {BRAND_CONFIG.contactPlaceholders.careersEmail}
             </span>

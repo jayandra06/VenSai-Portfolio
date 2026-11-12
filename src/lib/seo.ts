@@ -21,33 +21,10 @@ export const DEFAULT_OG_IMAGE = {
 //          Egypt, Italy (Rome), India
 export const GEO_HREFLANG_ALTERNATES: Record<string, string> = {
   "x-default": SITE_URL,
-  "en-US": SITE_URL, // United States
-  "en-GB": SITE_URL, // United Kingdom
-  "en-CA": SITE_URL, // Canada
-  "en-AU": SITE_URL, // Australia
-  "de-DE": SITE_URL, // Germany
-  "en-DE": SITE_URL, // Germany — English speakers
-  "en-AE": SITE_URL, // UAE — Dubai & Abu Dhabi
-  "ar-AE": SITE_URL, // UAE — Arabic speakers
-  "en-EG": SITE_URL, // Egypt
-  "ar-EG": SITE_URL, // Egypt — Arabic speakers
-  "it-IT": SITE_URL, // Italy (Rome)
-  "en-IT": SITE_URL, // Italy — English speakers
-  "en-IN": SITE_URL, // India
-  "hi-IN": SITE_URL, // India — Hindi speakers
-  // Broader European coverage
-  "en-FR": SITE_URL, // France
-  "en-NL": SITE_URL, // Netherlands
-  "en-ES": SITE_URL, // Spain
-  "en-SE": SITE_URL, // Sweden
-  "en-PL": SITE_URL, // Poland
-  "en-CH": SITE_URL, // Switzerland
-  "en-BE": SITE_URL, // Belgium
-  "en-IE": SITE_URL, // Ireland
-  "en-NO": SITE_URL, // Norway
-  "en-DK": SITE_URL, // Denmark
-  "en-FI": SITE_URL, // Finland
-  "en-AT": SITE_URL, // Austria
+  "en": SITE_URL,
+  "en-IN": SITE_URL,
+  "en-US": SITE_URL,
+  "en-GB": SITE_URL,
 };
 
 // ── Comprehensive keyword library ─────────────────────────────────────────────
@@ -391,7 +368,12 @@ export const KEYWORDS_GEO = [
 
 // ── Combined base keywords (injected into EVERY page) ────────────────────────
 export const GEO_BASE_KEYWORDS: string[] = [
-  ...KEYWORDS_FREELANCE.slice(0, 8),
+  "software company India",
+  "IT outsourcing partner India",
+  "corporate IT vendorship India",
+  "BPO voice and chat process India",
+  "payroll management and enterprise software",
+  "IT and non-IT project delivery",
   ...KEYWORDS_BPO_KPO.slice(0, 8),
   ...KEYWORDS_SOFTWARE_COMPANY.slice(0, 8),
   ...KEYWORDS_PRODUCT_DEV.slice(0, 6),

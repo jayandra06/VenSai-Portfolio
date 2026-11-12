@@ -8,6 +8,7 @@ import { CookieConsent } from "@/components/ui/CookieConsent";
 import { ContactFab } from "@/components/ui/ContactFab";
 import { SITE_URL, DEFAULT_OG_IMAGE, GEO_BASE_KEYWORDS } from "@/lib/seo";
 import { buildRootGraphSchema } from "@/lib/schema";
+import { BRAND_CONFIG } from "@/data/vensai-data";
 import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
@@ -116,7 +117,10 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <Navbar />
+          <Navbar
+            brandTagline={BRAND_CONFIG.tagline}
+            officesDisplay={BRAND_CONFIG.offices.display}
+          />
           <main id="main-content" className="flex-1 w-full max-w-full overflow-x-hidden">
             {children}
           </main>

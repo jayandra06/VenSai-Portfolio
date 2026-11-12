@@ -94,9 +94,9 @@ export const BRAND_CONFIG = {
   mission: "Built for startups, institutes, and growing businesses.",
   positioning: "Private software company — IT and non-IT services under Vijetha Softwares.",
   homepage: {
-    headline: "Software and day-to-day operations, handled by one company.",
+    headline: "Software Built to Scale. Operations Built to Last.",
     lead:
-      "VenSai Labs is a brand of Vijetha Softwares Pvt. Ltd. Full-time teams in Hyderabad and Visakhapatnam work on engineering, commerce, design, BPO/KPO, and post-launch support—so you are not juggling separate vendors.",
+      "Vensai Labs delivers custom software, enterprise vendorship, non-IT projects, and voice & chat BPO?all from one accountable in-house team.",
   },
   company: {
     legalName: "Vijetha Softwares Private Limited",
@@ -816,11 +816,13 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       "Pair operations desks with Vensai engineering when the work should be automated instead of merely staffed",
     ],
     capabilities: [
-      "Business process outsourcing",
-      "Knowledge process outsourcing",
+      "Inbound & outbound voice process",
+      "Live chat & email support desks",
+      "Business process outsourcing (BPO)",
+      "Knowledge process outsourcing (KPO)",
       "Data entry & cleansing",
       "Research & analysis desks",
-      "Finance & accounts operations",
+      "Payroll & finance operations",
       "Document processing",
       "Back-office administration",
       "Customer operations",

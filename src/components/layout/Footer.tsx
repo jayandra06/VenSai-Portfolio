@@ -130,6 +130,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/vendorship" className="text-slate-400 hover:text-white transition-colors">
+                  Enterprise Vendorship
+                </Link>
+              </li>
+              <li>
                 <Link href="/industries" className="text-slate-400 hover:text-white transition-colors">
                   Industries
                 </Link>
@@ -237,6 +242,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/services/creative-production"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Creative Production
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/solutions/support"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
@@ -310,7 +323,7 @@ export function Footer() {
               </h3>
               <div className="flex flex-wrap gap-2">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/vensailabs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 text-xs font-medium border border-slate-800 hover:border-vensai-electric text-slate-300 hover:text-white rounded-sm transition-colors"
@@ -318,20 +331,12 @@ export function Footer() {
                   LinkedIn
                 </a>
                 <a
-                  href="https://x.com"
+                  href="https://wa.me/918309057182"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 text-xs font-medium border border-slate-800 hover:border-vensai-electric text-slate-300 hover:text-white rounded-sm transition-colors"
                 >
-                  X / Twitter
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-medium border border-slate-800 hover:border-vensai-electric text-slate-300 hover:text-white rounded-sm transition-colors"
-                >
-                  Instagram
+                  WhatsApp
                 </a>
               </div>
             </div>
