@@ -1,263 +1,146 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Layers, Shield, Cpu, Workflow } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { Reveal } from "@/components/ui/EnterpriseUI";
-import { BRAND_CONFIG, SERVICE_CATEGORIES } from "@/data/vensai-data";
+import { BRAND_CONFIG } from "@/data/vensai-data";
 
-const ECOSYSTEM_NODES = [
+const PRACTICES = [
   {
-    id: "build",
-    verb: "BUILD",
-    domain: "Technology & Engineering",
-    items: ["Custom Software & SaaS", "iOS, Android & Flutter Apps", "Cloud, DevOps & Cybersecurity"],
-    metric: "Categories 01 – 05",
+    label: "IT",
+    items: ["Software, mobile and cloud", "AI, data and cybersecurity", "Enterprise systems and commerce"],
   },
   {
-    id: "design",
-    verb: "DESIGN",
-    domain: "Brand, UI/UX & Production",
-    items: ["Brand Strategy & Visual Identity", "Enterprise Product UI/UX", "Commercial & Catalog Shoots"],
-    metric: "Categories 11 – 13",
-  },
-  {
-    id: "automate",
-    verb: "AUTOMATE",
-    domain: "Enterprise, AI & Integrations",
-    items: ["SAP BTP, Power BI & Tableau", "Applied AI, LLMs & RAG", "ERP, CRM & API Middleware"],
-    metric: "Categories 03, 06, 08",
-  },
-  {
-    id: "scale",
-    verb: "SCALE",
-    domain: "Commerce, Ops & Talent",
-    items: ["Shopify, WooCommerce, Odoo", "Managed IT, KPO & BPO", "Internships & 24/7 Support"],
-    metric: "Categories 07, 09, 10, 14 – 16",
+    label: "Non-IT",
+    items: ["KPO, BPO and managed operations", "Brand, design and production", "Internships and client support"],
   },
 ];
 
 export function HeroSection() {
-  const [activeNode, setActiveNode] = useState<string>("build");
-  const prefersReducedMotion = useReducedMotion();
-
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#0B1118] border-b border-slate-200 dark:border-slate-800/90">
-      {/* Subtle Architectural Grid & Blue Radial Accent */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-grid-light dark:bg-grid-dark bg-[size:48px_48px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-0 w-[640px] h-[640px] rounded-full bg-vensai-electric/10 dark:bg-vensai-electric/15 blur-[130px]"
-      />
+    <section className="relative overflow-hidden border-b border-slate-200 bg-white dark:border-slate-800/90 dark:bg-[#121820]">
+      <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-14 lg:pb-28 lg:pt-20">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-16">
+          <div className="space-y-8 lg:col-span-7">
+            <Reveal>
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                {BRAND_CONFIG.legalLine}
+              </p>
+            </Reveal>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-12 pb-20 lg:pt-20 lg:pb-28">
-        {/* Top Positioning Pill Bar */}
-        <Reveal>
-          <div className="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#111827]/90 text-xs font-semibold tracking-[0.16em] uppercase text-slate-700 dark:text-slate-300 mb-8">
-            <span className="w-2 h-2 rounded-full bg-vensai-electric animate-pulse" />
-            <span>VENSAI LABS</span>
-            <span className="text-vensai-electric">•</span>
-            <span className="text-vensai-royal dark:text-vensai-electric">
-              {BRAND_CONFIG.tagline}
-            </span>
-          </div>
-        </Reveal>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Left Column: Primary Enterprise Copy & CTAs */}
-          <div className="lg:col-span-7 space-y-8">
             <Reveal delay={0.05}>
-              <h1 className="text-4xl sm:text-5xl xl:text-[56px] font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.18] sm:leading-[1.22] xl:leading-[1.25]">
-                Technology, Talent &amp; Solutions for Businesses Ready to{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-vensai-royal via-vensai-electric to-vensai-sky">
-                  Build and Scale.
-                </span>
+              <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl xl:text-[52px] xl:leading-[1.12]">
+                A software company for businesses ready to{" "}
+                <span className="text-vensai-royal dark:text-vensai-electric">build and scale.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                From software, managed IT and cybersecurity to KPO, BPO, internships, e-commerce and brand, Vensai brings the expertise, people and execution required to move businesses forward.
+              <p className="max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                VenSai Labs brings IT and non-IT under one roof. Software, cloud, security, commerce, brand, operations and support are staffed by our own experts and delivered as one engagement.
               </p>
             </Reveal>
 
-            {/* Core Proposition Callout Box */}
             <Reveal delay={0.15}>
-              <div className="p-5 rounded-xl border-l-2 border-vensai-electric bg-[#F7F9FC] dark:bg-[#111827]/80 border border-slate-200/80 dark:border-slate-800/80 max-w-2xl">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-vensai-royal dark:text-vensai-electric mb-1.5">
-                  Full-Service Freelancing Agency &amp; Business Solutions Partner
-                </p>
-                <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                  {BRAND_CONFIG.coreProposition}
-                </p>
-              </div>
-            </Reveal>
-
-            {/* CTAs */}
-            <Reveal delay={0.2}>
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-3 px-7 py-4 text-sm font-semibold text-white bg-vensai-royal hover:bg-vensai-electric rounded-lg shadow-blue-glow transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-vensai-royal px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-vensai-electric"
                 >
                   <span>Talk to Vensai</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-semibold text-slate-900 dark:text-white bg-white dark:bg-[#111827] hover:bg-slate-50 dark:hover:bg-[#1F2937] border border-slate-300 dark:border-slate-700 hover:border-vensai-electric rounded-lg transition-all duration-200"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3.5 text-sm font-semibold text-slate-800 transition-colors hover:border-vensai-royal hover:text-vensai-royal dark:border-slate-600 dark:text-slate-100 dark:hover:border-vensai-electric dark:hover:text-vensai-electric"
                 >
-                  <span>Explore Services</span>
+                  Explore services
                 </Link>
               </div>
             </Reveal>
 
-            {/* Three Pillars Strip */}
-            <Reveal delay={0.25}>
-              <div className="pt-6 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-vensai-electric shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-                      One Business Partner
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                      Single accountable governance
-                    </p>
-                  </div>
+            <Reveal delay={0.2}>
+              <dl className="grid max-w-xl grid-cols-1 gap-6 border-t border-slate-200 pt-6 dark:border-slate-800 sm:grid-cols-3">
+                <div>
+                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">One company</dt>
+                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">A single team accountable for the work</dd>
                 </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-vensai-electric shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-                      Multiple Capabilities
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                      {SERVICE_CATEGORIES.length} in-house practice disciplines
-                    </p>
-                  </div>
+                <div>
+                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">IT and non-IT</dt>
+                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">Engineering through operations and brand</dd>
                 </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-vensai-electric shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-                      End-to-End Delivery
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                      Strategy through post-launch care
-                    </p>
-                  </div>
+                <div>
+                  <dt className="text-sm font-semibold text-slate-900 dark:text-white">After launch</dt>
+                  <dd className="mt-1 text-sm text-slate-500 dark:text-slate-400">Support that stays with the system</dd>
                 </div>
-              </div>
+              </dl>
             </Reveal>
           </div>
 
-          {/* Right Column: Sophisticated Enterprise Brand & Ecosystem Console */}
           <div className="lg:col-span-5">
-            <Reveal delay={0.15}>
-              <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-[#F7F9FC] dark:bg-[#080D14] p-4 sm:p-8 shadow-enterprise-lg overflow-hidden">
-                {/* Top Blueprint Header */}
-                <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200 dark:border-slate-800/90 text-[11px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                  <span>VENSAI DELIVERY ARCHITECTURE</span>
-                  <span className="text-vensai-electric font-semibold">ACTIVE SYSTEM</span>
+            <Reveal delay={0.1}>
+              <div className="rounded-2xl border border-slate-200 bg-[#F7F9FC] p-6 shadow-enterprise dark:border-slate-800 dark:bg-[#18202a] sm:p-8">
+                <img
+                  src="/brand/vensai-full-light.png"
+                  alt="Vensai Labs — Expert Talent. Real Solutions. Build | Design | Automate | Scale"
+                  width={680}
+                  height={480}
+                  decoding="async"
+                  fetchPriority="high"
+                  className="mx-auto block h-auto w-full max-w-[280px] object-contain dark:hidden"
+                />
+                <img
+                  src="/brand/vensai-full-dark.png"
+                  alt="Vensai Labs — Expert Talent. Real Solutions. Build | Design | Automate | Scale"
+                  width={680}
+                  height={480}
+                  decoding="async"
+                  fetchPriority="high"
+                  className="mx-auto hidden h-auto w-full max-w-[280px] object-contain dark:block"
+                />
+
+                <p className="mt-6 text-center text-xs font-semibold uppercase tracking-[0.18em] text-vensai-royal dark:text-vensai-electric">
+                  {BRAND_CONFIG.tagline}
+                </p>
+
+                <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {PRACTICES.map((practice) => (
+                    <div
+                      key={practice.label}
+                      className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-[#121820]"
+                    >
+                      <p className="text-sm font-semibold text-slate-900 dark:text-white">{practice.label}</p>
+                      <ul className="mt-2 space-y-1.5">
+                        {practice.items.map((item) => (
+                          <li key={item} className="text-sm leading-snug text-slate-600 dark:text-slate-300">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Official Uploaded Vensai Labs Identity Centerpiece */}
-                <div className="relative rounded-xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#05080D] p-6 flex flex-col items-center justify-center shadow-inner">
-                  {/* Light mode uses exact transparent light-mode extraction; Dark mode uses exact uploaded dark-mode lockup */}
-                  <img
-                    src="/brand/vensai-full-light.png"
-                    alt="Vensai Labs — Freelance Talent. Real Solutions. Build | Design | Automate | Scale"
-                    width={680}
-                    height={480}
-                    decoding="async"
-                    fetchPriority="high"
-                    className="block dark:hidden w-full max-w-[340px] h-auto object-contain select-none"
-                  />
-                  <img
-                    src="/brand/vensai-full-dark.png"
-                    alt="Vensai Labs — Freelance Talent. Real Solutions. Build | Design | Automate | Scale"
-                    width={680}
-                    height={480}
-                    decoding="async"
-                    fetchPriority="high"
-                    className="hidden dark:block w-full max-w-[340px] h-auto object-contain select-none"
-                  />
-                </div>
-
-                {/* Interactive 4-Pillar Ecosystem Selector: BUILD | DESIGN | AUTOMATE | SCALE */}
-                <div className="mt-6">
-                  <div className="grid grid-cols-4 gap-1 sm:gap-1.5 p-1 rounded-xl bg-slate-100/90 dark:bg-[#0c131f] border border-slate-200/90 dark:border-slate-800/80">
-                    {ECOSYSTEM_NODES.map((node) => {
-                      const active = activeNode === node.id;
-                      return (
-                        <motion.button
-                          key={node.id}
-                          type="button"
-                          aria-pressed={active}
-                          onClick={() => setActiveNode(node.id)}
-                          whileHover={prefersReducedMotion ? {} : { scale: 1.05, y: -1 }}
-                          whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
-                          transition={{ duration: 0.16 }}
-                          className={`w-full h-8 sm:h-9 px-0.5 sm:px-1.5 flex items-center justify-center text-center text-[8.5px] min-[360px]:text-[9.5px] sm:text-[10px] font-bold tracking-normal sm:tracking-wider uppercase rounded-lg transition-colors duration-200 truncate focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vensai-electric ${
-                            active
-                              ? "bg-gradient-to-r from-vensai-royal via-[#0072ff] to-vensai-electric text-white shadow-md shadow-vensai-royal/30 border border-vensai-sky/40"
-                              : "bg-white/70 dark:bg-[#121c2d]/70 text-slate-700 dark:text-slate-300 hover:text-vensai-royal dark:hover:text-vensai-electric hover:bg-white dark:hover:bg-[#18253b] border border-slate-200/60 dark:border-slate-800/80"
-                          }`}
-                        >
-                          {node.verb}
-                        </motion.button>
-                      );
-                    })}
-                  </div>
-
-                  {/* Animated Ecosystem Node Detail Panel */}
-                  <AnimatePresence mode="wait">
-                    {ECOSYSTEM_NODES.filter((node) => node.id === activeNode).map((node) => (
-                      <motion.div
-                        key={node.id}
-                        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 8, scale: 0.98 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -6, scale: 0.98 }}
-                        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                        className="mt-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827]/90"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-bold uppercase tracking-wider text-vensai-royal dark:text-vensai-electric">
-                            {node.verb} — {node.domain}
-                          </span>
-                          <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                            {node.metric}
-                          </span>
-                        </div>
-                        <ul className="space-y-1.5 mt-2.5">
-                          {node.items.map((it, ii) => (
-                            <motion.li
-                              key={it}
-                              initial={{ opacity: 0, x: -8 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.22, delay: ii * 0.06 }}
-                              className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300"
-                            >
-                              <span className="w-1.5 h-1.5 bg-vensai-electric rounded-full" />
-                              <span>{it}</span>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    ))}
-                  </AnimatePresence>
-                </div>
-
-                {/* Bottom Governance Bar */}
-                <div className="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800/90 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
-                  <span>A Complete Business Ecosystem</span>
-                  <span className="text-vensai-electric">•</span>
-                  <span>Central Project Management</span>
+                <div className="mt-5 space-y-3 border-t border-slate-200 pt-5 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300">
+                  <p className="flex gap-2">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
+                    <span>
+                      <span className="font-medium text-slate-900 dark:text-white">
+                        {BRAND_CONFIG.offices.registered.label}.{" "}
+                      </span>
+                      {BRAND_CONFIG.company.registeredOffice}
+                    </span>
+                  </p>
+                  <p className="flex gap-2">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
+                    <span>
+                      <span className="font-medium text-slate-900 dark:text-white">
+                        {BRAND_CONFIG.offices.hyderabad.label}.{" "}
+                      </span>
+                      {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}
+                    </span>
+                  </p>
                 </div>
               </div>
             </Reveal>

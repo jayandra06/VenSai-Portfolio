@@ -24,7 +24,7 @@ export function CookieConsent() {
     <div
       role="region"
       aria-label="Cookie Preferences"
-      className="fixed bottom-4 right-4 left-4 md:left-auto md:max-w-md z-40 bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 p-5 rounded-sm shadow-enterprise-lg"
+      className="fixed bottom-4 left-4 right-4 z-40 max-w-md rounded-sm border border-slate-200 bg-white p-5 shadow-enterprise-lg dark:border-slate-800 dark:bg-[#111827] md:right-auto"
     >
       <div className="flex items-start justify-between gap-4">
         <div>

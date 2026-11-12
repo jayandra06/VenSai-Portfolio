@@ -67,7 +67,7 @@ export function CareersClient() {
               Full-Time Stability &amp; Growth
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              You are a permanent member of Vensai’s professional staff—collaborating with senior architects, designers and project managers rather than chasing isolated freelance gigs.
+              You are a permanent member of Vensai’s professional staff—collaborating with senior architects, designers and project managers rather than moving from one short contract to the next.
             </p>
           </div>
           <div className="p-7 rounded-sm bg-[#F7F9FC] dark:bg-[#111827] border border-slate-200 dark:border-slate-800">

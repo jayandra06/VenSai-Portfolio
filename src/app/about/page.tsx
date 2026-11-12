@@ -9,13 +9,13 @@ import { buildWebPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
-    "About Vensai Labs — Full-Service Freelancing Agency & Business Solutions Partner",
+    "About Vensai Labs — Software Company for IT and Non-IT",
   description:
-    "Learn who Vensai Labs is, our philosophy, our full-time multidisciplinary teams, how we work, and why businesses partner with Vensai from requirement to post-deployment support.",
+    "VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company with full-time experts across IT and non-IT, from engineering through operations and support.",
   path: "/about",
   keywords: [
     "about Vensai Labs",
-    "full-service freelancing agency",
+    "software company Visakhapatnam Hyderabad",
     "business solutions consultancy",
     "managed technology delivery partner",
     "in-house engineering and consulting teams",
@@ -25,9 +25,9 @@ export const metadata: Metadata = buildPageMetadata({
 export default function AboutPage() {
   const aboutPageSchema = buildWebPageSchema({
     title:
-      "About Vensai Labs — Full-Service Freelancing Agency & Business Solutions Partner",
+      "About Vensai Labs — Software Company for IT and Non-IT",
     description:
-      "Vensai Labs is a full-service freelancing agency and business solutions consultancy employing full-time professionals across engineering, managed IT, KPO and BPO, internships, creative and support.",
+      "VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company employing full-time experts across engineering, managed IT, KPO and BPO, internships, creative and support.",
     path: "/about",
     type: "AboutPage",
   });
@@ -55,7 +55,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                Vensai Labs is a full-service freelancing agency and business solutions consultancy. We maintain our own full-time professional employees across technology, engineering, design, consulting, marketing, creative production and customer support—giving businesses access to specialized talent while Vensai itself manages project execution, delivery and post-deployment care.
+                VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company. We employ our own full-time experts across technology, engineering, design, consulting, marketing, creative production and customer support, and we manage the work from the first requirement through delivery and support.
               </p>
 
               <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -84,7 +84,7 @@ export default function AboutPage() {
               <div className="p-8 rounded-sm bg-white dark:bg-[#05080D] border border-slate-200 dark:border-slate-800 shadow-enterprise-lg flex flex-col items-center">
                 <img
                   src="/brand/vensai-full-light.png"
-                  alt="Vensai Labs Official Identity — Freelance Talent. Real Solutions."
+                  alt="Vensai Labs Official Identity — Expert Talent. Real Solutions."
                   width={680}
                   height={480}
                   decoding="async"
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 />
                 <img
                   src="/brand/vensai-full-dark.png"
-                  alt="Vensai Labs Official Identity — Freelance Talent. Real Solutions."
+                  alt="Vensai Labs Official Identity — Expert Talent. Real Solutions."
                   width={680}
                   height={480}
                   decoding="async"
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 />
                 <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 w-full text-center">
                   <p className="text-xs font-mono uppercase tracking-[0.2em] text-vensai-royal dark:text-vensai-electric">
-                    FREELANCE TALENT. REAL SOLUTIONS.
+                    EXPERT TALENT. REAL SOLUTIONS.
                   </p>
                   <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-slate-500 mt-1">
                     BUILD • DESIGN • AUTOMATE • SCALE
@@ -143,8 +143,12 @@ export default function AboutPage() {
                   {BRAND_CONFIG.company.legalName} is incorporated
                 </h3>
                 <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Registered as an active private limited technology company with Corporate Identification Number (CIN){" "}
-                  <span className="font-mono font-medium text-slate-900 dark:text-white">{BRAND_CONFIG.company.cin}</span> under {BRAND_CONFIG.company.roc}. Headquartered at {BRAND_CONFIG.company.registeredOffice}.
+                  Registered as an active private limited technology company with CIN{" "}
+                  <span className="font-mono font-medium text-slate-900 dark:text-white">
+                    {BRAND_CONFIG.company.cin}
+                  </span>{" "}
+                  under {BRAND_CONFIG.company.roc}. Registered office: {BRAND_CONFIG.company.registeredOffice}. Hyderabad business unit:{" "}
+                  {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}.
                 </p>
               </li>
               <li className="pl-8 relative">
@@ -183,7 +187,7 @@ export default function AboutPage() {
               Flexibility Without Fragmentation
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              Businesses often face a difficult trade-off: hire unverified individual freelancers with no central accountability, or retain rigid agencies that only understand a single discipline. Vensai was built to bridge that gap—combining the agility of on-demand talent with the structured governance of an enterprise consultancy.
+              A serious company should not have to assemble a different expert for every discipline. Vensai was built so software, operations, brand and support sit in one company, with the same project leadership from the first conversation through support.
             </p>
           </div>
 

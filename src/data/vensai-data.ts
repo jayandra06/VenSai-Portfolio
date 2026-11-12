@@ -87,13 +87,15 @@ export interface CaseStudyBlueprint {
 export const BRAND_CONFIG = {
   name: "VENSAI LABS",
   shortName: "Vensai Labs",
-  tagline: "FREELANCE TALENT. REAL SOLUTIONS.",
+  legalLine: "VenSai Labs by Vijetha Softwares Pvt. Ltd.",
+  tagline: "EXPERT TALENT. REAL SOLUTIONS.",
   statement: "BUILD • DESIGN • AUTOMATE • SCALE.",
   nameMeaning: "Venture for Startups and Institutes",
   mission: "Crafted to support startups and institutes.",
+  positioning: "A software company across IT and non-IT.",
   company: {
     legalName: "Vijetha Softwares Private Limited",
-    shortLegalName: "Vijetha Softwares Pvt Ltd",
+    shortLegalName: "Vijetha Softwares Pvt. Ltd.",
     cin: "U72900AP2022PTC122120",
     incorporated: "29 June 2022",
     roc: "RoC Vijayawada, Andhra Pradesh",
@@ -101,6 +103,20 @@ export const BRAND_CONFIG = {
     registeredOffice: "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh, India - 530046",
     directors: ["Nookambika Mani Pilla", "Shubhanjali Patel"],
     collaboration: "HCTPL",
+  },
+  offices: {
+    registered: {
+      label: "Registered Office",
+      line: "Visakhapatnam, Andhra Pradesh, India",
+    },
+    hyderabad: {
+      label: "Hyderabad Business Unit",
+      lines: [
+        "3rd Floor, Vasishta Bhavan",
+        "TCS Synergy Park, APHB",
+        "Gachibowli, Hyderabad 500032",
+      ],
+    },
   },
   statementPipe: "BUILD | DESIGN | AUTOMATE | SCALE",
   pillars: [
@@ -117,7 +133,8 @@ export const BRAND_CONFIG = {
     phone: "+91 8309057182",
     whatsapp: "+91 8309057182",
     address: "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh 530046, India",
-    locations: "Visakhapatnam, Andhra Pradesh • Global Remote & On-Site Delivery",
+    locations:
+      "Registered Office, Visakhapatnam • Hyderabad Business Unit, Gachibowli • Global Remote & On-Site Delivery",
     hours: "Monday – Saturday (9:00 AM – 7:00 PM IST) • 24/7 Managed Operations Available",
   },
 };
@@ -960,7 +977,7 @@ export const WHY_VENSAI_POINTS = [
   {
     title: "Full-Time Professional Teams",
     description:
-      "Unlike open freelancer marketplaces, Vensai employs dedicated full-time professionals across engineering, design, consulting, marketing and support.",
+      "Vensai employs its own full-time experts across engineering, design, consulting, marketing and support, and runs every engagement as one company.",
   },
   {
     title: "Multi-Disciplinary Expertise",
@@ -1635,7 +1652,7 @@ export const INSIGHTS_ARTICLES = [
     category: "Architecture & Delivery",
     readTime: "6 min read",
     author: "Vensai Labs Delivery & Architecture Practice",
-    title: "Why Businesses Are Moving From Fragmented Freelancers to Managed Agency Teams",
+    title: "Why Businesses Are Moving From Fragmented Experts to One Software Company",
     summary:
       "How combining full-time multidisciplinary specialists with central project management eliminates delivery risk across complex software and digital initiatives.",
     keyTakeaways: [
@@ -1646,10 +1663,10 @@ export const INSIGHTS_ARTICLES = [
     sections: [
       {
         heading: "The Hidden Cost of Fragmented Contractor Coordination",
-        body: "When organizations hire disconnected individual freelancers across UI/UX design, backend engineering, cloud infrastructure and digital marketing, internal leadership is forced to act as systems integrator and project manager. Scope gaps between contractors frequently surface late in development—leading to rework, security blind spots and post-launch abandonment.",
+        body: "When organizations hire disconnected outside experts across UI/UX design, backend engineering, cloud infrastructure and digital marketing, internal leadership is forced to act as systems integrator and project manager. Scope gaps between those experts frequently surface late in development—leading to rework, security blind spots and post-launch abandonment.",
       },
       {
-        heading: "The Managed Full-Time Agency Model",
+        heading: "One Software Company, Full-Time Experts",
         body: "Vensai Labs operates on a fundamentally different principle: businesses gain flexible access to specialized talent, but every engineer, designer, consultant and support specialist is a full-time Vensai professional working under central project management. Architecture, code quality, deployment pipelines and post-deployment SLAs remain unified under one accountable partner.",
       },
     ],
@@ -1750,9 +1767,9 @@ export const INSIGHTS_ARTICLES = [
 
 export const HOMEPAGE_FAQS = [
   {
-    question: "How is Vensai Labs different from a freelancer marketplace or a traditional IT agency?",
+    question: "How is Vensai Labs different from hiring separate experts or a single-skill vendor?",
     answer:
-      "Unlike open freelancer marketplaces where you must vet, hire and coordinate individual contractors yourself, Vensai Labs employs its own full-time professionals across software, mobile, AI, cloud, cybersecurity, enterprise technology, e-commerce, design, marketing and customer support. Unlike narrow single-discipline agencies, Vensai manages the entire engagement end-to-end under central project management.",
+      "Vensai Labs is a software company. We employ our own full-time experts across software, mobile, AI, cloud, cybersecurity, enterprise technology, e-commerce, design, marketing, KPO, BPO and customer support. IT and non-IT work sit in the same company, and one project team manages the engagement from requirement to delivery.",
   },
   {
     question: "What engagement models does Vensai Labs offer?",

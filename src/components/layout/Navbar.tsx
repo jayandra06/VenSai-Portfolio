@@ -142,25 +142,19 @@ export function Navbar() {
           <div className="flex items-center gap-2.5 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-vensai-electric shrink-0" />
             <span className="font-semibold tracking-[0.15em] uppercase text-slate-900 dark:text-white">
-              FREELANCE TALENT. REAL SOLUTIONS.
+              EXPERT TALENT. REAL SOLUTIONS.
             </span>
           </div>
 
           {/* Right Side: Brand Statement & Consulting Quick-Link */}
           <div className="flex items-center gap-5 shrink-0">
-            <span className="tracking-[0.14em] uppercase text-slate-700 dark:text-slate-300 font-semibold">
-              BUILD <span className="text-vensai-electric mx-1.5">|</span> DESIGN{" "}
-              <span className="text-vensai-electric mx-1.5">|</span> AUTOMATE{" "}
-              <span className="text-vensai-electric mx-1.5">|</span> SCALE
+            <span className="text-slate-600 dark:text-slate-300">
+              Registered Office, Visakhapatnam
             </span>
             <span className="h-3.5 w-px bg-slate-300 dark:bg-slate-700" />
-            <Link
-              href="/solutions/consulting"
-              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-sm bg-vensai-royal/10 dark:bg-vensai-electric/15 text-vensai-royal dark:text-vensai-electric hover:bg-vensai-royal hover:text-white dark:hover:bg-vensai-electric dark:hover:text-white font-semibold tracking-[0.08em] uppercase transition-colors"
-            >
-              <span>Feasibility &amp; R&amp;D</span>
-              <ArrowRight className="w-3 h-3" />
-            </Link>
+            <span className="text-slate-600 dark:text-slate-300">
+              Hyderabad Business Unit, Gachibowli
+            </span>
           </div>
         </div>
       </div>
@@ -371,7 +365,7 @@ export function Navbar() {
                     {SERVICE_CATEGORIES.length} Specialized Service Practice Areas
                   </p>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mt-0.5">
-                    Full-Service Freelancing Agency &amp; Business Solutions Partner
+                    IT and non-IT practices of one software company
                   </h3>
                 </div>
                 <div className="flex items-center gap-4">
@@ -546,7 +540,7 @@ export function Navbar() {
             <div className="p-6 space-y-6">
               <div className="pb-4 border-b border-slate-200 dark:border-slate-800">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-vensai-electric">
-                  FREELANCE TALENT. REAL SOLUTIONS.
+                  EXPERT TALENT. REAL SOLUTIONS.
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                   BUILD • DESIGN • AUTOMATE • SCALE

@@ -12,7 +12,7 @@ export const DEFAULT_OG_IMAGE = {
   url: "/brand/vensai-logo-original.jpg",
   width: 1024,
   height: 724,
-  alt: "Vensai Labs — Freelance Talent. Real Solutions. Build • Design • Automate • Scale.",
+  alt: "Vensai Labs — Expert Talent. Real Solutions. Build • Design • Automate • Scale.",
 };
 
 // ── Geo-targeted hreflang alternates ──────────────────────────────────────────
@@ -427,7 +427,7 @@ export function buildPageMetadata({
 
   const baseKeywords = [
     "Vensai Labs",
-    "freelancing agency",
+    "software company",
     "business solutions partner",
     "end-to-end delivery",
     "dedicated professional teams",

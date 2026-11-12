@@ -10,34 +10,26 @@ import { WHY_VENSAI_POINTS } from "@/data/vensai-data";
 export function WhyVensaiSection() {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <section className="py-24 bg-[#0B1118] text-white border-b border-slate-800/90 relative overflow-hidden">
-      {/* Subtle Blue Accent Glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -left-32 w-[520px] h-[520px] rounded-full bg-vensai-royal/15 blur-[130px]"
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6">
+    <section className="relative overflow-hidden border-b border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-[#121820] lg:py-24">
+      <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Sticky / Editorial Column */}
           <div className="lg:col-span-5 space-y-6">
             <Reveal>
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-electric">
-                <span className="w-2 h-2 bg-vensai-electric inline-block" />
-                <span>WHY VENSAI LABS</span>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-vensai-royal dark:text-vensai-electric">
+                <span>Why Vensai Labs</span>
               </div>
-              <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.3] sm:leading-[1.32] lg:leading-[1.35]">
-                More Than a Service Provider. A Long-Term Business Partner.
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                A software company, not a marketplace of separate people.
               </h2>
-              <p className="mt-4 text-base text-slate-300 leading-relaxed">
-                Vensai combines the flexibility of freelancing with the accountability of a professional agency. We maintain our own full-time professional employees across technology, engineering, design, consulting, marketing and operational support—giving your business direct access to specialized teams while Vensai manages execution from start to finish.
+              <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
+                Vensai employs its own full-time experts across technology, engineering, design, consulting, marketing and operations. IT and non-IT sit in the same company, and one team stays accountable from the first brief through support.
               </p>
 
-              {/* Strategic Positioning Comparison Card */}
-              <div className="mt-8 p-6 rounded-xl bg-[#111827] border border-slate-800 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                  <span className="text-xs font-bold uppercase tracking-widest text-vensai-electric">
-                    The Vensai Agency Advantage
+              <div className="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-[#F7F9FC] p-6 dark:border-slate-700 dark:bg-[#18202a]">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-3 dark:border-slate-700">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-vensai-royal dark:text-vensai-electric">
+                    How the company works
                   </span>
                   <img
                     src="/brand/vensai-symbol.png"
@@ -49,23 +41,23 @@ export function WhyVensaiSection() {
                     className="h-6 w-auto object-contain"
                   />
                 </div>
-                <div className="space-y-3 text-xs text-slate-300">
+                <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                   <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-vensai-electric shrink-0 mt-0.5" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
                     <p>
-                      <strong className="text-white">Not a freelancer marketplace:</strong> You never have to vet, coordinate or chase unverified individual contractors.
+                      <strong className="text-slate-900 dark:text-white">In-house experts.</strong> You work with Vensai staff, not a chain of outside contractors.
                     </p>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-vensai-electric shrink-0 mt-0.5" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
                     <p>
-                      <strong className="text-white">Not a narrow single-skill shop:</strong> Software, cloud, security, SAP/BI, e-commerce, creative shoots and support work together seamlessly.
+                      <strong className="text-slate-900 dark:text-white">IT and non-IT together.</strong> Software, cloud, security, commerce, brand and support share one delivery plan.
                     </p>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-vensai-electric shrink-0 mt-0.5" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
                     <p>
-                      <strong className="text-white">Centralized accountability:</strong> One contract, one project management structure, and continuous post-deployment ownership.
+                      <strong className="text-slate-900 dark:text-white">One accountable team.</strong> One contract, one project lead, and support that continues after launch.
                     </p>
                   </div>
                 </div>
@@ -81,7 +73,7 @@ export function WhyVensaiSection() {
                 </Link>
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 border border-slate-700 hover:border-vensai-electric rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3.5 text-sm font-semibold text-slate-700 transition-colors hover:border-vensai-royal hover:text-vensai-royal dark:border-slate-600 dark:text-slate-200"
                 >
                   <span>About Our Model</span>
                 </Link>
@@ -94,24 +86,21 @@ export function WhyVensaiSection() {
             {WHY_VENSAI_POINTS.map((point, index) => (
               <Reveal key={point.title} delay={index * 0.03}>
                 <motion.div
-                  whileHover={prefersReducedMotion ? {} : { y: -4, boxShadow: "0 8px 32px rgba(0,95,255,0.12)" }}
+                  whileHover={
+                    prefersReducedMotion ? {} : { y: -4, boxShadow: "0 8px 32px rgba(0,95,255,0.12)" }
+                  }
                   transition={{ duration: 0.22 }}
-                  className="h-full p-6 rounded-xl bg-[#111827]/90 border border-slate-800 hover:border-vensai-electric/70 transition-colors cursor-default"
+                  className="h-full cursor-default rounded-2xl border border-slate-200 bg-[#F7F9FC] p-6 transition-colors hover:border-vensai-royal/40 dark:border-slate-700 dark:bg-[#18202a]"
                 >
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-xs font-bold text-vensai-electric">
+                  <div className="mb-3 flex items-center justify-between">
+                    <span className="font-mono text-xs font-semibold text-vensai-royal dark:text-vensai-electric">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <motion.span
-                      className="w-1.5 h-1.5 rounded-full bg-vensai-electric/60"
-                      animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
-                      transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.15 }}
-                    />
                   </div>
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base font-semibold text-slate-900 dark:text-white">
                     {point.title}
                   </h3>
-                  <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                     {point.description}
                   </p>
                 </motion.div>

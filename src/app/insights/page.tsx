@@ -17,7 +17,7 @@ export const metadata: Metadata = buildPageMetadata({
     "technical feasibility guide",
     "e-commerce architecture comparison",
     "post-deployment support playbook",
-    "dedicated agency vs freelancer marketplace",
+    "software company vs separate experts",
   ],
 });
 

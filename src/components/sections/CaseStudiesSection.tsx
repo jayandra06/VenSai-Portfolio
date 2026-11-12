@@ -22,23 +22,19 @@ export function CaseStudiesAndCTASection() {
   return (
     <>
       {/* SECTION 16: CONSULTING / FEASIBILITY CTA */}
-      <section className="py-20 bg-[#080D14] text-white border-b border-slate-800 relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute top-0 right-1/4 w-96 h-96 rounded-full bg-vensai-electric/15 blur-[110px]"
-        />
-        <div className="relative max-w-7xl mx-auto px-6">
+      <section className="relative border-b border-slate-200 bg-[#F7F9FC] py-16 dark:border-slate-800 dark:bg-[#121820] lg:py-20">
+        <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
-            <div className="p-8 sm:p-12 lg:p-14 rounded-2xl bg-gradient-to-br from-[#111827] via-[#0B1118] to-[#111827] border border-slate-800 shadow-enterprise-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8 space-y-4">
-                <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-electric">
-                  <Compass className="w-4 h-4" />
-                  <span>TECHNICAL CONSULTING • RESEARCH &amp; FEASIBILITY</span>
+            <div className="grid grid-cols-1 items-center gap-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-enterprise sm:p-12 lg:grid-cols-12 lg:p-14 dark:border-slate-700 dark:bg-[#18202a]">
+              <div className="space-y-4 lg:col-span-8">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-vensai-royal dark:text-vensai-electric">
+                  <Compass className="h-4 w-4" />
+                  <span>Technical consulting</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+                <h2 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
                   Have an idea but don&apos;t know where to start?
                 </h2>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                <p className="max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
                   Talk to our team about your technology, product, e-commerce or business requirement. We can help evaluate feasibility, define the right approach and build a practical roadmap.
                 </p>
               </div>
@@ -52,7 +48,7 @@ export function CaseStudiesAndCTASection() {
                 </Link>
                 <Link
                   href="/solutions/consulting"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white border border-slate-700 hover:border-vensai-electric rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-7 py-3.5 text-sm font-semibold text-slate-700 transition-colors hover:border-vensai-royal hover:text-vensai-royal dark:border-slate-600 dark:text-slate-200"
                 >
                   <span>Explore Consulting &amp; R&amp;D</span>
                 </Link>
@@ -236,7 +232,7 @@ export function CaseStudiesAndCTASection() {
             <SectionHeader
               eyebrow="FREQUENTLY ASKED QUESTIONS"
               title="How Vensai Labs Engages, Delivers & Supports."
-              description="Direct answers on how our full-time agency model, engagement structures, intellectual property governance and multi-disciplinary capabilities work."
+              description="Direct answers on how a software company with IT and non-IT practices engages, delivers and stays on after launch."
             />
           </Reveal>
           <Reveal delay={0.1}>
@@ -248,17 +244,8 @@ export function CaseStudiesAndCTASection() {
       </section>
 
       {/* SECTION 36: HOMEPAGE FINAL CTA */}
-      <section className="py-24 bg-[#0B1118] text-white relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-grid-dark bg-[size:48px_48px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full bg-vensai-royal/20 blur-[130px]"
-        />
-
-        <div className="relative max-w-4xl mx-auto px-6 text-center space-y-8">
+      <section className="relative border-t border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-[#121820] lg:py-24">
+        <div className="relative mx-auto max-w-3xl space-y-8 px-6 text-center">
           <Reveal>
             <div className="inline-flex flex-col items-center gap-3 mb-2">
               <img
@@ -275,11 +262,11 @@ export function CaseStudiesAndCTASection() {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white leading-[1.12]">
-              Whatever You’re Building, Let’s Build It Right.
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl sm:leading-[1.12]">
+              Whatever you’re building, let’s build it right.
             </h2>
 
-            <p className="mt-5 text-base sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
               Tell us what your business needs. Our team will help you understand the requirement, evaluate the right approach and bring together the expertise required to deliver it.
             </p>
 
@@ -293,7 +280,7 @@ export function CaseStudiesAndCTASection() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white bg-[#111827] hover:bg-[#1F2937] border border-slate-700 hover:border-vensai-electric rounded-lg transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-8 py-4 text-sm font-semibold text-slate-800 transition-colors hover:border-vensai-royal hover:text-vensai-royal dark:border-slate-600 dark:text-slate-100"
               >
                 <span>Explore Services</span>
               </Link>

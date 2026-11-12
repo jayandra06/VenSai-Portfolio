@@ -11,32 +11,31 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: "dark",
+  theme: "light",
   toggleTheme: () => {},
   setTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem("vensai-theme") as Theme | null;
+    const saved = localStorage.getItem("vensai-theme-v2") as Theme | null;
     if (saved === "light" || saved === "dark") {
       setThemeState(saved);
       document.documentElement.classList.toggle("dark", saved === "dark");
     } else {
-      // Default to dark mode to showcase the flagship dark Vensai identity immediately, while allowing one-click light mode toggle
-      setThemeState("dark");
-      document.documentElement.classList.add("dark");
+      setThemeState("light");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const setTheme = (next: Theme) => {
     setThemeState(next);
     if (typeof window !== "undefined") {
-      localStorage.setItem("vensai-theme", next);
+      localStorage.setItem("vensai-theme-v2", next);
       document.documentElement.classList.toggle("dark", next === "dark");
     }
   };
@@ -48,7 +47,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <ThemeContext.Provider
       value={{
-        theme: mounted ? theme : "dark",
+        theme: mounted ? theme : "light",
         toggleTheme,
         setTheme,
       }}

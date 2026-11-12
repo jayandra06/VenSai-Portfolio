@@ -1,37 +1,33 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Mail, Phone, Globe } from "lucide-react";
-import { VensaiLogo } from "@/components/brand/VensaiLogo";
 import { BRAND_CONFIG } from "@/data/vensai-data";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#080D13] text-slate-300 border-t border-slate-800/90 w-full max-w-full overflow-hidden">
-      {/* Top Executive Brand Strip */}
-      <div className="border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
-            <span className="text-white">ONE BUSINESS PARTNER.</span>
-            <span className="text-vensai-electric">•</span>
-            <span className="text-white">MULTIPLE CAPABILITIES.</span>
-            <span className="text-vensai-electric">•</span>
-            <span className="text-white">END-TO-END DELIVERY.</span>
-          </div>
-          <div className="flex items-center gap-4">
+    <footer className="w-full max-w-full overflow-hidden border-t border-slate-800 bg-[#101820] text-slate-300">
+      <div className="border-b border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 px-6 py-7 md:flex-row md:items-center">
+          <p className="text-sm text-slate-300">
+            <span className="font-semibold text-white">{BRAND_CONFIG.legalLine}</span>
+            <span className="mx-2 text-slate-600">·</span>
+            A software company across IT and non-IT.
+          </p>
+          <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-vensai-royal hover:bg-vensai-electric text-white rounded-sm transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-vensai-royal px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-vensai-electric"
             >
               <span>Talk to Vensai</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider border border-slate-700 hover:border-vensai-electric text-slate-200 rounded-sm transition-colors"
+              className="inline-flex items-center rounded-full border border-slate-600 px-4 py-2.5 text-sm font-semibold text-slate-100 transition-colors hover:border-white"
             >
-              <span>Explore Services</span>
+              Services
             </Link>
           </div>
         </div>
@@ -65,33 +61,38 @@ export function Footer() {
               </Link>
             </div>
 
-            <div className="space-y-1.5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-white">
-                {BRAND_CONFIG.tagline}
-              </p>
-              <p className="text-[11px] font-medium tracking-[0.24em] uppercase text-vensai-electric">
-                BUILD <span className="mx-1 text-slate-600">|</span> DESIGN{" "}
-                <span className="mx-1 text-slate-600">|</span> AUTOMATE{" "}
-                <span className="mx-1 text-slate-600">|</span> SCALE
-              </p>
-            </div>
+            <p className="text-sm font-medium text-white">{BRAND_CONFIG.tagline}</p>
 
-            <p className="text-sm text-slate-400 leading-relaxed pr-4">
-              <span className="text-white font-semibold">VenSai</span> — {BRAND_CONFIG.nameMeaning}. Vensai Labs is {BRAND_CONFIG.mission.toLowerCase()} We bring engineering, managed IT, KPO and BPO, internships, commerce, brand and support together and manage engagements from requirement to delivery.
+            <p className="pr-4 text-sm leading-relaxed text-slate-400">
+              <span className="font-semibold text-white">VenSai</span> — {BRAND_CONFIG.nameMeaning}.{" "}
+              {BRAND_CONFIG.mission} Engineering, managed IT, KPO and BPO, internships, commerce, brand and support are delivered by one company.
             </p>
 
-            <div className="p-4 rounded-sm border border-slate-800 bg-[#0B1118] text-xs text-slate-400 space-y-1.5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-vensai-electric">
-                A brand of
+            <div className="space-y-3 text-sm text-slate-400">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                  {BRAND_CONFIG.offices.registered.label}
+                </p>
+                <p className="mt-1 text-slate-200">{BRAND_CONFIG.company.registeredOffice}</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                  {BRAND_CONFIG.offices.hyderabad.label}
+                </p>
+                <p className="mt-1 leading-relaxed text-slate-200">
+                  {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}
+                </p>
+              </div>
+              <p className="text-xs text-slate-500">
+                {BRAND_CONFIG.company.legalName}
+                <span className="mx-1.5">·</span>
+                CIN {BRAND_CONFIG.company.cin}
+                <span className="mx-1.5">·</span>
+                {BRAND_CONFIG.company.roc}
               </p>
-              <p className="text-sm font-semibold text-white">{BRAND_CONFIG.company.legalName}</p>
-              <p>
-                CIN: <span className="font-mono text-slate-300">{BRAND_CONFIG.company.cin}</span> • {BRAND_CONFIG.company.roc}
+              <p className="text-[11px] text-slate-500">
+                In collaboration with {BRAND_CONFIG.company.collaboration}
               </p>
-              <p className="text-[11px] text-slate-400 leading-snug">
-                Regd Office: {BRAND_CONFIG.company.registeredOffice}
-              </p>
-              <p className="pt-0.5 text-[11px]">In collaboration with {BRAND_CONFIG.company.collaboration}</p>
             </div>
 
             <div className="pt-2 space-y-2 text-xs text-slate-400">
@@ -114,7 +115,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-start gap-2.5">
-                <Globe className="w-3.5 h-3.5 text-vensai-electric shrink-0 mt-0.5" />
+                <Globe className="mt-0.5 h-3.5 w-3.5 shrink-0 text-vensai-electric" />
                 <span className="leading-snug">{BRAND_CONFIG.contactPlaceholders.locations}</span>
               </div>
             </div>
@@ -369,16 +370,24 @@ export function Footer() {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="border-t border-slate-800/80 bg-[#05080D]">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p className="text-center sm:text-left">
-            © {currentYear} Vensai Labs, a brand of {BRAND_CONFIG.company.shortLegalName}. CIN:{" "}
-            <span className="font-mono">{BRAND_CONFIG.company.cin}</span>. All rights reserved.
+      <div className="border-t border-white/10 bg-[#0c141c]">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-6 py-5 text-xs text-slate-400 sm:flex-row sm:items-center">
+          <p>
+            © {currentYear} {BRAND_CONFIG.legalLine}. All rights reserved.
           </p>
-          <p className="tracking-wider uppercase text-[11px] text-slate-400">
-            FREELANCE TALENT. REAL SOLUTIONS. <span className="text-vensai-electric mx-1.5">•</span>{" "}
-            BUILD | DESIGN | AUTOMATE | SCALE
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link href="/privacy-notice" className="hover:text-white">
+              Privacy Notice
+            </Link>
+            <Link href="/cookies" className="hover:text-white">
+              Cookie Policy
+            </Link>
+            <Link href="/terms-and-conditions" className="hover:text-white">
+              Terms
+            </Link>
+            <span className="hidden text-slate-600 sm:inline">·</span>
+            <span className="tracking-wide text-slate-300">{BRAND_CONFIG.tagline}</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -44,7 +44,7 @@ export default function TermsAndConditionsPage() {
             These terms govern your use of the {BRAND_CONFIG.shortName} website. By browsing the site, submitting an inquiry or applying for a role, you agree to these terms. If you do not agree, please do not use the site.
           </p>
           <p>
-            {BRAND_CONFIG.shortName} is a full-service freelancing agency and business solutions partner. Tagline: &ldquo;{BRAND_CONFIG.tagline}&rdquo; Operating statement: &ldquo;{BRAND_CONFIG.statement}&rdquo;
+            {BRAND_CONFIG.legalLine} is a software company across IT and non-IT. Tagline: &ldquo;{BRAND_CONFIG.tagline}&rdquo; Operating statement: &ldquo;{BRAND_CONFIG.statement}&rdquo; The registered office is in {BRAND_CONFIG.offices.registered.line}. The Hyderabad business unit is at {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}.
           </p>
 
           <h2 className="text-xl font-semibold text-slate-900 dark:text-white pt-4">

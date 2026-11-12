@@ -396,6 +396,24 @@ export function ContactClient() {
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Share your requirement below. Our consulting and project management team will review your brief, evaluate technical feasibility, and connect you with the right Vensai specialists.
             </p>
+            <div className="grid gap-4 pt-2 sm:grid-cols-2">
+              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-[#121820]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                  {BRAND_CONFIG.offices.registered.label}
+                </p>
+                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-white">
+                  {BRAND_CONFIG.offices.registered.line}
+                </p>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-[#121820]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                  {BRAND_CONFIG.offices.hyderabad.label}
+                </p>
+                <p className="mt-1 text-sm font-medium leading-relaxed text-slate-900 dark:text-white">
+                  {BRAND_CONFIG.offices.hyderabad.lines.join(", ")}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -414,20 +432,20 @@ export function ContactClient() {
 
           {/* Right 4 Columns: Prefer a Direct Conversation? */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="p-8 rounded-sm bg-[#0B1118] text-white border border-slate-800 shadow-enterprise space-y-6">
+            <div className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-enterprise dark:border-slate-700 dark:bg-[#18202a]">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-vensai-electric">
-                  DIRECT CHANNELS
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-vensai-royal dark:text-vensai-electric">
+                  Direct channels
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold text-white">
+                <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">
                   Prefer a direct conversation?
                 </h2>
-                <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                   Reach our consulting and client engagement team directly via phone, WhatsApp or email.
                 </p>
               </div>
 
-              <div className="space-y-4 pt-2 border-t border-slate-800">
+              <div className="space-y-4 border-t border-slate-200 pt-2 dark:border-slate-700">
                 <a
                   href={`tel:${BRAND_CONFIG.contactPlaceholders.phone.replace(/[^+\d]/g, "")}`}
                   onClick={() =>
@@ -435,14 +453,14 @@ export function ContactClient() {
                       channel: "phone",
                     })
                   }
-                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 hover:border-vensai-electric flex items-start gap-3.5 transition-colors block group cursor-pointer"
+                  className="group flex cursor-pointer items-start gap-3.5 rounded-xl border border-slate-200 bg-[#F7F9FC] p-4 transition-colors hover:border-vensai-royal dark:border-slate-700 dark:bg-[#121820]"
                 >
                   <Phone className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-vensai-electric transition-colors">
                       Phone Consultation
                     </p>
-                    <p className="text-sm font-mono font-semibold text-white mt-0.5">
+                    <p className="mt-0.5 font-mono text-sm font-semibold text-slate-900 dark:text-white">
                       {BRAND_CONFIG.contactPlaceholders.phone}
                     </p>
                   </div>
@@ -457,14 +475,14 @@ export function ContactClient() {
                       channel: "whatsapp",
                     })
                   }
-                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 hover:border-vensai-electric flex items-start gap-3.5 transition-colors block group cursor-pointer"
+                  className="group flex cursor-pointer items-start gap-3.5 rounded-xl border border-slate-200 bg-[#F7F9FC] p-4 transition-colors hover:border-vensai-royal dark:border-slate-700 dark:bg-[#121820]"
                 >
                   <MessageSquare className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-vensai-electric transition-colors">
                       WhatsApp Business
                     </p>
-                    <p className="text-sm font-mono font-semibold text-white mt-0.5">
+                    <p className="mt-0.5 font-mono text-sm font-semibold text-slate-900 dark:text-white">
                       {BRAND_CONFIG.contactPlaceholders.whatsapp}
                     </p>
                   </div>
@@ -477,22 +495,22 @@ export function ContactClient() {
                       channel: "email",
                     })
                   }
-                  className="p-4 rounded-sm bg-[#111827] border border-slate-800 hover:border-vensai-electric flex items-start gap-3.5 transition-colors block group cursor-pointer"
+                  className="group flex cursor-pointer items-start gap-3.5 rounded-xl border border-slate-200 bg-[#F7F9FC] p-4 transition-colors hover:border-vensai-royal dark:border-slate-700 dark:bg-[#121820]"
                 >
                   <Mail className="w-5 h-5 text-vensai-electric shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-vensai-electric transition-colors">
                       Direct Email
                     </p>
-                    <p className="text-sm font-mono font-semibold text-white mt-0.5">
+                    <p className="mt-0.5 font-mono text-sm font-semibold text-slate-900 dark:text-white">
                       {BRAND_CONFIG.contactPlaceholders.email}
                     </p>
                   </div>
                 </a>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 space-y-2.5 text-xs text-slate-400">
-                <p className="font-semibold text-white uppercase tracking-wider">
+              <div className="space-y-2.5 border-t border-slate-200 pt-4 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300">
+                <p className="font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
                   What Happens Next?
                 </p>
                 <p>1. We review your requirement and assign a relevant domain lead.</p>

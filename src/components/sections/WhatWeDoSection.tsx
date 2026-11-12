@@ -244,22 +244,16 @@ export function WhatWeDoSection() {
       id="what-we-do"
       className="relative py-24 bg-[#F7F9FC] dark:bg-[#080D14] border-b border-slate-200 dark:border-slate-800/90 overflow-hidden"
     >
-      {/* Ambient glow blobs */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 right-0 w-[420px] h-[420px] rounded-full bg-vensai-electric/10 blur-[120px]"
+        className="pointer-events-none absolute -top-24 right-0 h-[420px] w-[420px] rounded-full bg-vensai-electric/10 blur-[120px]"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-1/4 w-[300px] h-[300px] rounded-full bg-vensai-royal/8 blur-[100px]"
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative mx-auto max-w-7xl px-6">
         <Reveal>
           <SectionHeader
             eyebrow={`THE PRACTICE FLOOR • ${SERVICE_CATEGORIES.length} DISCIPLINES`}
-            title="One studio. Every kind of work a serious company asks for."
-            description="Software, cybersecurity, managed IT, KPO and BPO, internships, commerce, brand and support live on the same floor. Pick a studio, open a brief, and see the work the way we actually staff it."
+            title="One company. IT and non-IT, staffed in-house."
+            description="Software, cybersecurity, managed IT, KPO and BPO, internships, commerce, brand and support sit in the same company. Open a practice and see how it is staffed."
             action={
               <Link
                 href="/services"

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { ContactFab } from "@/components/ui/ContactFab";
 import { SITE_URL, DEFAULT_OG_IMAGE, GEO_BASE_KEYWORDS } from "@/lib/seo";
 import { buildRootGraphSchema } from "@/lib/schema";
 import { Analytics } from "@vercel/analytics/next";
@@ -25,18 +26,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Vensai Labs | Freelance Talent. Real Solutions. — Enterprise Technology & Business Partner",
+      "Vensai Labs | Expert Talent. Real Solutions. — Software Company",
     template: "%s | Vensai Labs",
   },
   description:
-    "Vensai Labs is a full-service freelancing agency and business solutions partner delivering software engineering, mobile apps, AI/ML, cloud & DevOps, cybersecurity, SAP/BI, e-commerce, consulting, branding, marketing and post-deployment support.",
+    "VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company with IT and non-IT practices: software engineering, mobile, AI, cloud, cybersecurity, SAP/BI, e-commerce, consulting, brand, KPO, BPO and support.",
   applicationName: "Vensai Labs",
   authors: [{ name: "Vensai Labs", url: SITE_URL }],
   creator: "Vensai Labs",
   publisher: "Vensai Labs",
   keywords: [
     "Vensai Labs",
-    "Freelancing Agency",
+    "Software Company",
     "Business Solutions Partner",
     "Technology Partner",
     "Software Development Agency",
@@ -57,16 +58,16 @@ export const metadata: Metadata = {
     ],
     url: `${SITE_URL}/`,
     siteName: "Vensai Labs",
-    title: "Vensai Labs — Freelance Talent. Real Solutions.",
+    title: "Vensai Labs — Expert Talent. Real Solutions.",
     description:
-      "One Business Partner. Multiple Capabilities. End-to-End Delivery. Build • Design • Automate • Scale.",
+      "VenSai Labs by Vijetha Softwares Pvt. Ltd. A software company across IT and non-IT. Build • Design • Automate • Scale.",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vensai Labs — Freelance Talent. Real Solutions.",
+    title: "Vensai Labs — Expert Talent. Real Solutions.",
     description:
-      "Full-service freelancing agency and business solutions consultancy. Build • Design • Automate • Scale.",
+      "A software company across IT and non-IT. Build • Design • Automate • Scale.",
     images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {
@@ -100,7 +101,7 @@ export default function RootLayout({
   const rootGraphSchema = buildRootGraphSchema();
 
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${manrope.variable} font-sans bg-white dark:bg-[#0B1118] text-slate-900 dark:text-slate-100 antialiased selection:bg-vensai-electric selection:text-white min-h-screen flex flex-col w-full max-w-full overflow-x-hidden`}
       >
@@ -121,6 +122,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <CookieConsent />
+          <ContactFab />
         </ThemeProvider>
         <Analytics />
       </body>

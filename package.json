@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
+    "dev:3010": "next dev --turbopack -p 3010",
+    "dev:3060": "next dev --turbopack -p 3060",
+    "dev:webpack": "next dev",
+    "dev:local": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/dev-local.ps1",
+    "link-deps": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/link-local-deps.ps1",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

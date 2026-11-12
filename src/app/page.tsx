@@ -19,29 +19,20 @@ import {
 
 export const metadata: Metadata = buildPageMetadata({
   title:
-    "Vensai Labs | Freelance Talent. Real Solutions. — Software Company, BPO/KPO, Startup Incubator & Business Consultancy",
+    "Vensai Labs | Expert Talent. Real Solutions. — Software Company, BPO/KPO, Startup Incubator & Business Consultancy",
   description:
-    "Vensai Labs is a full-service software company, BPO/KPO agency, startup incubator and business consultancy. Hire freelance developers, outsource business processes, launch your startup MVP, get B2B consulting, and access IT placements & internships — serving USA, UK, Canada, Australia, UAE, Germany, India and beyond.",
+    "VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company, BPO/KPO partner, startup incubator and business consultancy with in-house experts across software, cloud, AI, managed IT, e-commerce, consulting and support — serving USA, UK, Canada, Australia, UAE, Germany, India and beyond.",
   path: "/",
   keywords: [
-    // Freelance talent
     ...KEYWORDS_FREELANCE,
-    // BPO & KPO
     ...KEYWORDS_BPO_KPO,
-    // Software company
     ...KEYWORDS_SOFTWARE_COMPANY,
-    // Product dev
     ...KEYWORDS_PRODUCT_DEV,
-    // Startup incubator
     ...KEYWORDS_STARTUP,
-    // B2B / investment consulting
     ...KEYWORDS_B2B_CONSULTING,
-    // Business consultancy
     ...KEYWORDS_CONSULTANCY,
-    // Placements & internships
     ...KEYWORDS_PLACEMENTS,
-    // Hand-curated homepage terms
-    "full-service freelancing agency",
+    "software company India",
     "enterprise technology consultancy",
     "managed e-commerce solutions",
     "dedicated engineering teams",
@@ -55,9 +46,9 @@ export const metadata: Metadata = buildPageMetadata({
 export default function HomePage() {
   const webPageSchema = buildWebPageSchema({
     title:
-      "Vensai Labs | Freelance Talent. Real Solutions. — Enterprise Technology & Business Partner",
+      "Vensai Labs | Expert Talent. Real Solutions. — Software Company",
     description:
-      "Full-service freelancing agency and business solutions consultancy managing project execution, dedicated specialists, managed IT, KPO and BPO, internships, consulting and post-deployment support.",
+      "VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company managing IT and non-IT work: software, managed IT, KPO and BPO, internships, consulting and post-deployment support.",
     path: "/",
   });
   const faqSchema = buildFaqSchema(HOMEPAGE_FAQS, "/");
