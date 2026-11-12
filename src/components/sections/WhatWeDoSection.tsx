@@ -14,6 +14,7 @@ import {
   Compass,
   GraduationCap,
   Headphones,
+  Layers,
   Palette,
   Server,
   Shield,
@@ -108,6 +109,48 @@ function useColumns() {
   return cols;
 }
 
+function PracticeIndexMark({
+  value,
+  variant,
+  highlighted,
+}: {
+  value: string;
+  variant: "tile" | "panel";
+  highlighted?: boolean;
+}) {
+  const position = variant === "tile" ? "right-4 top-3" : "right-10 top-6";
+  const size = variant === "tile" ? "text-[3.25rem]" : "text-[4.75rem]";
+
+  return (
+    <motion.span
+      aria-hidden="true"
+      initial={false}
+      animate={
+        highlighted
+          ? { opacity: 1, scale: 1.02 }
+          : { opacity: 1, scale: 1 }
+      }
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      className={`pointer-events-none absolute ${position} ${size} select-none font-semibold leading-none tracking-tighter transition-colors duration-500 ease-out ${
+        highlighted
+          ? "text-vensai-electric/45 dark:text-vensai-electric/55"
+          : variant === "tile"
+            ? "text-slate-200/90 dark:text-white/[0.07] group-hover:text-vensai-electric/35 dark:group-hover:text-vensai-electric/45"
+            : "text-vensai-electric/30 dark:text-vensai-electric/40"
+      }`}
+    >
+      {value}
+    </motion.span>
+  );
+}
+
+const GROUP_ICONS: Record<ServiceCategory["categoryGroup"], React.ComponentType<{ className?: string }>> = {
+  "Technology & Engineering": Code2,
+  "Enterprise & Commerce": Building2,
+  "Consulting & Operations": Compass,
+  "Brand, Growth & Creative": Palette,
+};
+
 export function WhatWeDoSection() {
   const [activeGroup, setActiveGroup] = useState<ServiceCategory["categoryGroup"] | "All">("All");
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -159,7 +202,6 @@ export function WhatWeDoSection() {
         type="button"
         aria-pressed={isSelected}
         onClick={() => handleSelect(cat.id)}
-        layout="position"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0 }}
@@ -176,26 +218,21 @@ export function WhatWeDoSection() {
             : "bg-white/80 dark:bg-[#0B1118] border-slate-200 dark:border-slate-800 hover:border-vensai-electric/40 hover:shadow-[0_2px_16px_rgba(0,95,255,0.06)]"
         }`}
       >
-        {/* Ghost number watermark */}
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-1 -top-3 text-6xl font-semibold tracking-tighter text-slate-100 dark:text-white/[0.04] select-none"
-        >
-          {cat.number}
-        </span>
+        <PracticeIndexMark value={cat.number} variant="tile" highlighted={isSelected} />
 
-        <div className="relative flex items-start justify-between gap-3">
-          {/* Icon: CSS transition only, no Framer wiggle */}
-          <span
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-xl transition-[background-color,color] duration-300 ${
+        <div className="relative flex items-start gap-3 pr-12">
+          <motion.span
+            layout={false}
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition-[background-color,color,box-shadow] duration-300 ${
               isSelected
-                ? "bg-vensai-royal text-white"
-                : "bg-[#F7F9FC] dark:bg-[#111827] text-vensai-royal dark:text-vensai-electric group-hover:bg-vensai-royal/8 dark:group-hover:bg-vensai-electric/10"
+                ? "bg-vensai-royal text-white shadow-blue-glow-sm"
+                : "bg-[#F7F9FC] dark:bg-[#111827] text-vensai-royal dark:text-vensai-electric group-hover:bg-vensai-royal/10 dark:group-hover:bg-vensai-electric/15"
             }`}
+            whileHover={prefersReducedMotion ? {} : { scale: 1.06, rotate: -4 }}
+            transition={{ type: "spring", stiffness: 420, damping: 22 }}
           >
-            <CatIcon className="w-4 h-4" />
-          </span>
-          <span className="font-mono text-[10px] font-bold text-vensai-electric">{cat.number}</span>
+            <CatIcon className="h-[18px] w-[18px]" />
+          </motion.span>
         </div>
 
         <p className="relative mt-3 text-sm font-semibold text-slate-900 dark:text-white leading-snug">
@@ -215,13 +252,15 @@ export function WhatWeDoSection() {
         />
 
         {/* Chevron — smooth CSS rotate */}
-        <span
-          className={`absolute top-3 right-3 text-vensai-electric transition-[opacity,transform] duration-300 ${
-            isSelected ? "opacity-100 rotate-90" : "opacity-0 rotate-0 group-hover:opacity-60"
+        <motion.span
+          className={`absolute bottom-3 right-3 text-vensai-electric ${
+            isSelected ? "opacity-100" : "opacity-0 group-hover:opacity-70"
           }`}
+          animate={{ rotate: isSelected ? 90 : 0 }}
+          transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
-          <ChevronRight className="w-3.5 h-3.5" />
-        </span>
+          <ChevronRight className="h-3.5 w-3.5" />
+        </motion.span>
       </motion.button>
     );
 
@@ -273,6 +312,7 @@ export function WhatWeDoSection() {
               label="All"
               verb="All"
               subtitle={`${SERVICE_CATEGORIES.length} practices`}
+              icon={Layers}
               active={activeGroup === "All"}
               onClick={() => handleGroupChange("All")}
             />
@@ -285,6 +325,7 @@ export function WhatWeDoSection() {
                   label={group.split(" & ")[0]}
                   verb={meta.verb}
                   subtitle={`${count} practices`}
+                  icon={GROUP_ICONS[group]}
                   active={activeGroup === group}
                   onClick={() => handleGroupChange(group)}
                 />
@@ -329,12 +370,14 @@ function GroupTabButton({
   label,
   verb,
   subtitle,
+  icon: Icon,
   active,
   onClick,
 }: {
   label: string;
   verb: string;
   subtitle: string;
+  icon?: React.ComponentType<{ className?: string }>;
   active: boolean;
   onClick: () => void;
 }) {
@@ -346,19 +389,42 @@ function GroupTabButton({
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.97 }}
       transition={{ duration: 0.18 }}
-      className={`text-left rounded-2xl border px-4 py-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vensai-electric ${
+      className={`group/tab relative overflow-hidden text-left rounded-2xl border px-4 py-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vensai-electric ${
         active
           ? "bg-gradient-to-br from-vensai-royal to-vensai-electric text-white border-transparent shadow-blue-glow-sm"
           : "bg-white dark:bg-[#0B1118] border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:border-vensai-electric"
       }`}
     >
-      <p className={`text-[10px] font-bold tracking-[0.22em] uppercase ${active ? "text-white/80" : "text-vensai-electric"}`}>
-        {verb}
-      </p>
-      <p className="mt-1 text-sm font-semibold leading-snug">{label}</p>
-      <p className={`mt-1 text-[11px] leading-snug ${active ? "text-white/80" : "text-slate-500 dark:text-slate-400"}`}>
-        {subtitle}
-      </p>
+      <motion.span
+        aria-hidden
+        className={`pointer-events-none absolute -right-2 -top-4 text-5xl font-semibold tracking-tighter transition-colors duration-500 ${
+          active
+            ? "text-white/15"
+            : "text-slate-100 dark:text-white/[0.04] group-hover/tab:text-vensai-electric/15"
+        }`}
+      >
+        {verb.slice(0, 1)}
+      </motion.span>
+      <div className="relative flex items-start gap-3">
+        {Icon ? (
+          <span
+            className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
+              active ? "bg-white/15 text-white" : "bg-[#F7F9FC] dark:bg-[#111827] text-vensai-electric"
+            }`}
+          >
+            <Icon className="h-4 w-4" />
+          </span>
+        ) : null}
+        <div className="min-w-0 flex-1">
+          <p className={`text-[10px] font-bold tracking-[0.22em] uppercase ${active ? "text-white/80" : "text-vensai-electric"}`}>
+            {verb}
+          </p>
+          <p className="mt-1 text-sm font-semibold leading-snug">{label}</p>
+          <p className={`mt-1 text-[11px] leading-snug ${active ? "text-white/80" : "text-slate-500 dark:text-slate-400"}`}>
+            {subtitle}
+          </p>
+        </div>
+      </div>
     </motion.button>
   );
 }
@@ -410,12 +476,7 @@ const InlineDetailPanel = React.forwardRef<
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute right-6 top-4 text-8xl font-semibold tracking-tighter text-slate-100 dark:text-white/[0.04] select-none"
-            >
-              {category.number}
-            </span>
+            <PracticeIndexMark value={category.number} variant="panel" highlighted />
             <div className="relative">
               <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-vensai-electric">
                 <Icon className="w-3.5 h-3.5" />
@@ -479,8 +540,9 @@ const InlineDetailPanel = React.forwardRef<
                   key={useCase.title}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -2 }}
                   transition={{ duration: 0.3, delay: 0.22 + ui * 0.04, ease: "easeOut" }}
-                  className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-[#0B1118] p-4 hover:border-vensai-electric/50 transition-colors"
+                  className="group/case rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-[#0B1118] p-4 transition-[border-color,box-shadow] duration-300 hover:border-vensai-electric/50 hover:shadow-[0_8px_24px_rgba(0,95,255,0.06)]"
                 >
                   <p className="text-sm font-semibold text-slate-900 dark:text-white">{useCase.title}</p>
                   <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">

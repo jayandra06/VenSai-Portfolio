@@ -117,10 +117,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <Navbar
-            brandTagline={BRAND_CONFIG.tagline}
-            officesDisplay={BRAND_CONFIG.offices.display}
-          />
+          <Navbar brandTagline={BRAND_CONFIG.tagline} />
           <main id="main-content" className="flex-1 w-full max-w-full overflow-x-hidden">
             {children}
           </main>

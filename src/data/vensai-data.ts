@@ -96,7 +96,7 @@ export const BRAND_CONFIG = {
   homepage: {
     headline: "Software Built to Scale. Operations Built to Last.",
     lead:
-      "Vensai Labs delivers custom software, enterprise vendorship, non-IT projects, and voice & chat BPO?all from one accountable in-house team.",
+      "Vensai Labs delivers custom software, enterprise vendorship, non-IT projects, and voice & chat BPO—all from one accountable in-house team.",
   },
   company: {
     legalName: "Vijetha Softwares Private Limited",
@@ -110,10 +110,6 @@ export const BRAND_CONFIG = {
       "57-6-114/1, Aganampudi, Visakhapatnam, Andhra Pradesh, India - 530046",
     directors: ["Nookambika Mani Pilla", "Shubhanjali Patel"],
     collaboration: "HCTPL",
-  },
-  offices: {
-    display: "Hyderabad · Visakhapatnam",
-    cities: ["Hyderabad", "Visakhapatnam"] as const,
   },
   statementPipe: "BUILD | DESIGN | AUTOMATE | SCALE",
   pillars: [
@@ -129,7 +125,6 @@ export const BRAND_CONFIG = {
     careersEmail: "careers@vensailabs.in",
     phone: "+91 8309057182",
     whatsapp: "+91 8309057182",
-    locations: "Hyderabad · Visakhapatnam · Global delivery",
     hours: "Monday – Saturday (9:00 AM – 7:00 PM IST) • 24/7 Managed Operations Available",
   },
 };

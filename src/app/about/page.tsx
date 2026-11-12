@@ -147,7 +147,7 @@ export default function AboutPage() {
                   <span className="font-mono font-medium text-slate-900 dark:text-white">
                     {BRAND_CONFIG.company.cin}
                   </span>{" "}
-                  under {BRAND_CONFIG.company.roc}. Teams are based in {BRAND_CONFIG.offices.display.replace(" · ", " and ")}.
+                  under {BRAND_CONFIG.company.roc}. Delivery is run by full-time in-house teams.
                 </p>
               </li>
               <li className="pl-8 relative">

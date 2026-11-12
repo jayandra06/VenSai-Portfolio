@@ -56,22 +56,6 @@ export function buildRootGraphSchema() {
           { "@type": "City", "name": "Abu Dhabi" },
           { "@type": "City", "name": "Rome" },
           { "@type": "City", "name": "London" },
-          { "@type": "City", "name": "Visakhapatnam" },
-          { "@type": "City", "name": "Hyderabad" },
-        ],
-        address: [
-          {
-            "@type": "PostalAddress",
-            addressLocality: "Visakhapatnam",
-            addressRegion: "Andhra Pradesh",
-            addressCountry: "IN",
-          },
-          {
-            "@type": "PostalAddress",
-            addressLocality: "Hyderabad",
-            addressRegion: "Telangana",
-            addressCountry: "IN",
-          },
         ],
         parentOrganization: {
           "@type": "Organization",

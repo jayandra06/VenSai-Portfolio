@@ -396,9 +396,6 @@ export function ContactClient() {
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Share your requirement below. Our consulting and project management team will review your brief, evaluate technical feasibility, and connect you with the right Vensai specialists.
             </p>
-            <p className="pt-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-              Offices: {BRAND_CONFIG.offices.display}
-            </p>
           </div>
         </div>
       </section>
@@ -514,7 +511,6 @@ export function ContactClient() {
                   CIN: <span className="font-mono text-vensai-electric">{BRAND_CONFIG.company.cin}</span> ·{" "}
                   {BRAND_CONFIG.company.roc}
                 </p>
-                <p>{BRAND_CONFIG.offices.display}</p>
               </div>
             </div>
           </div>

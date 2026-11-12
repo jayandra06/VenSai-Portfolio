@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/EnterpriseUI";
 import { BRAND_CONFIG, SERVICE_CATEGORIES } from "@/data/vensai-data";
 
@@ -120,11 +120,6 @@ export function HeroSection() {
                     </div>
                   ))}
                 </div>
-
-                <p className="mt-5 flex items-center gap-2 border-t border-slate-200 pt-5 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300">
-                  <MapPin className="h-4 w-4 shrink-0 text-vensai-royal dark:text-vensai-electric" />
-                  <span>{BRAND_CONFIG.offices.display}</span>
-                </p>
               </div>
             </Reveal>
           </div>

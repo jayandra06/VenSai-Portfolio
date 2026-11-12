@@ -88,10 +88,9 @@ const SOLUTIONS_MENU = [
 export type NavbarBrandProps = {
   /** Serialized from the server layout so SSR and hydration stay in sync. */
   brandTagline: string;
-  officesDisplay: string;
 };
 
-export function Navbar({ brandTagline, officesDisplay }: NavbarBrandProps) {
+export function Navbar({ brandTagline }: NavbarBrandProps) {
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
@@ -143,18 +142,12 @@ export function Navbar({ brandTagline, officesDisplay }: NavbarBrandProps) {
     >
       {/* Top Executive Micro-Bar */}
       <div className="relative z-50 hidden lg:block border-b border-slate-200/70 dark:border-slate-800/80 bg-[#F7F9FC] dark:bg-[#070B10]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-8 text-[11px] font-medium text-slate-600 dark:text-slate-400">
-          {/* Left Side: Brand Tagline */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center text-[11px] font-medium text-slate-600 dark:text-slate-400">
           <div className="flex items-center gap-2.5 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-vensai-electric shrink-0" />
             <span className="font-semibold tracking-[0.15em] uppercase text-slate-900 dark:text-white">
               {brandTagline}
             </span>
-          </div>
-
-          {/* Right Side: Brand Statement & Consulting Quick-Link */}
-          <div className="flex items-center gap-5 shrink-0">
-            <span className="text-slate-600 dark:text-slate-300">{officesDisplay}</span>
           </div>
         </div>
       </div>

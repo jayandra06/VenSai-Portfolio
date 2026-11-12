@@ -31,7 +31,7 @@ const ENGAGEMENT_TRACKS = [
   {
     title: "Dedicated Offshore Pods (T&M / Retainer)",
     description:
-      "Pre-vetted full-time engineers, testers, and leads from our Hyderabad and Visakhapatnam teams working directly inside your sprint cadence.",
+      "Pre-vetted full-time engineers, testers, and leads working directly inside your sprint cadence.",
   },
   {
     title: "BPO Voice & Non-Voice Operations",
@@ -49,7 +49,7 @@ const COMPLIANCE_ITEMS = [
   { label: "Legal Entity", value: BRAND_CONFIG.company.legalName },
   { label: "CIN", value: BRAND_CONFIG.company.cin },
   { label: "Registrar of Companies", value: BRAND_CONFIG.company.roc },
-  { label: "Operating Centers", value: BRAND_CONFIG.offices.display },
+  { label: "Delivery Model", value: "Dedicated in-house pods and vendorship programs" },
   { label: "Payroll & Statutory", value: "In-house payroll, PF/ESIC & statutory compliance ready" },
   { label: "Security & Confidentiality", value: "Mutual NDA, role-based access & BGV-ready onboarding" },
 ];
@@ -181,7 +181,7 @@ export default function VendorshipPage() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-vensai-electric shrink-0" />
-                  <span>Fast ramp-up across {BRAND_CONFIG.offices.display}</span>
+                  <span>Fast ramp-up with dedicated pods</span>
                 </p>
               </div>
             </div>

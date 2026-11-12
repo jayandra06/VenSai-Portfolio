@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Mail, Phone, Globe } from "lucide-react";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { BRAND_CONFIG } from "@/data/vensai-data";
+import { BrandSocialLinks } from "@/components/ui/BrandSocialIcons";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -69,7 +70,6 @@ export function Footer() {
             </p>
 
             <div className="space-y-3 text-sm text-slate-400">
-              <p className="text-slate-200">{BRAND_CONFIG.offices.display}</p>
               <p className="text-xs text-slate-500">
                 {BRAND_CONFIG.company.legalName}
                 <span className="mx-1.5">·</span>
@@ -100,10 +100,6 @@ export function Footer() {
                 >
                   {BRAND_CONFIG.contactPlaceholders.phone}
                 </a>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <Globe className="mt-0.5 h-3.5 w-3.5 shrink-0 text-vensai-electric" />
-                <span className="leading-snug">{BRAND_CONFIG.contactPlaceholders.locations}</span>
               </div>
             </div>
           </div>
@@ -321,24 +317,9 @@ export function Footer() {
               <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
                 Connect
               </h3>
-              <div className="flex flex-wrap gap-2">
-                <a
-                  href="https://www.linkedin.com/company/vensailabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-medium border border-slate-800 hover:border-vensai-electric text-slate-300 hover:text-white rounded-sm transition-colors"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://wa.me/918309057182"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-medium border border-slate-800 hover:border-vensai-electric text-slate-300 hover:text-white rounded-sm transition-colors"
-                >
-                  WhatsApp
-                </a>
-              </div>
+              <BrandSocialLinks
+                whatsappDigits={BRAND_CONFIG.contactPlaceholders.whatsapp.replace(/[^0-9]/g, "")}
+              />
             </div>
 
             <div className="space-y-2">
