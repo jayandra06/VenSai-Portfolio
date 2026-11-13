@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Outfit, Source_Serif_4, JetBrains_Mono } from "next/font/google";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -17,17 +18,28 @@ const inter = Inter({
   display: "swap",
 });
 
-const manrope = Manrope({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "Vensai Labs | Expert Talent. Real Solutions. — Software Company",
+    default: "Vensai Labs — Software, vendorship, and BPO delivery",
     template: "%s | Vensai Labs",
   },
   description:
@@ -39,9 +51,8 @@ export const metadata: Metadata = {
   keywords: [
     "Vensai Labs",
     "Software Company",
-    "Business Solutions Partner",
-    "Technology Partner",
-    "Software Development Agency",
+    "Enterprise vendorship India",
+    "BPO voice chat India",
     "E-commerce Solutions",
     "Enterprise Technology Consulting",
     "Technical Consulting & R&D",
@@ -59,16 +70,16 @@ export const metadata: Metadata = {
     ],
     url: `${SITE_URL}/`,
     siteName: "Vensai Labs",
-    title: "Vensai Labs — Expert Talent. Real Solutions.",
+    title: "Vensai Labs — Software, vendorship, and BPO",
     description:
-      "VenSai Labs by Vijetha Softwares Pvt. Ltd. People. Technology. Innovation. Build • Design • Automate • Scale.",
+      "Custom software, enterprise subcontracting, and voice/chat BPO from Vijetha Softwares Pvt. Ltd.",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vensai Labs — Expert Talent. Real Solutions.",
+    title: "Vensai Labs — Software, vendorship, and BPO",
     description:
-      "People. Technology. Innovation. Build • Design • Automate • Scale.",
+      "Custom software, enterprise subcontracting, and voice/chat BPO from Vijetha Softwares Pvt. Ltd.",
     images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {
@@ -104,12 +115,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${manrope.variable} font-sans bg-white dark:bg-[#0B1118] text-slate-900 dark:text-slate-100 antialiased selection:bg-vensai-electric selection:text-white min-h-screen flex flex-col w-full max-w-full overflow-x-hidden`}
+        className={`${inter.variable} ${outfit.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} font-sans bg-vensai-paper dark:bg-vensai-obsidian text-slate-900 dark:text-slate-100 antialiased selection:bg-vensai-electric selection:text-white min-h-screen flex flex-col w-full max-w-full overflow-x-hidden`}
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootGraphSchema) }}
         />
+        <ScrollProgress />
         <ThemeProvider>
           <a
             href="#main-content"

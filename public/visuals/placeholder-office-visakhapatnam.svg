@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Placeholder  Visakhapatnam Head Office">
+  <rect width="900" height="600" fill="#0a1628"/>
+  <rect x="48" y="48" width="804" height="504" fill="#111827" stroke="#334155" stroke-width="2" rx="8"/>
+  <text x="72" y="120" fill="#B87333" font-family="system-ui,sans-serif" font-size="14" letter-spacing="3">PLACEHOLDER</text>
+  <text x="72" y="160" fill="#f1f5f9" font-family="system-ui,sans-serif" font-size="32" font-weight="600">Visakhapatnam head office</text>
+  <text x="72" y="200" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="18">Replace with approved photography when available.</text>
+  <rect x="72" y="240" width="756" height="280" fill="#1e293b" rx="6"/>
+  <path d="M200 420 L350 320 L500 380 L700 260" fill="none" stroke="#0A84FF" stroke-width="3" opacity="0.5"/>
+</svg>

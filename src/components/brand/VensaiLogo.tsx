@@ -150,7 +150,7 @@ export function VensaiLogo({
   return (
     <Link
       href="/"
-      aria-label="Vensai Labs Home — Expert Talent. Real Solutions."
+      aria-label="Vensai Labs home"
       className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-vensai-electric rounded-sm shrink-0"
     >
       {content}

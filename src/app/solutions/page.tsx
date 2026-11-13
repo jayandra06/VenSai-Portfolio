@@ -89,8 +89,8 @@ export default function SolutionsPage() {
               <span className="w-2 h-2 bg-vensai-electric inline-block" />
               <span>INTEGRATED BUSINESS SOLUTIONS</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-              One Business Partner. Multiple Capabilities. End-to-End Delivery.
+            <h1 className="font-display text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+              Solutions that combine engineering, commerce, and operations
             </h1>
             <p className="mt-5 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Real business problems rarely fit neatly inside a single discipline. Vensai assembles cross-functional teams—combining software engineering, enterprise integration, creative production, consulting and operational support—managed under a single accountable delivery structure.

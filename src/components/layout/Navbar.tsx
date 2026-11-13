@@ -136,8 +136,8 @@ export function Navbar({ brandTagline }: NavbarBrandProps) {
       ref={navRef}
       className={`sticky top-0 z-50 w-full max-w-full transition-all duration-300 ${
         scrolled
-          ? "bg-white dark:bg-[#0B1118] border-b border-slate-200/80 dark:border-slate-800/80 shadow-enterprise-sm"
-          : "bg-white dark:bg-[#0B1118] border-b border-slate-200/60 dark:border-slate-800/60"
+          ? "bg-white/90 dark:bg-[#0B1118]/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-enterprise-sm"
+          : "bg-white/80 dark:bg-[#0B1118]/90 backdrop-blur-sm border-b border-slate-200/60 dark:border-slate-800/60"
       }`}
     >
       {/* Top Executive Micro-Bar */}
@@ -168,6 +168,18 @@ export function Navbar({ brandTagline }: NavbarBrandProps) {
             }`}
           >
             Home
+          </Link>
+
+          <Link
+            href="/work"
+            onMouseEnter={() => setOpenMenu(null)}
+            className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 text-xs xl:text-[13px] 2xl:text-sm font-medium rounded-sm transition-colors whitespace-nowrap ${
+              pathname.startsWith("/work")
+                ? "text-vensai-royal dark:text-vensai-electric"
+                : "text-slate-700 dark:text-slate-200 hover:text-vensai-royal dark:hover:text-vensai-electric"
+            }`}
+          >
+            Work
           </Link>
 
           {/* Services Mega Menu Trigger */}
@@ -209,6 +221,18 @@ export function Navbar({ brandTagline }: NavbarBrandProps) {
               }`}
             />
           </button>
+
+          <Link
+            href="/vendorship"
+            onMouseEnter={() => setOpenMenu(null)}
+            className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 text-xs xl:text-[13px] 2xl:text-sm font-medium rounded-sm transition-colors whitespace-nowrap ${
+              pathname.startsWith("/vendorship")
+                ? "text-vensai-royal dark:text-vensai-electric"
+                : "text-slate-700 dark:text-slate-200 hover:text-vensai-royal dark:hover:text-vensai-electric"
+            }`}
+          >
+            Vendorship
+          </Link>
 
           <Link
             href="/industries"
@@ -546,6 +570,18 @@ export function Navbar({ brandTagline }: NavbarBrandProps) {
                   className="block py-2.5 text-base font-semibold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800/60"
                 >
                   Home
+                </Link>
+                <Link
+                  href="/work"
+                  className="block py-2.5 text-base font-semibold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800/60"
+                >
+                  Work
+                </Link>
+                <Link
+                  href="/vendorship"
+                  className="block py-2.5 text-base font-semibold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800/60"
+                >
+                  Vendorship
                 </Link>
 
                 {/* Services Accordion */}

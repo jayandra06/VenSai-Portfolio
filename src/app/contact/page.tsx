@@ -8,7 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   title:
     "Contact Vensai Labs | Start a Project, Dedicated Team or Consulting Inquiry",
   description:
-    "Talk to Vensai Labs about your software, mobile, AI, cloud, cybersecurity, SAP/BI, e-commerce, branding, marketing or support requirement. NDA-ready consultation and end-to-end delivery.",
+    "Talk to Vensai Labs about software, vendorship, BPO, or non-IT work. NDA-ready consultation with scope and staffing outlined in plain language.",
   path: "/contact",
   keywords: [
     "contact Vensai Labs",

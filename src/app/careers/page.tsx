@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { CareersClient } from "./CareersClient";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildWebPageSchema } from "@/lib/schema";
-import { KEYWORDS_PLACEMENTS, KEYWORDS_FREELANCE, KEYWORDS_SOFTWARE_COMPANY } from "@/lib/seo";
+import { KEYWORDS_PLACEMENTS, KEYWORDS_BPO_KPO, KEYWORDS_SOFTWARE_COMPANY } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
@@ -15,7 +15,7 @@ export const metadata: Metadata = buildPageMetadata({
     // Placements & internships (primary)
     ...KEYWORDS_PLACEMENTS,
     // Talent / hiring (secondary)
-    ...KEYWORDS_FREELANCE.slice(0, 12),
+    ...KEYWORDS_BPO_KPO.slice(0, 8),
     // Software company context
     ...KEYWORDS_SOFTWARE_COMPANY.slice(0, 8),
     // Hand-curated

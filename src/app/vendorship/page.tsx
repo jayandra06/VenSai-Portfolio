@@ -49,7 +49,8 @@ const COMPLIANCE_ITEMS = [
   { label: "Legal Entity", value: BRAND_CONFIG.company.legalName },
   { label: "CIN", value: BRAND_CONFIG.company.cin },
   { label: "Registrar of Companies", value: BRAND_CONFIG.company.roc },
-  { label: "Delivery Model", value: "Dedicated in-house pods and vendorship programs" },
+  { label: "Operating presence", value: BRAND_CONFIG.offices.display },
+  { label: "Delivery model", value: "Dedicated in-house pods and vendorship programs" },
   { label: "Payroll & Statutory", value: "In-house payroll, PF/ESIC & statutory compliance ready" },
   { label: "Security & Confidentiality", value: "Mutual NDA, role-based access & BGV-ready onboarding" },
 ];
@@ -77,7 +78,7 @@ export default function VendorshipPage() {
   });
 
   return (
-    <div className="bg-white dark:bg-[#0B1118]">
+    <div className="bg-vensai-paper dark:bg-vensai-obsidian">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -85,7 +86,7 @@ export default function VendorshipPage() {
         }}
       />
 
-      <section className="relative bg-[#0B1118] text-white border-b border-slate-800 py-20 lg:py-28 overflow-hidden">
+      <section className="surface-ink relative border-b border-white/10 py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-grid-dark opacity-50 pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-6">
           <Breadcrumbs
@@ -95,15 +96,12 @@ export default function VendorshipPage() {
             ]}
           />
           <div className="mt-8 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-vensai-royal/20 border border-vensai-electric/30 text-vensai-electric text-[11px] font-bold uppercase tracking-[0.2em]">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Enterprise &amp; Tier-1 Vendorship</span>
-            </div>
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08]">
-              Accountable Delivery Partner for Prime Contractors &amp; Corporates.
+            <p className="eyebrow-quiet text-vensai-copper">Enterprise vendorship</p>
+            <h1 className="mt-6 font-display text-4xl font-semibold tracking-tight leading-[1.08] sm:text-5xl lg:text-6xl">
+              When you already hold the client, we take the defined scope.
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
-              {BRAND_CONFIG.legalLine} partners with enterprise system integrators, consulting firms, and mid-to-large corporates to deliver IT builds, non-IT projects, and voice &amp; chat BPO operations from one in-house Indian team.
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
+              White-label modules, dedicated pods, or voice and chat processes—run to an agreed SLA under {BRAND_CONFIG.company.shortLegalName}, with payroll and statutory compliance on our side.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -127,11 +125,9 @@ export default function VendorshipPage() {
       <section className="py-20 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-2xl mb-12">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-vensai-electric">
-              HOW WE PARTNER
-            </p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">
-              Four Ways Enterprise Teams Use Vensai Labs
+            <p className="eyebrow-quiet">Engagement tracks</p>
+            <h2 className="mt-2 font-display text-3xl font-semibold text-slate-900 dark:text-white">
+              How prime contractors use our teams
             </h2>
           </div>
 

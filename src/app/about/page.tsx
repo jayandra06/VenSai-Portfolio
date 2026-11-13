@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { Breadcrumbs, SectionHeader } from "@/components/ui/EnterpriseUI";
+import { OfficePresenceSection } from "@/components/sections/OfficePresenceSection";
 import { BRAND_CONFIG, WHY_VENSAI_POINTS, PROCESS_STEPS } from "@/data/vensai-data";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildWebPageSchema } from "@/lib/schema";
@@ -50,16 +51,16 @@ export default function AboutPage() {
                 <span>ABOUT VENSAI LABS • WHO WE ARE</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.25] sm:leading-[1.28] lg:leading-[1.3]">
-                One Business Partner. Multiple Capabilities. End-to-End Delivery.
+              <h1 className="font-display text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+                A software company with IT, non-IT, and operations desks
               </h1>
 
-              <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company. We employ our own full-time experts across technology, engineering, design, consulting, marketing, creative production and customer support, and we manage the work from the first requirement through delivery and support.
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                {BRAND_CONFIG.legalLine} employs full-time teams for engineering, managed IT, BPO and KPO, internships, brand, and support. Work is scoped, staffed from our payroll, and maintained after go-live.
               </p>
 
-              <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-                Whatever your business needs—technology, software, e-commerce, cybersecurity, cloud, AI, enterprise systems, branding, marketing, research or operational support—Vensai brings the right expertise together and manages the engagement from requirement to delivery.
+              <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
+                We are not a freelance marketplace. We take defined modules for prime contractors, run voice and chat processes to SLA, and ship non-IT programs with the same delivery discipline as software builds.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4">
@@ -157,7 +158,7 @@ export default function AboutPage() {
                   Partnering with {BRAND_CONFIG.company.collaboration}
                 </h3>
                 <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Vijetha Softwares joins hands with {BRAND_CONFIG.company.collaboration} to combine delivery capacity, domain knowledge and talent programs under one roof.
+                  Vijetha Softwares works with {BRAND_CONFIG.company.collaboration} on delivery capacity, domain programs, and internship cohorts where those programs need extra bench strength.
                 </p>
               </li>
               <li className="pl-8 relative">
@@ -249,6 +250,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <OfficePresenceSection />
 
       {/* Why Businesses Work With Us */}
       <section className="py-20">

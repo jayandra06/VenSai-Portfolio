@@ -70,18 +70,29 @@ export interface TechGroup {
   }[];
 }
 
+export type CaseStudyTag = "IT" | "Non-IT" | "BPO";
+export type CaseStudyTheme = "terminal" | "commerce" | "industrial";
+
 export interface CaseStudyBlueprint {
   id: string;
+  slug: string;
   code: string;
+  clientName: string;
   title: string;
   clientIndustry: string;
   engagementModel: string;
+  summary: string;
+  tags: CaseStudyTag[];
+  theme: CaseStudyTheme;
+  metrics: { label: string; value: string }[];
   websiteUrl?: string;
+  secondaryUrl?: string;
   challenge: string;
   approach: string;
   solution: string;
   technologies: string[];
   outcome: string;
+  architectureNotes: string[];
 }
 
 export const BRAND_CONFIG = {
@@ -98,6 +109,11 @@ export const BRAND_CONFIG = {
     lead:
       "Vensai Labs delivers custom software, enterprise vendorship, non-IT projects, and voice & chat BPO—all from one accountable in-house team.",
   },
+  offices: {
+    display: "Hyderabad · Visakhapatnam",
+    registeredLabel: "Visakhapatnam Head Office",
+    businessUnitLabel: "Hyderabad Business Unit",
+  },
   company: {
     legalName: "Vijetha Softwares Private Limited",
     shortLegalName: "Vijetha Softwares Pvt. Ltd.",
@@ -112,11 +128,7 @@ export const BRAND_CONFIG = {
     collaboration: "HCTPL",
   },
   statementPipe: "BUILD | DESIGN | AUTOMATE | SCALE",
-  pillars: [
-    "ONE BUSINESS PARTNER.",
-    "MULTIPLE CAPABILITIES.",
-    "END-TO-END DELIVERY.",
-  ],
+  pillars: [] as string[],
   coreProposition:
     "Tell us the outcome you need. We scope it, assign people from our own payroll, and stay on for maintenance and support when the work goes live.",
   contactPlaceholders: {
@@ -1468,59 +1480,147 @@ export const TECH_ECOSYSTEM: TechGroup[] = [
   },
 ];
 
+export const BUSINESS_PILLARS = [
+  {
+    id: "software",
+    title: "Software & IT",
+    summary:
+      "Product engineering, cloud, integrations, and managed IT—scoped builds with the same people who maintain them after go-live.",
+    href: "/services",
+    visual: "software",
+  },
+  {
+    id: "vendorship",
+    title: "Enterprise vendorship",
+    summary:
+      "White-label modules, dedicated pods, and fixed-scope work under your prime contract when you already hold the client relationship.",
+    href: "/vendorship",
+    visual: "vendorship",
+  },
+  {
+    id: "bpo",
+    title: "BPO — voice & chat",
+    summary:
+      "Inbound and outbound voice, live chat, tickets, and back-office desks—including payroll and finance support—run to an agreed SLA.",
+    href: "/services/kpo-bpo",
+    visual: "bpo",
+  },
+  {
+    id: "non-it",
+    title: "Non-IT & digital",
+    summary:
+      "Brand, campaigns, creative production, and campus programs when a non-IT workstream needs the same delivery discipline as engineering.",
+    href: "/services/branding",
+    visual: "digital",
+  },
+] as const;
+
 export const CASE_STUDY_BLUEPRINTS: CaseStudyBlueprint[] = [
   {
     id: "cs-globiance",
-    code: "CASE STUDY — 01",
-    title: "Globiance — Institutional Crypto Exchange & Digital Banking Infrastructure",
-    clientIndustry: "Globiance • Crypto & Digital Finance",
-    engagementModel: "Core Architecture & High-Frequency Trading Engine",
+    slug: "globiance",
+    code: "01",
+    clientName: "Globiance",
+    title: "Exchange matching, wallets, and banking rails",
+    clientIndustry: "Digital finance",
+    engagementModel: "Core platform engineering",
+    summary:
+      "Order books, custody flows, and compliance checks had to stay fast and auditable when markets spiked.",
+    tags: ["IT"],
+    theme: "terminal",
+    metrics: [
+      { label: "Order latency (avg.)", value: "<5 ms" },
+      { label: "Platform uptime", value: "99.995%" },
+      { label: "Critical audit findings", value: "0" },
+    ],
     websiteUrl: "https://globiance.com/",
     challenge:
-      "Engineered to solve high-concurrency order book bottlenecks, latency spikes during extreme market volatility, multi-currency wallet custody risks, and strict cross-border regulatory compliance across banking jurisdictions.",
+      "Peak trading volume exposed bottlenecks in the matching path, wallet segregation, and cross-border settlement checks.",
     approach:
-      "Designed a distributed, event-driven microservices architecture with zero-trust cryptographic enclaves. Implemented segregated hot/cold wallet governance, automated KYC/AML verification pipelines, and high-throughput order matching clusters.",
+      "We split the stack into event-driven services, tightened hot/cold wallet rules, and wired KYC/AML checks into the order path instead of after the fact.",
     solution:
-      "Delivered an institutional-grade digital asset exchange terminal with real-time WebSocket order books, sub-millisecond matching engine, multi-sig vault integrations, and unified API rails connecting banking payment partners with exchange liquidity pools.",
-    technologies: ["Blockchain APIs", "Go / Node.js", "Next.js", "Redis Cluster", "Kafka", "Docker & K8s", "Zero-Trust Security"],
+      "A live trading terminal with WebSocket books, a matching cluster sized for volatility, multi-sig vault hooks, and APIs that connect banking partners to liquidity.",
+    technologies: ["Go", "Node.js", "Next.js", "Redis", "Kafka", "Kubernetes"],
     outcome:
-      "Achieved sub-5ms average order execution latency under peak volatility, 99.995% service uptime, seamless multi-region fiat settlement rails, and zero critical vulnerabilities across third-party security audits.",
+      "Markets stayed tradeable through volatile sessions, settlement stayed traceable, and external security reviews came back clean.",
+    architectureNotes: [
+      "Order ingress → risk checks → matching engine → ledger posting",
+      "Wallet tiering with policy gates on large transfers",
+      "Partner banking webhooks isolated from the matching hot path",
+    ],
   },
   {
     id: "cs-suta",
-    code: "CASE STUDY — 02",
-    title: "Suta — High-Scale Omnichannel D2C & Warehouse Sync Ecosystem",
-    clientIndustry: "Suta • Ecommerce & D2C Retail",
-    engagementModel: "Headless Commerce, Inventory Automation & Support",
+    slug: "suta",
+    code: "02",
+    clientName: "Suta",
+    title: "Festive-sale commerce and warehouse truth",
+    clientIndustry: "D2C retail",
+    engagementModel: "Commerce engineering & ops automation",
+    summary:
+      "The storefront had to stay up in peak sales, and stock online had to match what warehouses could actually ship.",
+    tags: ["IT", "Non-IT", "BPO"],
+    theme: "commerce",
+    metrics: [
+      { label: "Mobile load time", value: "−58%" },
+      { label: "Checkout conversion", value: "+34%" },
+      { label: "Mega-sale uptime", value: "100%" },
+    ],
     websiteUrl: "https://suta.in/",
     challenge:
-      "Severe flash-sale traffic spikes causing catalog browsing bottlenecks, inventory desynchronization across multi-city retail stores and central warehouse hubs, and high customer support volume regarding dispatch tracking.",
+      "Sale traffic slowed the catalog, stores and the warehouse disagreed on stock, and customers kept asking where orders were.",
     approach:
-      "Engineered a headless commerce architecture with edge-cached catalog indexing, automated bidirectional middleware connecting Shopify Plus to warehouse ERP systems, and proactive fulfillment tracking notification pipelines.",
+      "Headless storefront with edge caching, middleware that syncs Shopify Plus to warehouse systems both ways, and shipment notifications customers actually read.",
     solution:
-      "Deployed an edge-optimized storefront delivering sub-second page transitions, an event-driven inventory sync orchestrator preventing stockouts and overselling, and automated WhatsApp notification pipelines for proactive fulfillment updates.",
-    technologies: ["Shopify Plus", "Next.js", "Custom API Middleware", "Logistics & Shipping APIs", "WhatsApp Commerce", "Edge Caching"],
+      "Faster mobile browsing, a sync job that blocks oversells, and WhatsApp updates tied to real dispatch events.",
+    technologies: ["Shopify Plus", "Next.js", "Middleware APIs", "Edge cache", "WhatsApp notifications"],
     outcome:
-      "Slashed mobile page load times by 58%, eliminated inventory reconciliation errors across physical stores and web, maintained 100% uptime during festive mega-sales, and improved checkout conversion by 34%.",
+      "Festive sales ran without stock surprises, support volume dropped on “where is my order?”, and mobile checkout improved.",
+    architectureNotes: [
+      "Storefront → API layer → Shopify / warehouse connectors",
+      "Inventory events fan out to web, POS, and alerts",
+      "Fulfillment status pushed to customer channels",
+    ],
   },
   {
     id: "cs-euroasiann",
-    code: "CASE STUDY — 03",
-    title: "Euroasiann — Multi-National ERP & Supply Chain Operations System",
-    clientIndustry: "Euroasiann Group • Enterprise ERP & Logistics",
-    engagementModel: "Custom ERP Engineering & Operational Digitalization",
+    slug: "euroasiann",
+    code: "03",
+    clientName: "Euroasiann Group",
+    title: "Ship Span ERP for fleet, procurement, and finance",
+    clientIndustry: "Marine & industrial operations",
+    engagementModel: "Custom ERP & integrations",
+    summary:
+      "Regional teams needed one place for vessels, vendors, inventory, and month-end close—not another spreadsheet bridge.",
+    tags: ["IT", "Non-IT"],
+    theme: "industrial",
+    metrics: [
+      { label: "Procurement cycle", value: "−65%" },
+      { label: "Month-end close", value: "14d → 48h" },
+      { label: "ERP modules live", value: "6+" },
+    ],
     websiteUrl: "https://erp.euroasianngroup.com/",
+    secondaryUrl: "https://euroasianngroup.com/",
     challenge:
-      "Operating across multi-territory jurisdictions with fragmented legacy ERP software, manual invoice/procurement approvals, lack of unified freight container tracking, and delayed month-end financial consolidations.",
+      "Approvals, freight milestones, and finance consolidation lived in different tools across territories.",
     approach:
-      "Conducted an end-to-end operational workflow audit and architected a centralized, modular enterprise ERP platform with strict role-based access controls, multi-currency accounting engines, and automated multi-tier approval hierarchies.",
+      "Workflow mapping first, then a modular ERP with role-based access, multi-currency books, and approval chains people could follow.",
     solution:
-      "Engineered a custom cloud-native ERP ecosystem featuring real-time logistics and container milestone tracking, automated vendor procurement lifecycles, customs documentation filing pipelines, and interactive executive reporting dashboards.",
-    technologies: ["Custom ERP", "Next.js / React", "Python / FastAPI", "PostgreSQL", "REST & GraphQL APIs", "Power BI", "Docker"],
+      "Fleet, procurement, inventory, crew, vendors, and compliance in linked modules with dashboards leadership actually opens.",
+    technologies: ["Next.js", "FastAPI", "PostgreSQL", "Power BI", "Docker"],
     outcome:
-      "Reduced procurement cycle times by 65%, accelerated financial month-end closing from 14 days to 48 hours, and delivered unified operational visibility across all regional hubs with complete audit traceability.",
+      "Buying cycles shortened, finance close stopped taking two weeks, and ops could see containers and cash in the same week.",
+    architectureNotes: [
+      "Fleet · Procurement · Inventory · Crew · Vendors · Compliance",
+      "Approval graph shared across finance and operations",
+      "Reporting layer fed from a single operational ledger",
+    ],
   },
 ];
+
+export function getCaseStudyBySlug(slug: string): CaseStudyBlueprint | undefined {
+  return CASE_STUDY_BLUEPRINTS.find((c) => c.slug === slug);
+}
 
 export const CAREER_ROLES = [
   {

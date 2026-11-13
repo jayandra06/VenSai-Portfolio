@@ -68,7 +68,7 @@ export default function IndustriesPage() {
                       SECTOR {String(idx + 1).padStart(2, "0")}
                     </span>
                     <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                      End-to-End Delivery
+                      In-house teams
                     </span>
                   </div>
 

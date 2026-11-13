@@ -101,6 +101,10 @@ export function Footer() {
                   {BRAND_CONFIG.contactPlaceholders.phone}
                 </a>
               </div>
+              <BrandSocialLinks
+                className="pt-1"
+                whatsappDigits={BRAND_CONFIG.contactPlaceholders.whatsapp.replace(/[^0-9]/g, "")}
+              />
             </div>
           </div>
 
@@ -110,6 +114,11 @@ export function Footer() {
               Company
             </h3>
             <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link href="/work" className="text-slate-400 hover:text-white transition-colors">
+                  Work
+                </Link>
+              </li>
               <li>
                 <Link href="/about" className="text-slate-400 hover:text-white transition-colors">
                   About Vensai

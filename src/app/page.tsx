@@ -1,54 +1,35 @@
 import React from "react";
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { WhatWeDoSection } from "@/components/sections/WhatWeDoSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
-import { WhyVensaiSection } from "@/components/sections/WhyVensaiSection";
-import { EngagementModelsSection } from "@/components/sections/EngagementModelsSection";
-import { IndustriesSection } from "@/components/sections/IndustriesSection";
-import { TechEcosystemSection } from "@/components/sections/TechEcosystemSection";
-import { CaseStudiesAndCTASection } from "@/components/sections/CaseStudiesSection";
+import { BusinessPillarsSection } from "@/components/sections/BusinessPillarsSection";
+import { ProofStripSection } from "@/components/sections/ProofStripSection";
+import { CaseStudiesPreviewSection } from "@/components/sections/CaseStudiesPreviewSection";
+import { CompactTechBand } from "@/components/sections/CompactTechBand";
+import { HomeClosingSection } from "@/components/sections/HomeClosingSection";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildWebPageSchema, buildFaqSchema } from "@/lib/schema";
 import { HOMEPAGE_FAQS } from "@/data/vensai-data";
-import {
-  KEYWORDS_FREELANCE, KEYWORDS_BPO_KPO, KEYWORDS_SOFTWARE_COMPANY,
-  KEYWORDS_PRODUCT_DEV, KEYWORDS_STARTUP, KEYWORDS_B2B_CONSULTING,
-  KEYWORDS_CONSULTANCY, KEYWORDS_PLACEMENTS,
-} from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Vensai Labs | Expert Talent. Real Solutions. — Software Company, BPO/KPO, Startup Incubator & Business Consultancy",
+  title: "Vensai Labs — Software, vendorship, and BPO",
   description:
-    "VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company, BPO/KPO partner, startup incubator and business consultancy with in-house experts across software, cloud, AI, managed IT, e-commerce, consulting and support — serving USA, UK, Canada, Australia, UAE, Germany, India and beyond.",
+    "Custom software, enterprise subcontracting, voice and chat BPO, and non-IT projects—delivered by in-house teams at Vijetha Softwares Pvt. Ltd.",
   path: "/",
   keywords: [
-    ...KEYWORDS_FREELANCE,
-    ...KEYWORDS_BPO_KPO,
-    ...KEYWORDS_SOFTWARE_COMPANY,
-    ...KEYWORDS_PRODUCT_DEV,
-    ...KEYWORDS_STARTUP,
-    ...KEYWORDS_B2B_CONSULTING,
-    ...KEYWORDS_CONSULTANCY,
-    ...KEYWORDS_PLACEMENTS,
+    "Vensai Labs",
     "software company India",
-    "enterprise technology consultancy",
-    "managed e-commerce solutions",
-    "dedicated engineering teams",
-    "SAP BTP and Power BI consulting",
-    "technical feasibility consulting",
-    "one business partner multiple capabilities",
-    "end-to-end technology delivery",
+    "enterprise vendorship",
+    "offshore delivery pod",
+    "BPO voice chat",
+    "KPO operations",
   ],
 });
 
 export default function HomePage() {
   const webPageSchema = buildWebPageSchema({
-    title:
-      "Vensai Labs | Expert Talent. Real Solutions. — Software Company",
+    title: "Vensai Labs — Software, vendorship, and BPO",
     description:
-      "VenSai Labs by Vijetha Softwares Pvt. Ltd. is a software company managing IT and non-IT work: software, managed IT, KPO and BPO, internships, consulting and post-deployment support.",
+      "Custom software, enterprise vendorship, voice and chat BPO, and non-IT digital work from Vijetha Softwares Pvt. Ltd.",
     path: "/",
   });
   const faqSchema = buildFaqSchema(HOMEPAGE_FAQS, "/");
@@ -64,14 +45,11 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <HeroSection />
-      <WhatWeDoSection />
-      <ProcessSection />
-      <WhyVensaiSection />
-      <EngagementModelsSection />
-      <IndustriesSection />
-      <TechEcosystemSection />
-      <CaseStudiesAndCTASection />
+      <BusinessPillarsSection />
+      <ProofStripSection />
+      <CaseStudiesPreviewSection />
+      <CompactTechBand />
+      <HomeClosingSection />
     </>
   );
 }
-

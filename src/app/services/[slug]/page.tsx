@@ -39,7 +39,7 @@ export async function generateMetadata({
     };
   }
   return buildPageMetadata({
-    title: `${service.title} — End-to-End Business Solutions`,
+    title: `${service.title} — Vensai Labs`,
     description: `${service.tagline} ${service.overview}`,
     path: `/services/${service.slug}`,
     keywords: [
@@ -69,7 +69,7 @@ export default async function ServiceDetailPage({
   );
 
   const webPageSchema = buildWebPageSchema({
-    title: `${service.title} — End-to-End Business Solutions | Vensai Labs`,
+    title: `${service.title} | Vensai Labs`,
     description: `${service.tagline} ${service.overview}`,
     path: `/services/${service.slug}`,
   });

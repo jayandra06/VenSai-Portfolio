@@ -169,11 +169,15 @@ export function InsightsClient() {
       {/* Case Study Blueprints Reference */}
       <section className="py-20 bg-[#F7F9FC] dark:bg-[#080D14]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white">
-            Case Study Reporting Framework
+          <h2 className="font-display text-2xl font-semibold text-slate-900 dark:text-white sm:text-3xl">
+            Published case studies
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl">
-            Structured case study templates ready to present client-authorized engagements across software, enterprise systems, e-commerce and cloud infrastructure.
+          <p className="mt-2 max-w-2xl text-sm text-slate-600 dark:text-slate-300 sm:text-base">
+            Full write-ups with metrics and architecture notes live on the{" "}
+            <Link href="/work" className="font-semibold text-vensai-royal dark:text-vensai-electric">
+              work index
+            </Link>
+            .
           </p>
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {CASE_STUDY_BLUEPRINTS.map((cs) => (
@@ -184,9 +188,8 @@ export function InsightsClient() {
                 <span className="font-mono text-xs font-bold text-vensai-electric">
                   {cs.code}
                 </span>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  {cs.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{cs.clientName}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{cs.summary}</p>
                 <p className="text-xs font-medium text-slate-500">
                   {cs.clientIndustry}
                 </p>

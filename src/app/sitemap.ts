@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SERVICE_CATEGORIES } from "@/data/vensai-data";
+import { CASE_STUDY_BLUEPRINTS, SERVICE_CATEGORIES } from "@/data/vensai-data";
 import { SITE_URL } from "@/lib/seo";
 
 // ── Dates ─────────────────────────────────────────────────────────────────────
@@ -41,6 +41,7 @@ const CORE_ROUTES: {
   { path: "/",                         priority: 1.0,  changeFrequency: "weekly",  section: "home" },
   { path: "/services",                 priority: 0.95, changeFrequency: "weekly",  section: "services" },
   { path: "/vendorship",               priority: 0.92, changeFrequency: "weekly",  section: "vendorship" },
+  { path: "/work",                     priority: 0.9,  changeFrequency: "weekly",  section: "work" },
   { path: "/solutions",                priority: 0.90, changeFrequency: "weekly",  section: "solutions" },
   { path: "/solutions/ecommerce",      priority: 0.90, changeFrequency: "weekly",  section: "solutions" },
   { path: "/solutions/consulting",     priority: 0.90, changeFrequency: "weekly",  section: "solutions" },
@@ -74,5 +75,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: buildAlternates(`/services/${s.slug}`),
   }));
 
-  return [...staticEntries, ...serviceEntries];
+  const workEntries = CASE_STUDY_BLUEPRINTS.map((study) => ({
+    url: `${SITE_URL}/work/${study.slug}`,
+    lastModified: LAST_MODIFIED_CORE,
+    changeFrequency: "monthly" as ChangeFreq,
+    priority: 0.82,
+    alternates: buildAlternates(`/work/${study.slug}`),
+  }));
+
+  return [...staticEntries, ...serviceEntries, ...workEntries];
 }

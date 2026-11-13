@@ -115,17 +115,8 @@ export function SectionHeader({
       }`}
     >
       <div className={align === "center" ? "" : "max-w-3xl"}>
-        <div
-          className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vensai-royal dark:text-vensai-electric mb-3`}
-        >
-          <motion.span
-            className="w-2 h-2 bg-vensai-electric inline-block"
-            animate={{ scale: [1, 1.4, 1] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <span>{eyebrow}</span>
-        </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.3] sm:leading-[1.32] lg:leading-[1.35]">
+        <p className="eyebrow-quiet mb-3 text-left">{eyebrow}</p>
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-[42px] leading-[1.25]">
           {title}
         </h2>
         {description && (

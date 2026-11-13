@@ -9,10 +9,10 @@ export const SITE_URL = (
 
 export const SITE_NAME = "Vensai Labs";
 export const DEFAULT_OG_IMAGE = {
-  url: "/brand/vensai-logo-original.jpg",
-  width: 1024,
-  height: 724,
-  alt: "Vensai Labs — People. Technology. Innovation. Build • Design • Automate • Scale.",
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "Vensai Labs — software, vendorship, and BPO",
 };
 
 // ── Geo-targeted hreflang alternates ──────────────────────────────────────────
@@ -409,10 +409,10 @@ export function buildPageMetadata({
 
   const baseKeywords = [
     "Vensai Labs",
-    "software company",
-    "business solutions partner",
-    "end-to-end delivery",
-    "dedicated professional teams",
+    "software company India",
+    "enterprise vendorship",
+    "BPO voice and chat",
+    "in-house delivery teams",
   ];
 
   // Build per-page hreflang map (canonical URL for every locale)

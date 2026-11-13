@@ -116,7 +116,7 @@ export function buildRootGraphSchema() {
         url: `${SITE_URL}/`,
         name: SITE_NAME,
         description:
-          "Technology, Talent & Solutions for Businesses Ready to Build and Scale. One Business Partner. Multiple Capabilities. End-to-End Delivery.",
+          "Custom software, enterprise vendorship, and BPO operations from Vijetha Softwares Pvt. Ltd.",
         publisher: {
           "@id": ORG_ID,
         },

@@ -4,23 +4,28 @@
 
 @layer base {
   :root {
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F7F9FC;
-    --text-primary: #0B1118;
-    --text-secondary: #1F2937;
-    --accent-electric: #0A84FF;
-    --accent-royal: #0066FF;
-    --accent-sky: #00A3FF;
+    --bg-primary: #f4f1ea;
+    --bg-secondary: #f7f4ee;
+    --bg-ink: #0a1628;
+    --text-primary: #070b12;
+    --text-secondary: #1f2937;
+    --accent-electric: #0a84ff;
+    --accent-royal: #0066ff;
+    --accent-sky: #00a3ff;
+    --accent-copper: #b87333;
+    --measure: 38rem;
   }
 
   .dark {
-    --bg-primary: #0B1118;
-    --bg-secondary: #111827;
-    --text-primary: #FFFFFF;
-    --text-secondary: #D1D5DB;
-    --accent-electric: #0A84FF;
-    --accent-royal: #0066FF;
-    --accent-sky: #00A3FF;
+    --bg-primary: #070b12;
+    --bg-secondary: #0a1628;
+    --bg-ink: #020a1f;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent-electric: #0a84ff;
+    --accent-royal: #0066ff;
+    --accent-sky: #00a3ff;
+    --accent-copper: #c98a4b;
   }
 
   html,
@@ -35,6 +40,22 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .prose-measure {
+    max-width: var(--measure);
+  }
+
+  .surface-paper {
+    @apply bg-vensai-paper bg-paper-grain dark:bg-vensai-obsidian;
+  }
+
+  .surface-ink {
+    @apply bg-vensai-navy bg-ink-mesh text-slate-100;
+  }
+
+  .eyebrow-quiet {
+    @apply text-xs font-medium tracking-wide text-vensai-copper dark:text-vensai-copper;
   }
 
   @media (prefers-reduced-motion: reduce) {
